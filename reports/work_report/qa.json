@@ -1,0 +1,34 @@
+{
+  "report": "LIBERO_工作报告_2026-09-07至08.docx",
+  "sha256": "a15117ffa788eb265ccb668606c057b8c62ed614ffd527647eaa347771b5106b",
+  "pages": 16,
+  "visually_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "renderer": "Installed Microsoft Word PDF export, documents skill render_docx.py rasterizer with Python 3.9 annotation compatibility adapter",
+  "image_dpi": 140,
+  "checks": [
+    "All pages visually inspected",
+    "Cover border removed",
+    "Run table headers adjusted",
+    "No page overflow or clipped content found",
+    "Historical results distinguished from fixed development validation"
+  ],
+  "new_experiments": false,
+  "new_model_api_calls": 0
+}

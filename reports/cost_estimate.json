@@ -1,0 +1,32 @@
+{
+  "pilot_run_id": "dev-gpt6-v6",
+  "actual_usage": {
+    "episodes": 30,
+    "calls": 175,
+    "input_tokens": 456083,
+    "output_tokens": 14164,
+    "episode_wall_seconds": 1234.4700000000084
+  },
+  "pricing_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "pricing_date": "2026-09-07",
+  "usd_per_million": {
+    "uncached_input": 10,
+    "cached_input": 1,
+    "cache_write": 12.5,
+    "output": 50
+  },
+  "cost_note": "Conservative no-cache Standard-price estimate; actual invoice may differ. Public rates, not a billing receipt.",
+  "pilot_estimated_usd": 5.26903,
+  "formal_episodes": 470,
+  "formal_projected_usd": 82.54813666666666,
+  "formal_projected_serial_hours": 5.372230555555592,
+  "ablation_states_per_task": 5,
+  "ablation_projected_usd": 8.781716666666666,
+  "execution_budget": {
+    "campaign_usd_cap": 600,
+    "max_llm_calls_per_episode": 24,
+    "max_output_tokens": 4096,
+    "max_replans": 3,
+    "workers": 1
+  }
+}

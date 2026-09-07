@@ -1,0 +1,7 @@
+{
+  "requested_model": "gpt-6-astra",
+  "returned_model": null,
+  "latency_seconds": 90.17199999999866,
+  "usage": {},
+  "error": "The read operation timed out"
+}

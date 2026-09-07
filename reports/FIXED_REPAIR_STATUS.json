@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "run_id": "fixed-repair-validation-v2",
+  "completed": 24,
+  "successes": 24,
+  "llm_calls": 0,
+  "formal_api_campaign": "still_paused",
+  "report": "E:\\djf\\LIBERO-GPT6-Eval\\reports\\fixed_repair\\SUMMARY.md"
+}

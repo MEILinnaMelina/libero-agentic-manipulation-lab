@@ -1,0 +1,1 @@
+{"request": {"skill": "clear_obstruction", "object": "milk_1", "goal": "", "strategy": null}, "success": false, "failure_code": "control_error", "message": "End effector did not reach target", "diagnostics": {"target": [-0.22, 0.32, 0.5488054980451786], "actual": [-0.20910339791709553, 0.2900320976044688, 0.5507169421734684]}, "env_steps": 178, "official_success": false}

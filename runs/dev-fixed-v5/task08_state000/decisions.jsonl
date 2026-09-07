@@ -1,0 +1,10 @@
+{"request": {"skill": "turn_on", "object": "flat_stove_1", "goal": "", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "grasp", "object": "moka_pot_1", "goal": "flat_stove_1_cook_region", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "moka_pot_1", "goal": "flat_stove_1_cook_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "moka_pot_1", "goal": "flat_stove_1_cook_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "moka_pot_1", "goal": "flat_stove_1_cook_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "grasp", "object": "moka_pot_2", "goal": "flat_stove_1_cook_region", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "moka_pot_2", "goal": "flat_stove_1_cook_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "moka_pot_2", "goal": "flat_stove_1_cook_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "moka_pot_2", "goal": "flat_stove_1_cook_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "finish", "object": null, "goal": "", "strategy": null}, "source": "fixed_bddl_diagnostic"}

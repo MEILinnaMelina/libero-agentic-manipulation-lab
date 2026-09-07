@@ -1,0 +1,38 @@
+﻿{
+    "time":  "2026-09-07T01:48:34.5415830+08:00",
+    "gpu":  "NVIDIA GeForce RTX 3060 Laptop GPU, 546.30, 6144 MiB",
+    "conda":  {
+                  "envs":  [
+                               "C:\\Users\\melin\\.conda\\envs\\buildenv",
+                               "C:\\Users\\melin\\.conda\\envs\\pytorch",
+                               "C:\\Users\\melin\\.conda\\envs\\roboeval",
+                               "C:\\Users\\melin\\.conda\\envs\\tbfix",
+                               "E:\\djf\\LIBERO-GPT6-Eval\\.venv-sim",
+                               "d:\\py\\Anaconda3",
+                               "d:\\py\\Anaconda3\\envs\\tf2.10"
+                           ]
+              },
+    "wsl":  [
+                "docker-desktop",
+                "",
+                ""
+            ],
+    "disks":  [
+                  {
+                      "Name":  "C",
+                      "Used":  253696937984,
+                      "Free":  3996901376
+                  },
+                  {
+                      "Name":  "D",
+                      "Used":  208463462400,
+                      "Free":  43563311104
+                  },
+                  {
+                      "Name":  "E",
+                      "Used":  884494151680,
+                      "Free":  115692158976
+                  }
+              ],
+    "api_key_present":  true
+}

@@ -1,0 +1,7 @@
+{
+  "requested_model": "gpt-6-astra",
+  "returned_model": null,
+  "latency_seconds": 1.3119999999980791,
+  "usage": {},
+  "error": "http_429"
+}

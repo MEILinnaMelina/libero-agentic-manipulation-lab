@@ -1,0 +1,2 @@
+{"request": {"skill": "open_door", "object": "microwave_1", "goal": "", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "grasp", "object": "white_yellow_mug_1", "goal": "microwave_1_heating_region", "strategy": "side"}, "source": "fixed_bddl_diagnostic"}

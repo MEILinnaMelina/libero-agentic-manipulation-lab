@@ -1,0 +1,425 @@
+{
+  "frame": "world",
+  "length_unit": "meter",
+  "angle_unit": "radian",
+  "objects": {
+    "black_book_1": {
+      "position_m": [
+        -0.2101091256973006,
+        0.16362137894134401,
+        0.8838459626226786
+      ],
+      "quaternion_xyzw": [
+        0.028497611250170373,
+        0.012893476343823027,
+        0.9074013063960351,
+        -0.4190996463510488
+      ],
+      "aabb_m": [
+        [
+          -0.27026259774386946,
+          0.1252786834682167,
+          0.8850647389347541
+        ],
+        [
+          -0.16217153327837844,
+          0.2249943598803092,
+          1.0210487866347029
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "white_yellow_mug_1": {
+      "position_m": [
+        -0.11516817141728936,
+        0.003584679169686882,
+        0.8852270012643118
+      ],
+      "quaternion_xyzw": [
+        -8.931891978750122e-07,
+        -3.670730927916967e-08,
+        0.7071069872187453,
+        -0.7071065751537245
+      ],
+      "aabb_m": [
+        [
+          -0.1681205332781346,
+          -0.06486441845550125,
+          0.8851297580437095
+        ],
+        [
+          -0.06205880236600109,
+          0.07486252785708393,
+          0.988343114716578
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "desk_caddy_1": {
+      "position_m": [
+        -0.4061207021800691,
+        -0.13373614324678404,
+        0.887
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        1.0,
+        6.123233995736766e-17
+      ],
+      "aabb_m": [
+        [
+          -0.48162070218006914,
+          -0.35061614324678403,
+          0.88839
+        ],
+        [
+          -0.3306207021800691,
+          0.08314385675321592,
+          1.05529
+        ]
+      ],
+      "type": "object",
+      "fixed": true,
+      "parent": null,
+      "held": false
+    },
+    "study_table_desk_caddy_init_region": {
+      "position_m": [
+        -0.4,
+        -0.14,
+        0.867
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.41000000000000003,
+          -0.15000000000000002,
+          0.86
+        ],
+        [
+          -0.39,
+          -0.13,
+          0.874
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "study_table_black_book_init_region": {
+      "position_m": [
+        -0.2,
+        0.15,
+        0.867
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.225,
+          0.125,
+          0.86
+        ],
+        [
+          -0.17500000000000002,
+          0.175,
+          0.874
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "study_table_white_yellow_mug_init_region": {
+      "position_m": [
+        -0.1,
+        0.0,
+        0.867
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.125,
+          -0.025,
+          0.86
+        ],
+        [
+          -0.07500000000000001,
+          0.025,
+          0.874
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "study_table_desk_caddy_right_region": {
+      "position_m": [
+        -0.4,
+        0.15,
+        0.867
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.45,
+          0.09999999999999998,
+          0.86
+        ],
+        [
+          -0.35000000000000003,
+          0.2,
+          0.874
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "desk_caddy_1_right_contain_region": {
+      "position_m": [
+        -0.4124307021800691,
+        0.00965385675321595,
+        0.95258
+      ],
+      "quaternion_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "aabb_m": [
+        [
+          -0.4743907021800691,
+          -0.05250614324678406,
+          0.89212
+        ],
+        [
+          -0.3504707021800691,
+          0.07181385675321596,
+          1.01304
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "desk_caddy_1",
+      "held": false
+    },
+    "desk_caddy_1_left_contain_region": {
+      "position_m": [
+        -0.41243070218006916,
+        -0.27924614324678404,
+        0.95258
+      ],
+      "quaternion_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "aabb_m": [
+        [
+          -0.4743907021800692,
+          -0.34140614324678403,
+          0.89212
+        ],
+        [
+          -0.35047070218006915,
+          -0.21708614324678405,
+          1.01304
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "desk_caddy_1",
+      "held": false
+    },
+    "desk_caddy_1_back_contain_region": {
+      "position_m": [
+        -0.43976070218006913,
+        -0.13309614324678404,
+        0.97258
+      ],
+      "quaternion_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "aabb_m": [
+        [
+          -0.4675107021800691,
+          -0.19525614324678403,
+          0.91212
+        ],
+        [
+          -0.41201070218006913,
+          -0.07093614324678404,
+          1.03304
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "desk_caddy_1",
+      "held": false
+    },
+    "desk_caddy_1_front_contain_region": {
+      "position_m": [
+        -0.37510070218006913,
+        -0.13309614324678404,
+        0.92754
+      ],
+      "quaternion_xyzw": [
+        0.7071067811865475,
+        0.0,
+        4.3297803758143125e-17,
+        -0.7071067811865475
+      ],
+      "aabb_m": [
+        [
+          -0.40285070218006913,
+          -0.19525614324678406,
+          0.89159
+        ],
+        [
+          -0.34735070218006914,
+          -0.07093614324678402,
+          0.9634900000000001
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "desk_caddy_1",
+      "held": false
+    }
+  },
+  "joints": {},
+  "contacts": [
+    [
+      null,
+      "black_book_1_g1"
+    ],
+    [
+      null,
+      "black_book_1_g1"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g23"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g23"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g24"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g25"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g26"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g28"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g30"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g31"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g32"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g33"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g34"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g34"
+    ],
+    [
+      "black_book_1_g1",
+      "gripper0_hand_collision"
+    ]
+  ],
+  "eef_position_m": [
+    -0.2067154370285388,
+    0.17851981711516174,
+    0.9864827548503456
+  ],
+  "eef_quaternion_xyzw": [
+    0.999998165820277,
+    -0.0009304521768434548,
+    -0.000568939388530485,
+    0.0015744595265587886
+  ],
+  "gripper_qpos": [
+    0.03994676345669186,
+    -0.039940151140235684
+  ],
+  "robot_qpos": [
+    0.1427969535725841,
+    0.5042211402345249,
+    0.16624983060295181,
+    -2.126528047375703,
+    -0.16572481398368016,
+    2.6169408999954973,
+    1.2203472631266934
+  ],
+  "goal_status": [
+    {
+      "predicate": [
+        "in",
+        "black_book_1",
+        "desk_caddy_1_back_contain_region"
+      ],
+      "satisfied": false
+    }
+  ],
+  "official_success": false,
+  "remaining_steps": 522
+}

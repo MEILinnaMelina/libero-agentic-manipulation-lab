@@ -1,0 +1,20 @@
+# Inference-only subset of the upstream requirements; no training packages.
+numpy==1.22.4
+robosuite==1.4.0
+mujoco==2.3.7
+bddl==1.0.1
+easydict==1.9
+gym==0.25.2
+cloudpickle==2.1.0
+matplotlib==3.5.3
+opencv-python==4.6.0.66
+scipy==1.10.1
+numba==0.58.1
+PyYAML==6.0.2
+torch==2.0.1
+imageio==2.35.1
+imageio-ffmpeg==0.5.1
+jsonschema==4.23.0
+pytest==8.3.5
+termcolor==2.4.0
+future==0.18.2

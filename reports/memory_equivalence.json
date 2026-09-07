@@ -1,0 +1,26 @@
+{
+  "actions": {
+    "shape_before": [
+      262,
+      7
+    ],
+    "shape_after": [
+      262,
+      7
+    ],
+    "equal": true,
+    "max_difference": 0.0
+  },
+  "sim_states": {
+    "shape_before": [
+      262,
+      123
+    ],
+    "shape_after": [
+      262,
+      123
+    ],
+    "equal": true,
+    "max_difference": 0.0
+  }
+}

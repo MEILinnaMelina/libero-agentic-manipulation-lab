@@ -1,0 +1,493 @@
+{
+  "frame": "world",
+  "length_unit": "meter",
+  "angle_unit": "radian",
+  "objects": {
+    "porcelain_mug_1": {
+      "position_m": [
+        -0.10576261285086418,
+        -0.23524450141627173,
+        0.897602754245232
+      ],
+      "quaternion_xyzw": [
+        -3.964013344385891e-05,
+        -2.3454396637969413e-05,
+        -0.7071060869096104,
+        0.7071074739627136
+      ],
+      "aabb_m": [
+        [
+          -0.15519810940000175,
+          -0.2952065960138631,
+          0.899991685731741
+        ],
+        [
+          -0.058902526333241424,
+          -0.170563068937077,
+          1.0060685658041664
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "white_yellow_mug_1": {
+      "position_m": [
+        0.028373970120089544,
+        0.024615141230634997,
+        0.8992677346152951
+      ],
+      "quaternion_xyzw": [
+        0.011642298615630719,
+        0.03735306741077293,
+        -0.6805061990041844,
+        0.7316970126731611
+      ],
+      "aabb_m": [
+        [
+          -0.021405413803511287,
+          -0.04965116488548375,
+          0.8981569292350239
+        ],
+        [
+          0.08413825613906255,
+          0.08882420599203848,
+          1.0068498881932453
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "microwave_1": {
+      "position_m": [
+        -0.007935069047738368,
+        0.3402118095223618,
+        0.9199999999999999
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.3076465353919712,
+          0.002708887639069235,
+          0.9199999999999998
+        ],
+        [
+          0.16456493095226163,
+          0.45126180952236183,
+          1.1085
+        ]
+      ],
+      "type": "object",
+      "fixed": true,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_microwave_init_region": {
+      "position_m": [
+        0.0,
+        0.35,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.01,
+          0.33999999999999997,
+          0.868
+        ],
+        [
+          0.01,
+          0.36,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_white_yellow_mug_init_region": {
+      "position_m": [
+        0.0,
+        0.0,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.025,
+          -0.025,
+          0.868
+        ],
+        [
+          0.025,
+          0.025,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_porcelain_mug_init_region": {
+      "position_m": [
+        -0.1,
+        -0.25,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.125,
+          -0.275,
+          0.868
+        ],
+        [
+          -0.07500000000000001,
+          -0.22499999999999998,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_porcelain_mug_front_region": {
+      "position_m": [
+        0.0,
+        -0.25,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.05,
+          -0.3,
+          0.868
+        ],
+        [
+          0.05,
+          -0.2,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "microwave_1_top_side": {
+      "position_m": [
+        -0.007935069047738368,
+        0.3502118095223618,
+        1.1199999999999999
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.12793506904773835,
+          0.2667118095223618,
+          1.115
+        ],
+        [
+          0.11206493095226162,
+          0.4337118095223618,
+          1.1249999999999998
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "microwave_1",
+      "held": false
+    },
+    "microwave_1_heating_region": {
+      "position_m": [
+        -0.007935069047738368,
+        0.3502118095223618,
+        1.016
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.12793506904773835,
+          0.2667118095223618,
+          0.936
+        ],
+        [
+          0.11206493095226162,
+          0.4337118095223618,
+          1.096
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "microwave_1",
+      "held": false
+    }
+  },
+  "joints": {
+    "microwave_1_microjoint": {
+      "qpos": -1.8386036528519565,
+      "type": "hinge",
+      "range": [
+        -2.094,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "anchor_world": [
+        -0.18043506904773834,
+        0.2522118095223618,
+        1.016
+      ]
+    }
+  },
+  "contacts": [
+    [
+      "table_collision",
+      "porcelain_mug_1_g5"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g5"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g5"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g5"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g19"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g19"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g19"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g19"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g20"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g20"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g20"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g20"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g21"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g21"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g21"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g21"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g22"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g22"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g22"
+    ],
+    [
+      "table_collision",
+      "porcelain_mug_1_g22"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g23"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g23"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g24"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g24"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g25"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g25"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g26"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g27"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g33"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g34"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g34"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g35"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g37"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g37"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g39"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g39"
+    ],
+    [
+      "table_collision",
+      "white_yellow_mug_1_g39"
+    ],
+    [
+      "white_yellow_mug_1_g19",
+      "gripper0_finger2_collision"
+    ],
+    [
+      "white_yellow_mug_1_g20",
+      "gripper0_finger2_collision"
+    ],
+    [
+      "white_yellow_mug_1_g21",
+      "gripper0_finger2_collision"
+    ]
+  ],
+  "eef_position_m": [
+    0.04412699753271504,
+    0.007261099675046997,
+    1.0079160160060547
+  ],
+  "eef_quaternion_xyzw": [
+    0.7050608438524392,
+    0.7090402013087286,
+    -0.008650410521741975,
+    -0.00873898117457326
+  ],
+  "gripper_qpos": [
+    0.03989687032500291,
+    -0.04073045631300346
+  ],
+  "robot_qpos": [
+    -0.04608412984611868,
+    0.7850023244505565,
+    0.06892014223041183,
+    -1.524261274842894,
+    -0.06414514621250238,
+    2.2824362438698014,
+    -0.7447040500336873
+  ],
+  "goal_status": [
+    {
+      "predicate": [
+        "in",
+        "white_yellow_mug_1",
+        "microwave_1_heating_region"
+      ],
+      "satisfied": false
+    },
+    {
+      "predicate": [
+        "close",
+        "microwave_1"
+      ],
+      "satisfied": false
+    }
+  ],
+  "official_success": false,
+  "remaining_steps": 245
+}

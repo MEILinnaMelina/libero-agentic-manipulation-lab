@@ -1,0 +1,45 @@
+{
+  "run_id": "repair-t01-v13",
+  "method": "fixed",
+  "split": "dev",
+  "complete": true,
+  "scheduled": 1,
+  "completed": 1,
+  "missing": [],
+  "per_task": [
+    {
+      "task_id": 1,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 1,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 1
+      }
+    }
+  ],
+  "macro_success_rate": 1.0,
+  "macro_bootstrap95": [
+    1.0,
+    1.0
+  ],
+  "bootstrap_note": "Stratified empirical bootstrap; degenerates at all-zero/all-one samples. See Wilson per-task intervals.",
+  "micro_wilson95": [
+    0.20654931437723745,
+    1.0
+  ],
+  "failure_counts": {},
+  "mean_llm_calls": 0.0,
+  "mean_replans": 0.0,
+  "total_input_tokens": 0,
+  "total_output_tokens": 0,
+  "total_llm_latency_seconds": 0.0,
+  "total_episode_wall_seconds": 16.593999999997322,
+  "estimated_cost_usd": 0,
+  "cost_note": "Usage-priced estimate, not an invoice; unavailable-response usage remains unknown."
+}

@@ -1,0 +1,711 @@
+{
+  "frame": "world",
+  "length_unit": "meter",
+  "angle_unit": "radian",
+  "objects": {
+    "alphabet_soup_1": {
+      "position_m": [
+        -0.012400084192049821,
+        0.2407340476837507,
+        0.641748634127987
+      ],
+      "quaternion_xyzw": [
+        0.012008539215451869,
+        0.7066690398950101,
+        0.7074308233576125,
+        0.004036484032672196
+      ],
+      "aabb_m": [
+        [
+          -0.04411797569441809,
+          0.20573832059927433,
+          0.6031870314534047
+        ],
+        [
+          0.019302165441513183,
+          0.2684476829778416,
+          0.6796770187011479
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": true
+    },
+    "cream_cheese_1": {
+      "position_m": [
+        0.17933302435739815,
+        -0.1770523115756671,
+        0.4456959397015131
+      ],
+      "quaternion_xyzw": [
+        -3.721875198049584e-07,
+        2.9363985008128177e-13,
+        0.999957652387395,
+        -0.009202903441378725
+      ],
+      "aabb_m": [
+        [
+          0.13833920650223233,
+          -0.19913208895307255,
+          0.43675990932904135
+        ],
+        [
+          0.22032684221256396,
+          -0.15497253419826162,
+          0.45463197007398487
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "tomato_sauce_1": {
+      "position_m": [
+        -0.008370829471745516,
+        0.25283702279926185,
+        0.4921689125340161
+      ],
+      "quaternion_xyzw": [
+        0.0071677793826853764,
+        0.7074212042528915,
+        0.7067514914609351,
+        0.0024883789610231953
+      ],
+      "aabb_m": [
+        [
+          -0.039718223125357846,
+          0.21863766155904094,
+          0.4537594749751741
+        ],
+        [
+          0.02312981380095715,
+          0.28048096663556665,
+          0.5299712392530664
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "ketchup_1": {
+      "position_m": [
+        -0.24006612552599912,
+        -0.15740117791775834,
+        0.5091798430329575
+      ],
+      "quaternion_xyzw": [
+        0.5000000451130694,
+        0.49999995219122184,
+        0.4999999579791834,
+        0.5000000447165174
+      ],
+      "aabb_m": [
+        [
+          -0.25769612713688883,
+          -0.18506118106607303,
+          0.4367598427747687
+        ],
+        [
+          -0.2209361211050956,
+          -0.12884117456658398,
+          0.582369843202258
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "orange_juice_1": {
+      "position_m": [
+        0.009215833413944162,
+        -0.23319089625523243,
+        0.506509843038735
+      ],
+      "quaternion_xyzw": [
+        0.492757808990809,
+        0.5071387792873907,
+        0.5071387778276215,
+        0.49275781094263643
+      ],
+      "aabb_m": [
+        [
+          -0.01776759092304192,
+          -0.2605548085833419,
+          0.43675984293864156
+        ],
+        [
+          0.036220539399684046,
+          -0.20621234401149063,
+          0.5679498431310108
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "milk_1": {
+      "position_m": [
+        0.03944364221008173,
+        -0.10978567665286117,
+        0.506509843038735
+      ],
+      "quaternion_xyzw": [
+        0.5000000043777698,
+        0.49999999584370275,
+        0.4999999973313891,
+        0.5000000024471384
+      ],
+      "aabb_m": [
+        [
+          0.013193641825929078,
+          -0.13623567691106647,
+          0.4367598429386416
+        ],
+        [
+          0.0656936425910469,
+          -0.08316567605612582,
+          0.5679498431310107
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "butter_1": {
+      "position_m": [
+        0.06710511174744366,
+        0.02515547306013219,
+        0.44546992152000003
+      ],
+      "quaternion_xyzw": [
+        -4.322888256988554e-19,
+        1.7166723551471362e-17,
+        1.0,
+        5.394432886879207e-33
+      ],
+      "aabb_m": [
+        [
+          0.029015111747443652,
+          0.005385473060132186,
+          0.43675992152000004
+        ],
+        [
+          0.10519511174744367,
+          0.04492547306013219,
+          0.45417992152000003
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "basket_1": {
+      "position_m": [
+        -0.009559050212277589,
+        0.2510375946414376,
+        0.43219199589487006
+      ],
+      "quaternion_xyzw": [
+        -0.0016948077549488504,
+        0.0016951604017965147,
+        0.7070312556163916,
+        0.7071782361183032
+      ],
+      "aabb_m": [
+        [
+          -0.08835545844918795,
+          0.1675824244147278,
+          0.4367598089769973
+        ],
+        [
+          0.06895256116181495,
+          0.337131758947423,
+          0.5782229866876497
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_basket_init_region": {
+      "position_m": [
+        0.0,
+        0.26,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.01,
+          0.25,
+          0.40299999999999997
+        ],
+        [
+          0.01,
+          0.27,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_milk_init_region": {
+      "position_m": [
+        0.05,
+        -0.1,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          0.024999999999999998,
+          -0.125,
+          0.40299999999999997
+        ],
+        [
+          0.07500000000000001,
+          -0.07500000000000001,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_cream_cheese_init_region": {
+      "position_m": [
+        0.1,
+        -0.2,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          0.07500000000000001,
+          -0.225,
+          0.40299999999999997
+        ],
+        [
+          0.125,
+          -0.17500000000000002,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_orange_juice_init_region": {
+      "position_m": [
+        0.0,
+        -0.25,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.025,
+          -0.275,
+          0.40299999999999997
+        ],
+        [
+          0.025,
+          -0.22499999999999998,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_tomato_sauce_init_region": {
+      "position_m": [
+        -0.1,
+        0.05,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.125,
+          0.024999999999999998,
+          0.40299999999999997
+        ],
+        [
+          -0.07500000000000001,
+          0.07500000000000001,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_alphabet_soup_init_region": {
+      "position_m": [
+        -0.1,
+        -0.15,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.125,
+          -0.175,
+          0.40299999999999997
+        ],
+        [
+          -0.07500000000000001,
+          -0.125,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_butter_init_region": {
+      "position_m": [
+        0.05,
+        0.05,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          0.024999999999999998,
+          0.024999999999999998,
+          0.40299999999999997
+        ],
+        [
+          0.07500000000000001,
+          0.07500000000000001,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_ketchup_init_region": {
+      "position_m": [
+        -0.25,
+        -0.15,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.275,
+          -0.175,
+          0.40299999999999997
+        ],
+        [
+          -0.22499999999999998,
+          -0.125,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "basket_1_contain_region": {
+      "position_m": [
+        -0.009558978579570646,
+        0.2513820525293061,
+        0.5040411702029883
+      ],
+      "quaternion_xyzw": [
+        0.0016951610935017245,
+        0.0016945602739467153,
+        0.7071782089002929,
+        -0.707031283431588
+      ],
+      "aabb_m": [
+        [
+          -0.07065174263023363,
+          0.1899569157840721,
+          0.4342591435791333
+        ],
+        [
+          0.051533785471092344,
+          0.31280718927454015,
+          0.5738231968268434
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": "basket_1",
+      "held": false
+    }
+  },
+  "joints": {},
+  "contacts": [
+    [
+      null,
+      "cream_cheese_1_g1"
+    ],
+    [
+      null,
+      "cream_cheese_1_g1"
+    ],
+    [
+      null,
+      "cream_cheese_1_g1"
+    ],
+    [
+      null,
+      "cream_cheese_1_g1"
+    ],
+    [
+      null,
+      "cream_cheese_1_g1"
+    ],
+    [
+      null,
+      "cream_cheese_1_g1"
+    ],
+    [
+      null,
+      "cream_cheese_1_g1"
+    ],
+    [
+      null,
+      "cream_cheese_1_g1"
+    ],
+    [
+      null,
+      "ketchup_1_g1"
+    ],
+    [
+      null,
+      "ketchup_1_g1"
+    ],
+    [
+      null,
+      "ketchup_1_g1"
+    ],
+    [
+      null,
+      "ketchup_1_g1"
+    ],
+    [
+      null,
+      "orange_juice_1_g1"
+    ],
+    [
+      null,
+      "orange_juice_1_g1"
+    ],
+    [
+      null,
+      "orange_juice_1_g1"
+    ],
+    [
+      null,
+      "orange_juice_1_g1"
+    ],
+    [
+      null,
+      "milk_1_g1"
+    ],
+    [
+      null,
+      "milk_1_g1"
+    ],
+    [
+      null,
+      "milk_1_g1"
+    ],
+    [
+      null,
+      "milk_1_g1"
+    ],
+    [
+      null,
+      "butter_1_g1"
+    ],
+    [
+      null,
+      "butter_1_g1"
+    ],
+    [
+      null,
+      "butter_1_g1"
+    ],
+    [
+      null,
+      "butter_1_g1"
+    ],
+    [
+      null,
+      "basket_1_g1"
+    ],
+    [
+      null,
+      "basket_1_g1"
+    ],
+    [
+      null,
+      "basket_1_g1"
+    ],
+    [
+      null,
+      "basket_1_g1"
+    ],
+    [
+      "alphabet_soup_1_g2",
+      "gripper0_hand_collision"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "alphabet_soup_1_g6"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "alphabet_soup_1_g6"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "alphabet_soup_1_g6"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "alphabet_soup_1_g6"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "alphabet_soup_1_g15"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "alphabet_soup_1_g15"
+    ],
+    [
+      "gripper0_finger2_pad_collision",
+      "alphabet_soup_1_g7"
+    ],
+    [
+      "gripper0_finger2_pad_collision",
+      "alphabet_soup_1_g7"
+    ],
+    [
+      "gripper0_finger2_pad_collision",
+      "alphabet_soup_1_g7"
+    ],
+    [
+      "tomato_sauce_1_g8",
+      "basket_1_g1"
+    ],
+    [
+      "tomato_sauce_1_g17",
+      "basket_1_g1"
+    ],
+    [
+      "tomato_sauce_1_g17",
+      "basket_1_g1"
+    ]
+  ],
+  "eef_position_m": [
+    -0.021787219981656558,
+    0.23720532468870517,
+    0.6482811390222574
+  ],
+  "eef_quaternion_xyzw": [
+    0.9999903400436714,
+    -0.0019525964701191945,
+    0.00393680238842337,
+    -9.366601293148862e-05
+  ],
+  "gripper_qpos": [
+    0.031259085444533694,
+    -0.031203318426852807
+  ],
+  "robot_qpos": [
+    0.110291518067046,
+    0.12519534889907746,
+    0.3466549481774832,
+    -2.2161914404212943,
+    -0.06377339376638336,
+    2.3399826672972766,
+    1.2883736410671203
+  ],
+  "goal_status": [
+    {
+      "predicate": [
+        "in",
+        "alphabet_soup_1",
+        "basket_1_contain_region"
+      ],
+      "satisfied": false
+    },
+    {
+      "predicate": [
+        "in",
+        "tomato_sauce_1",
+        "basket_1_contain_region"
+      ],
+      "satisfied": true
+    }
+  ],
+  "official_success": false,
+  "remaining_steps": 351
+}

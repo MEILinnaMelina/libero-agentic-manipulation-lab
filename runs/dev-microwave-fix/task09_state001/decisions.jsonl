@@ -1,0 +1,7 @@
+{"request": {"skill": "open_door", "object": "microwave_1", "goal": "", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "grasp", "object": "white_yellow_mug_1", "goal": "microwave_1_heating_region", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "white_yellow_mug_1", "goal": "microwave_1_heating_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "white_yellow_mug_1", "goal": "microwave_1_heating_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "white_yellow_mug_1", "goal": "microwave_1_heating_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "close_door", "object": "microwave_1", "goal": "", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "finish", "object": null, "goal": "", "strategy": null}, "source": "fixed_bddl_diagnostic"}

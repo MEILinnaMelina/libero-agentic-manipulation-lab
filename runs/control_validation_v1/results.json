@@ -1,0 +1,209 @@
+[
+  {
+    "test": "translation_0",
+    "expected_m": [
+      0.025,
+      0.0,
+      0.0
+    ],
+    "actual_m": [
+      0.02047680914682211,
+      0.00013076552771839386,
+      -0.0014539683977958795
+    ],
+    "passed": true
+  },
+  {
+    "test": "translation_1",
+    "expected_m": [
+      0.0,
+      0.025,
+      0.0
+    ],
+    "actual_m": [
+      0.003473822725831896,
+      0.02434798706698709,
+      0.002667325573602719
+    ],
+    "passed": true
+  },
+  {
+    "test": "translation_2",
+    "expected_m": [
+      0.0,
+      0.0,
+      0.025000000000000022
+    ],
+    "actual_m": [
+      -0.0014328757561698421,
+      0.00025015657981612704,
+      0.020943351836229862
+    ],
+    "passed": true
+  },
+  {
+    "test": "rotation_world_z",
+    "expected_rad": [
+      0,
+      0,
+      0.15
+    ],
+    "actual_rad": [
+      -0.00026017178730057127,
+      4.5035032808105806e-05,
+      0.015102549018197188
+    ],
+    "passed": false
+  },
+  {
+    "test": "gripper_sign",
+    "apertures": {
+      "-1": 0.0781611496222791,
+      "1": 0.0018389673563934507
+    },
+    "passed": true
+  },
+  {
+    "test": "isolated_ik",
+    "result": {
+      "feasible": true,
+      "qpos": [
+        -0.48251491674213187,
+        -0.14723405553315078,
+        0.5100340654074428,
+        -2.286757373454227,
+        0.08764851674355321,
+        2.109256463169317,
+        2.0335242448299025
+      ],
+      "attempts": [
+        {
+          "position_error_m": 0.0020574331314599913,
+          "orientation_error_rad": 0.14898160110247352,
+          "collisions": []
+        }
+      ]
+    },
+    "passed": true
+  },
+  {
+    "test": "grasp",
+    "request": {
+      "skill": "grasp",
+      "object": "alphabet_soup_1",
+      "goal": "basket_1_contain_region",
+      "strategy": "top"
+    },
+    "success": true,
+    "failure_code": null,
+    "diagnostics": {
+      "candidates": [
+        {
+          "yaw": 0,
+          "target": [
+            -0.1000354781276484,
+            -0.1556953121234143,
+            0.4824880836956907
+          ],
+          "report": {
+            "feasible": true,
+            "waypoints": [
+              {
+                "feasible": true,
+                "qpos": [
+                  -0.5140012023309817,
+                  -0.08920775231483584,
+                  0.1472161418198071,
+                  -2.5919145728311985,
+                  0.048384631313611225,
+                  2.507652901094889,
+                  1.8835242448299025
+                ],
+                "attempts": [
+                  {
+                    "position_error_m": 0.0014231934406593624,
+                    "orientation_error_rad": 0.06884183661450972,
+                    "collisions": []
+                  }
+                ]
+              },
+              {
+                "feasible": true,
+                "qpos": [
+                  0.011175502212569077,
+                  0.3093135254845426,
+                  -0.30492835928094875,
+                  -2.577773067290613,
+                  0.44878043482898666,
+                  2.86998225349983,
+                  1.5835242448299027
+                ],
+                "attempts": [
+                  {
+                    "position_error_m": 0.0027622125958013076,
+                    "orientation_error_rad": 0.06954442430249863,
+                    "collisions": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "test": "lift",
+    "request": {
+      "skill": "lift",
+      "object": "alphabet_soup_1",
+      "goal": "basket_1_contain_region",
+      "strategy": "top"
+    },
+    "success": true,
+    "failure_code": null,
+    "diagnostics": {
+      "object_displacement_m": [
+        -0.00427003791479473,
+        0.002783282297119327,
+        0.1202680617323153
+      ]
+    }
+  },
+  {
+    "test": "transport",
+    "request": {
+      "skill": "transport",
+      "object": "alphabet_soup_1",
+      "goal": "basket_1_contain_region",
+      "strategy": "top"
+    },
+    "success": true,
+    "failure_code": null,
+    "diagnostics": {}
+  },
+  {
+    "test": "place",
+    "request": {
+      "skill": "place",
+      "object": "alphabet_soup_1",
+      "goal": "basket_1_contain_region",
+      "strategy": "top"
+    },
+    "success": false,
+    "failure_code": "control_error",
+    "message": "End effector did not reach target",
+    "diagnostics": {
+      "target": [
+        -0.010927583798628229,
+        0.3052115619043816,
+        0.5107921873235328
+      ],
+      "actual": [
+        -0.0024063998836672674,
+        0.33584489781999816,
+        0.576067271401203
+      ]
+    }
+  }
+]

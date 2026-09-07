@@ -1,0 +1,58 @@
+{
+  "run_id": "carry-validation",
+  "method": "fixed",
+  "split": "dev",
+  "complete": true,
+  "scheduled": 2,
+  "completed": 2,
+  "missing": [],
+  "per_task": [
+    {
+      "task_id": 0,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 1,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 1
+      }
+    },
+    {
+      "task_id": 7,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 1,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 1
+      }
+    }
+  ],
+  "macro_success_rate": 1.0,
+  "macro_bootstrap95": [
+    1.0,
+    1.0
+  ],
+  "bootstrap_note": "Stratified empirical bootstrap; degenerates at all-zero/all-one samples. See Wilson per-task intervals.",
+  "micro_wilson95": [
+    0.34238022750665303,
+    1.0
+  ],
+  "failure_counts": {},
+  "mean_llm_calls": 0.0,
+  "mean_replans": 0.0,
+  "total_input_tokens": 0,
+  "total_output_tokens": 0,
+  "total_llm_latency_seconds": 0.0,
+  "total_episode_wall_seconds": 33.812000000005355
+}

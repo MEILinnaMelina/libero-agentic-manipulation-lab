@@ -1,0 +1,53 @@
+{
+  "completed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    35
+  ],
+  "pending": [
+    33,
+    34,
+    36,
+    37,
+    38
+  ],
+  "evidence": {
+    "T01-T04": "README.md; docs/METHOD.md; docs/provenance/sources.json",
+    "T05-T10": "configs/requirements-sim.lock; runs/smoke/results.json; configs/task_manifest.json; docs/provenance/windows_patches.json",
+    "T11-T15": "configs/protocol.json; tests/test_protocol.py; runs/noop-memory-validation/task00_state000/result.json",
+    "T16-T21": "src/libero_eval/{env,scene,motion,skills}.py; runs/control_validation/results.json; reports/memory_equivalence.json; runs/carry-validation/",
+    "T22-T24": "Implemented in skills.py; actual per-mechanism development trajectories must be verified before closing these items.",
+    "T25-T31": "runs/api_probe; runs/pilot-gpt6-v1; reports/dev-gpt6-v3; reports/cost_estimate.json",
+    "T32-T38": "Formal completion requires configs/frozen.json plus all three complete formal conditions and bilingual report."
+  }
+}

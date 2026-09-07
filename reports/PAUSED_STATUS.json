@@ -1,0 +1,23 @@
+{
+  "status": "paused_by_user",
+  "time": 1788761569.6593776,
+  "formal_scheduled": 470,
+  "formal_terminal_records": 83,
+  "formal_successes": 33,
+  "formal_terminations": {
+    "success": 33,
+    "api_error": 47,
+    "interrupted": 3
+  },
+  "interrupted_episodes": [
+    "task01_state036",
+    "task01_state037",
+    "task01_state038"
+  ],
+  "api_blocker": "HTTP 429 insufficient_quota / credit_balance_exhausted",
+  "all_runs_metadata_records": 1076,
+  "all_runs_input_tokens": 3025494,
+  "all_runs_output_tokens": 83034,
+  "all_runs_usage_priced_estimate_usd": 32.16930250000003,
+  "cost_note": "Estimate from recorded returned usage and public Standard prices including cache discounts. Not invoice; requests without returned usage are unknown."
+}

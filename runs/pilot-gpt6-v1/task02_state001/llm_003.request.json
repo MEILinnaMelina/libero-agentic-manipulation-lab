@@ -1,0 +1,93 @@
+{
+  "model": "gpt-6-astra",
+  "store": false,
+  "reasoning": {
+    "effort": "low"
+  },
+  "max_output_tokens": 4096,
+  "input": [
+    {
+      "role": "system",
+      "content": "You are the semantic task planner for a single-arm LIBERO adaptation of RoboEval Agentic v2. Choose exactly one skill. Deterministic robotics code alone chooses poses, offsets, joints, trajectories, gains, tolerances and step counts. Use only current named objects and regions. Fixtures cannot be lifted. Re-observe after each skill and use failure feedback. Do not claim success without official check_success. BDDL goals are explicitly provided as privileged task information. Return the supplied strict JSON schema. thought is a brief decision rationale."
+    },
+    {
+      "role": "user",
+      "content": "{\"task\": {\"language\": \"turn on the stove and put the moka pot on it\", \"goals\": [[\"turnon\", \"flat_stove_1\"], [\"on\", \"moka_pot_1\", \"flat_stove_1_cook_region\"]]}, \"skills\": {\"grasp\": \"Object is movable and not held; one Panda arm.\", \"lift\": \"Object must be held.\", \"transport\": \"Object must be held; goal is a named object/region.\", \"place\": \"Object must be held; goal is a named object/region; release and settle.\", \"open_drawer\": \"Named articulated region is a sliding drawer; hand is empty.\", \"close_drawer\": \"Named sliding drawer is unobstructed; hand is empty.\", \"open_door\": \"Named hinged appliance; hand is empty.\", \"close_door\": \"Named hinged appliance; placed objects clear the door arc.\", \"turn_on\": \"Named stove has a rotary switch; hand is empty.\", \"finish\": \"Official success is true, or no recovery remains.\"}, \"scene\": {\"frame\": \"world\", \"length_unit\": \"meter\", \"angle_unit\": \"radian\", \"objects\": {\"chefmate_8_frypan_1\": {\"position_m\": [-0.03934786488148992, -0.26137122397492724, 0.899170958627053], \"quaternion_xyzw\": [-7.829701864719791e-05, 8.432544031772331e-05, 0.7071070062060509, 0.7071065468040251], \"aabb_m\": [[-0.14049537904893633, -0.3581801485691276, 0.8999578764183137], [0.06388638629154239, -0.0020498589913518495, 0.9578273220552922]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"moka_pot_1\": {\"position_m\": [0.06033735675525906, 0.0185152230532607, 0.9661058538799803], \"quaternion_xyzw\": [2.069601940323666e-07, -4.609649681059325e-06, 0.9999999999893542, -3.3038978686584495e-10], \"aabb_m\": [[0.01948916135383457, -0.0727132979632632, 0.8999955245470279], [0.10090555252163193, 0.07482492388991811, 1.0517959235305454]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"flat_stove_1\": {\"position_m\": [-0.20612070218006914, 0.20626385675321599, 0.905], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.2582052663061838, 0.11126385675321598, 0.885], [0.03887929781993085, 0.301263856753216, 0.9550200000000001]], \"type\": \"object\", \"fixed\": true, \"parent\": null, \"held\": false}, \"kitchen_table_flat_stove_init_region\": {\"position_m\": [-0.2, 0.2, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.21000000000000002, 0.19, 0.868], [-0.19, 0.21000000000000002, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"kitchen_table_frypan_init_region\": {\"position_m\": [-0.05, -0.25, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.07500000000000001, -0.275, 0.868], [-0.024999999999999998, -0.22499999999999998, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"kitchen_table_moka_pot_init_region\": {\"position_m\": [0.05, 0.0, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.024999999999999998, -0.025, 0.868], [0.07500000000000001, 0.025, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"flat_stove_1_cook_region\": {\"position_m\": [-0.05612070218006915, 0.20626385675321599, 0.905], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.13112070218006916, 0.131263856753216, 0.9025000000000001], [0.01887929781993085, 0.28126385675321597, 0.9075]], \"type\": \"site\", \"fixed\": true, \"parent\": \"flat_stove_1\", \"held\": false}}, \"joints\": {\"flat_stove_1_button\": {\"qpos\": -0.005023176245732922, \"type\": \"hinge\", \"range\": [-0.005, 2.1], \"axis_world\": [0.0, 0.0, 1.0], \"anchor_world\": [-0.20612070218006914, 0.20626385675321599, 0.905]}}, \"contacts\": [[\"table_collision\", \"chefmate_8_frypan_1_g4\"], [\"table_collision\", \"chefmate_8_frypan_1_g4\"], [\"table_collision\", \"chefmate_8_frypan_1_g4\"], [\"table_collision\", \"chefmate_8_frypan_1_g4\"], [\"table_collision\", \"moka_pot_1_g2\"], [\"table_collision\", \"moka_pot_1_g2\"], [\"table_collision\", \"moka_pot_1_g2\"], [\"table_collision\", \"moka_pot_1_g2\"], [\"table_collision\", \"moka_pot_1_g3\"], [\"table_collision\", \"moka_pot_1_g3\"], [\"table_collision\", \"moka_pot_1_g3\"], [\"table_collision\", \"moka_pot_1_g3\"], [\"table_collision\", \"moka_pot_1_g4\"], [\"table_collision\", \"moka_pot_1_g4\"], [\"table_collision\", \"moka_pot_1_g4\"], [\"table_collision\", \"moka_pot_1_g4\"], [\"table_collision\", \"moka_pot_1_g5\"], [\"table_collision\", \"moka_pot_1_g5\"], [\"table_collision\", \"moka_pot_1_g5\"], [\"table_collision\", \"moka_pot_1_g5\"], [\"table_collision\", \"moka_pot_1_g6\"], [\"table_collision\", \"moka_pot_1_g6\"], [\"table_collision\", \"moka_pot_1_g6\"], [\"table_collision\", \"moka_pot_1_g6\"], [\"table_collision\", \"moka_pot_1_g7\"], [\"table_collision\", \"moka_pot_1_g7\"], [\"table_collision\", \"moka_pot_1_g7\"], [\"table_collision\", \"moka_pot_1_g7\"], [\"table_collision\", \"moka_pot_1_g8\"], [\"table_collision\", \"moka_pot_1_g8\"], [\"table_collision\", \"moka_pot_1_g8\"], [\"table_collision\", \"moka_pot_1_g8\"], [\"flat_stove_1_g19\", \"gripper0_hand_collision\"]], \"eef_position_m\": [-0.24967622611468301, 0.2072336419779546, 0.9239638351673065], \"eef_quaternion_xyzw\": [0.9999992228261362, -0.0010827881096590608, 0.0006176424920411235, -2.0851509797134202e-05], \"gripper_qpos\": [0.039999443649544254, -0.03999765795493159], \"robot_qpos\": [0.2557949253899662, 0.48307429727978735, 0.14826565899481112, -2.465938997105145, -0.3415616245326625, 2.933971426492892, 1.510045659847783], \"goal_status\": [{\"predicate\": [\"turnon\", \"flat_stove_1\"], \"satisfied\": false}, {\"predicate\": [\"on\", \"moka_pot_1\", \"flat_stove_1_cook_region\"], \"satisfied\": false}], \"official_success\": false, \"remaining_steps\": 437}, \"history\": [{\"request\": {\"skill\": \"turn_on\", \"object\": \"flat_stove_1\", \"goal\": \"flat_stove_1\", \"strategy\": null}, \"success\": false, \"failure_code\": \"control_error\", \"message\": \"End effector did not reach target\", \"diagnostics\": {\"target\": [-0.25595070218006916, 0.20784385675321598, 0.91157], \"actual\": [-0.24997799385914374, 0.20709727373221581, 0.9239641661913726]}, \"env_steps\": 88, \"official_success\": false}, {\"request\": {\"skill\": \"turn_on\", \"object\": \"flat_stove_1\", \"goal\": \"flat_stove_1\", \"strategy\": null}, \"success\": false, \"failure_code\": \"control_error\", \"message\": \"End effector did not reach target\", \"diagnostics\": {\"target\": [-0.25594213675930766, 0.2080941453825473, 0.91157], \"actual\": [-0.24967622611468301, 0.2072336419779546, 0.9239638351673065]}, \"env_steps\": 75, \"official_success\": false}]}"
+    }
+  ],
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "name": "libero_semantic_skill",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schema_version",
+          "thought",
+          "request"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "enum": [
+              "libero.agentic_v2.skill_request.v1"
+            ]
+          },
+          "thought": {
+            "type": "string"
+          },
+          "request": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "skill",
+              "object",
+              "goal",
+              "strategy"
+            ],
+            "properties": {
+              "skill": {
+                "type": "string",
+                "enum": [
+                  "grasp",
+                  "lift",
+                  "transport",
+                  "place",
+                  "open_drawer",
+                  "close_drawer",
+                  "open_door",
+                  "close_door",
+                  "turn_on",
+                  "finish"
+                ]
+              },
+              "object": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "goal": {
+                "type": "string"
+              },
+              "strategy": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  null,
+                  "top",
+                  "side",
+                  "handle"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

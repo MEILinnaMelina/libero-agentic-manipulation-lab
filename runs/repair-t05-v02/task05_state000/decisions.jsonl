@@ -1,0 +1,4 @@
+{"request": {"skill": "grasp", "object": "black_book_1", "goal": "desk_caddy_1_back_contain_region", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "black_book_1", "goal": "desk_caddy_1_back_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "black_book_1", "goal": "desk_caddy_1_back_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "black_book_1", "goal": "desk_caddy_1_back_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}

@@ -1,0 +1,60 @@
+{
+  "run_id": "pilot-gpt6-v1",
+  "method": "gpt6",
+  "split": "dev",
+  "complete": true,
+  "scheduled": 4,
+  "completed": 4,
+  "missing": [],
+  "per_task": [
+    {
+      "task_id": 0,
+      "scheduled": 2,
+      "completed": 2,
+      "missing": 0,
+      "successes": 2,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.34238022750665303,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 2
+      }
+    },
+    {
+      "task_id": 2,
+      "scheduled": 2,
+      "completed": 2,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.6576197724933469
+      ],
+      "termination_counts": {
+        "replan_budget": 2
+      }
+    }
+  ],
+  "macro_success_rate": 0.5,
+  "macro_bootstrap95": [
+    0.5,
+    0.5
+  ],
+  "bootstrap_note": "Stratified empirical bootstrap; degenerates at all-zero/all-one samples. See Wilson per-task intervals.",
+  "micro_wilson95": [
+    0.15003898915214947,
+    0.8499610108478506
+  ],
+  "failure_counts": {
+    "control_error": 14
+  },
+  "mean_llm_calls": 8.0,
+  "mean_replans": 3.0,
+  "total_input_tokens": 127643,
+  "total_output_tokens": 2773,
+  "total_llm_latency_seconds": 113.53400000000056,
+  "total_episode_wall_seconds": 155.5930000000003
+}

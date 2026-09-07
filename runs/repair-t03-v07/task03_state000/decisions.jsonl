@@ -1,0 +1,6 @@
+{"request": {"skill": "open_drawer", "object": "white_cabinet_1_bottom_region", "goal": "", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "grasp", "object": "akita_black_bowl_1", "goal": "white_cabinet_1_bottom_region", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "akita_black_bowl_1", "goal": "white_cabinet_1_bottom_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "akita_black_bowl_1", "goal": "white_cabinet_1_bottom_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "akita_black_bowl_1", "goal": "white_cabinet_1_bottom_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "close_drawer", "object": "white_cabinet_1_bottom_region", "goal": "", "strategy": null}, "source": "fixed_bddl_diagnostic"}

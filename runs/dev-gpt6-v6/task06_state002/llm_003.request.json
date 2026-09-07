@@ -1,0 +1,93 @@
+{
+  "model": "gpt-6-astra",
+  "store": false,
+  "reasoning": {
+    "effort": "low"
+  },
+  "max_output_tokens": 4096,
+  "input": [
+    {
+      "role": "system",
+      "content": "You are the semantic task planner for a single-arm LIBERO adaptation of RoboEval Agentic v2. Choose exactly one skill. Deterministic robotics code alone chooses poses, offsets, joints, trajectories, gains, tolerances and step counts. Use only current named objects and regions. Fixtures cannot be lifted. Re-observe after each skill and use failure feedback. Do not claim success without official check_success. BDDL goals are explicitly provided as privileged task information. Return the supplied strict JSON schema. thought is a brief decision rationale."
+    },
+    {
+      "role": "user",
+      "content": "{\"task\": {\"language\": \"put the white mug on the plate and put the chocolate pudding to the right of the plate\", \"goals\": [[\"on\", \"porcelain_mug_1\", \"plate_1\"], [\"on\", \"chocolate_pudding_1\", \"living_room_table_plate_right_region\"]]}, \"skills\": {\"grasp\": \"Object is movable and not held; one Panda arm.\", \"lift\": \"Object must be held.\", \"transport\": \"Object must be held; goal is a named object/region.\", \"place\": \"Object must be held; goal is a named object/region; release and settle.\", \"open_drawer\": \"Named articulated region is a sliding drawer; hand is empty.\", \"close_drawer\": \"Named sliding drawer is unobstructed; hand is empty.\", \"open_door\": \"Named hinged appliance; hand is empty.\", \"close_door\": \"Named hinged appliance; placed objects clear the door arc.\", \"turn_on\": \"Named stove has a rotary switch; hand is empty.\", \"finish\": \"Official success is true, or no recovery remains.\"}, \"scene\": {\"frame\": \"world\", \"length_unit\": \"meter\", \"angle_unit\": \"radian\", \"objects\": {\"porcelain_mug_1\": {\"position_m\": [-0.1153, -0.1647, 0.4443], \"quaternion_xyzw\": [0.1419, -0.1596, 0.7004, -0.6811], \"aabb_m\": [[-0.1456, -0.2276, 0.4364], [-0.0284, -0.1021, 0.5626]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": true}, \"red_coffee_mug_1\": {\"position_m\": [-0.2133, -0.0059, 0.4386], \"quaternion_xyzw\": [0.0, -0.0, -0.7071, 0.7071], \"aabb_m\": [[-0.2605, -0.0681, 0.4368], [-0.1673, 0.0548, 0.5694]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"plate_1\": {\"position_m\": [0.1699, 0.0154, 0.4393], \"quaternion_xyzw\": [0.0, -0.0, 0.7071, 0.7071], \"aabb_m\": [[0.1008, -0.0526, 0.4368], [0.2383, 0.0851, 0.4557]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"chocolate_pudding_1\": {\"position_m\": [-0.0616, 0.1089, 0.4498], \"quaternion_xyzw\": [0.0, 0.0, 1.0, 0.0], \"aabb_m\": [[-0.1012, 0.0857, 0.4368], [-0.021, 0.132, 0.4642]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_plate_left_region\": {\"position_m\": [0.15, -0.1, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.1, -0.15, 0.403], [0.2, -0.05, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_plate_right_region\": {\"position_m\": [0.15, 0.1, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.1, 0.05, 0.403], [0.2, 0.15, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_plate_init_region\": {\"position_m\": [0.15, 0.0, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.125, -0.025, 0.403], [0.175, 0.025, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_porcelain_mug_init_region\": {\"position_m\": [-0.1, -0.15, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.125, -0.175, 0.403], [-0.075, -0.125, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_chocolate_pudding_init_region\": {\"position_m\": [-0.05, 0.1, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.075, 0.075, 0.403], [-0.025, 0.125, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_red_coffee_mug_init_region\": {\"position_m\": [-0.2, 0.0, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.225, -0.025, 0.403], [-0.175, 0.025, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}}, \"joints\": {}, \"contacts\": [[null, \"porcelain_mug_1_g7\"], [null, \"porcelain_mug_1_g22\"], [null, \"red_coffee_mug_1_g2\"], [null, \"red_coffee_mug_1_g4\"], [null, \"red_coffee_mug_1_g5\"], [null, \"red_coffee_mug_1_g6\"], [null, \"red_coffee_mug_1_g7\"], [null, \"red_coffee_mug_1_g8\"], [null, \"plate_1_g2\"], [null, \"plate_1_g3\"], [null, \"plate_1_g4\"], [null, \"plate_1_g6\"], [null, \"plate_1_g10\"], [null, \"plate_1_g8\"], [null, \"plate_1_g9\"], [null, \"chocolate_pudding_1_g1\"], [null, \"chocolate_pudding_1_g1\"], [null, \"chocolate_pudding_1_g1\"], [null, \"chocolate_pudding_1_g1\"], [\"porcelain_mug_1_g9\", \"gripper0_finger1_collision\"], [\"porcelain_mug_1_g12\", \"gripper0_finger1_collision\"], [\"gripper0_finger1_pad_collision\", \"porcelain_mug_1_g9\"], [\"gripper0_finger1_pad_collision\", \"porcelain_mug_1_g9\"], [\"gripper0_finger1_pad_collision\", \"porcelain_mug_1_g9\"], [\"porcelain_mug_1_g16\", \"gripper0_finger2_collision\"], [\"gripper0_finger2_pad_collision\", \"porcelain_mug_1_g16\"], [\"gripper0_finger2_pad_collision\", \"porcelain_mug_1_g16\"]], \"eef_position_m\": [-0.0797, -0.1668, 0.5322], \"eef_quaternion_xyzw\": [0.7083, 0.7059, -0.0024, -0.0037], \"gripper_qpos\": [0.041, -0.0412], \"robot_qpos\": [-0.1438, 0.1842, -0.2126, -2.5231, 0.0862, 2.6929, -1.2125], \"goal_status\": [{\"predicate\": [\"on\", \"porcelain_mug_1\", \"plate_1\"], \"satisfied\": false}, {\"predicate\": [\"on\", \"chocolate_pudding_1\", \"living_room_table_plate_right_region\"], \"satisfied\": false}], \"official_success\": false, \"remaining_steps\": 507}, \"history\": [{\"request\": {\"skill\": \"grasp\", \"object\": \"porcelain_mug_1\", \"goal\": \"plate_1\", \"strategy\": \"handle\"}, \"success\": false, \"failure_code\": \"control_error\", \"message\": \"End effector did not reach target\", \"official_success\": false}, {\"request\": {\"skill\": \"lift\", \"object\": \"porcelain_mug_1\", \"goal\": \"plate_1\", \"strategy\": null}, \"success\": false, \"failure_code\": \"grasp_slip\", \"message\": \"No verified two-finger hold on porcelain_mug_1\", \"official_success\": false}]}"
+    }
+  ],
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "name": "libero_semantic_skill",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schema_version",
+          "thought",
+          "request"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "enum": [
+              "libero.agentic_v2.skill_request.v1"
+            ]
+          },
+          "thought": {
+            "type": "string"
+          },
+          "request": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "skill",
+              "object",
+              "goal",
+              "strategy"
+            ],
+            "properties": {
+              "skill": {
+                "type": "string",
+                "enum": [
+                  "grasp",
+                  "lift",
+                  "transport",
+                  "place",
+                  "open_drawer",
+                  "close_drawer",
+                  "open_door",
+                  "close_door",
+                  "turn_on",
+                  "finish"
+                ]
+              },
+              "object": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "goal": {
+                "type": "string"
+              },
+              "strategy": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  null,
+                  "top",
+                  "side",
+                  "handle"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

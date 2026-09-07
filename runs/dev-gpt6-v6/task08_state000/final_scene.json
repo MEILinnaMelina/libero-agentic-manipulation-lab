@@ -1,0 +1,347 @@
+{
+  "frame": "world",
+  "length_unit": "meter",
+  "angle_unit": "radian",
+  "objects": {
+    "moka_pot_1": {
+      "position_m": [
+        0.07090482109028191,
+        -0.339464255706548,
+        0.9595503211822689
+      ],
+      "quaternion_xyzw": [
+        -0.5305714553560005,
+        0.06073041582318853,
+        -0.11148375920025375,
+        0.8380794227219387
+      ],
+      "aabb_m": [
+        [
+          0.017266858855712587,
+          -0.41680480547718274,
+          0.8983698562298532
+        ],
+        [
+          0.12513720674084805,
+          -0.24910065120625252,
+          1.0362695318142514
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "moka_pot_2": {
+      "position_m": [
+        -0.04853740999229314,
+        -0.2993924429961267,
+        0.9784450256265722
+      ],
+      "quaternion_xyzw": [
+        0.002033910582336791,
+        -0.6266997419492686,
+        0.7792540525455035,
+        -0.0025334245346592746
+      ],
+      "aabb_m": [
+        [
+          -0.08980469446593785,
+          -0.38411565209488824,
+          0.8999713084123846
+        ],
+        [
+          -0.007543052775985912,
+          -0.22788714939018428,
+          1.0462987450746188
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "flat_stove_1": {
+      "position_m": [
+        -0.19373614324678404,
+        -0.20590268455726907,
+        0.905
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.2445600447133801,
+          -0.3009026845572691,
+          0.885
+        ],
+        [
+          0.05126385675321596,
+          -0.11090268455726907,
+          0.9550200000000001
+        ]
+      ],
+      "type": "object",
+      "fixed": true,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_flat_stove_init_region": {
+      "position_m": [
+        -0.2,
+        -0.2,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.21000000000000002,
+          -0.21000000000000002,
+          0.868
+        ],
+        [
+          -0.19,
+          -0.19,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_moka_pot_right_init_region": {
+      "position_m": [
+        -0.05,
+        0.25,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.07500000000000001,
+          0.22499999999999998,
+          0.868
+        ],
+        [
+          -0.024999999999999998,
+          0.275,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_moka_pot_left_init_region": {
+      "position_m": [
+        0.05,
+        0.05,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          0.024999999999999998,
+          0.024999999999999998,
+          0.868
+        ],
+        [
+          0.07500000000000001,
+          0.07500000000000001,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "flat_stove_1_cook_region": {
+      "position_m": [
+        -0.04373614324678404,
+        -0.20590268455726907,
+        0.905
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.11873614324678404,
+          -0.2809026845572691,
+          0.9025000000000001
+        ],
+        [
+          0.031263856753215954,
+          -0.13090268455726906,
+          0.9075
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "flat_stove_1",
+      "held": false
+    }
+  },
+  "joints": {
+    "flat_stove_1_button": {
+      "qpos": 1.4382913917406646,
+      "type": "hinge",
+      "range": [
+        -0.005,
+        2.1
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "anchor_world": [
+        -0.19373614324678404,
+        -0.20590268455726907,
+        0.905
+      ]
+    }
+  },
+  "contacts": [
+    [
+      "table_collision",
+      "moka_pot_1_g4"
+    ],
+    [
+      "table_collision",
+      "moka_pot_1_g13"
+    ],
+    [
+      "table_collision",
+      "moka_pot_1_g13"
+    ],
+    [
+      "table_collision",
+      "moka_pot_1_g14"
+    ],
+    [
+      "table_collision",
+      "moka_pot_1_g14"
+    ],
+    [
+      "table_collision",
+      "moka_pot_1_g14"
+    ],
+    [
+      "table_collision",
+      "moka_pot_1_g14"
+    ],
+    [
+      "table_collision",
+      "moka_pot_1_g15"
+    ],
+    [
+      "table_collision",
+      "moka_pot_1_g15"
+    ],
+    [
+      "table_collision",
+      "moka_pot_2_g14"
+    ],
+    [
+      "table_collision",
+      "moka_pot_2_g14"
+    ],
+    [
+      "moka_pot_1_g16",
+      "gripper0_hand_collision"
+    ],
+    [
+      "moka_pot_1_g4",
+      "gripper0_finger2_collision"
+    ],
+    [
+      "moka_pot_1_g8",
+      "gripper0_finger2_collision"
+    ],
+    [
+      "moka_pot_2_g4",
+      "flat_stove_1_collision_burner"
+    ],
+    [
+      "moka_pot_2_g4",
+      "flat_stove_1_collision_burner"
+    ]
+  ],
+  "eef_position_m": [
+    0.1051706950295956,
+    -0.25445674868868967,
+    0.9685973215697061
+  ],
+  "eef_quaternion_xyzw": [
+    0.7079828048083724,
+    0.7061809973534904,
+    -0.00041501824340654293,
+    0.008280992232654404
+  ],
+  "gripper_qpos": [
+    0.039993936163231575,
+    -0.04033206455581264
+  ],
+  "robot_qpos": [
+    -0.30872219612012214,
+    1.40376324057968,
+    -0.03592557933874066,
+    -0.4947933292991452,
+    0.028826751911821106,
+    1.9127075939082856,
+    -1.1062714891422405
+  ],
+  "goal_status": [
+    {
+      "predicate": [
+        "on",
+        "moka_pot_1",
+        "flat_stove_1_cook_region"
+      ],
+      "satisfied": false
+    },
+    {
+      "predicate": [
+        "on",
+        "moka_pot_2",
+        "flat_stove_1_cook_region"
+      ],
+      "satisfied": false
+    },
+    {
+      "predicate": [
+        "turnon",
+        "flat_stove_1"
+      ],
+      "satisfied": true
+    }
+  ],
+  "official_success": false,
+  "remaining_steps": 116
+}

@@ -1,0 +1,172 @@
+{
+  "id": "resp_0b98d827a6ff6eac016a9e512ef99887d0a11e18a7f47729ff",
+  "object": "response",
+  "created_at": 1788760367,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788760370,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0b98d827a6ff6eac016a9e512fd7e087d082a50427e9c01187",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqnlEyOg3KsMZOwl308huWaZbBNNY82WikA80WwY_9OuDT7WgHVcrGU_Qu6AXvjoL1enK1I1KwQHUzVzd0d0iGPhqs4XbfLTRyfMjFy3Jt123auWOGmNE_Sl7-4JjSE1g6qLNDfLpjGfkKdxl3M1rRcitO-KKSZDPVd14EAD21lJGlKLvX1m3nGn10_s79rOJYyMGPFxQvxeftz4trkVQVgO-pYrl00kSRjxNWiwXGQL1P6ffxkbIpQuVD7PO7cruybcKekZha12oXSqkYCbW2_wTRt_A_cPGPw0oTDZrVIWWWQsgJWJf8cj_cOX0edm5rg_9ACV8r_um0kv0-uzAz_ptzYgachTVf-OjxSveKjaahgBD0gEWvd6TYWDs823Hz39cA_lycgGBfVPC_wsu-36_AR_nlwt02QqhHItk7UTXbzfCjYesfg8r2O7nTPwftWzkunSCVxeNdv-sSokP6LHCR4QOGMnvLGozz3mvNnMOyAjDSD6rm7Y7OLUcgWMzgjDsuqQnYetqFxFz8z1RU1Ykj05Vj0CLvix2MvaF9Fr3jd1GpVM-7h_Ne09weuZCo5sfNvp8-Jpf4Qi9cJ6ux9jDmkI1WU4n1eJ6qzQCr7JrHmTljbWUZar71SLeBmgBDIu-9yQDEXWJfXCW49H8-qH5mdEGfOJj3Wc7SgJ2BjwrqvbP6Md8SJjXxOCttWr2lGXLuBLEjKmR_HFiGvjpL8MKoBs48SPi5wxNTLNaEct9gTpYiv86LxLgJcAlqtQ2NhLaGdTi0XCowUkgULSWbOHIUorvfJCILFsavuyrNyr9rWimRbesk2asp23zmxbHseBlxkUsjLVQCpRD5AjoxXNHgC47NXo_H5RxFwDHidH99EaJd88sw3g2LE-9kGpzXtWktMn7E2Dbbgo_xTToofIg6QHo_OrYETnpbu4-WKHf26tWcTk4Uih2WOJEjL2EDQH1UureD-km9OstuDNxCXxfX4bE599KEqkKn0XJZPLrOqTz4SFUs3VxLdde-NphY_XlFG-d_rMSLBQRE5ohKzTJWXqIpB0O3ZLhbIVMUDdmqk-K4zyk3i1krxaMYTsY1WZaY_z4QCuEmGjvfZwiuJ7PY_oVaROXphb0Wru22wKKGpeqN7ZvNx2gpdnnb5HqPblMAqEpRJtZRbivRN6QnCthAXi3vXiXiTQNRBKHby-ViLm_McueURJzYKvIaixuc7ttt2MVz02vcbOyjTr3q-_vMKVt8kULsDE-jRyMDOl18SWpPMa3fLoQuzU7QAkhrx6uY",
+      "summary": []
+    },
+    {
+      "id": "msg_0b98d827a6ff6eac016a9e5130e93087d09c4cf5fc42afd1e9",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"schema_version\":\"libero.agentic_v2.skill_request.v1\",\"thought\":\"The stove remains off after a target-reaching error. The hand is empty, so retry turning it on before handling the moka pot.\",\"request\":{\"skill\":\"turn_on\",\"object\":\"flat_stove_1\",\"goal\":\"flat_stove_1\",\"strategy\":null}}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "libero_semantic_skill",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schema_version",
+          "thought",
+          "request"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "enum": [
+              "libero.agentic_v2.skill_request.v1"
+            ]
+          },
+          "thought": {
+            "type": "string"
+          },
+          "request": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "skill",
+              "object",
+              "goal",
+              "strategy"
+            ],
+            "properties": {
+              "skill": {
+                "type": "string",
+                "enum": [
+                  "grasp",
+                  "lift",
+                  "transport",
+                  "place",
+                  "open_drawer",
+                  "close_drawer",
+                  "open_door",
+                  "close_door",
+                  "turn_on",
+                  "finish"
+                ]
+              },
+              "object": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "goal": {
+                "type": "string"
+              },
+              "strategy": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  null,
+                  "top",
+                  "side",
+                  "handle"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 2122,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 2119
+    },
+    "output_tokens": 102,
+    "output_tokens_details": {
+      "reasoning_tokens": 19
+    },
+    "total_tokens": 2224
+  },
+  "user": null,
+  "metadata": {}
+}

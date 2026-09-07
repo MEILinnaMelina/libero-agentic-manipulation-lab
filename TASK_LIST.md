@@ -1,0 +1,144 @@
+# RoboEval Agentic v2 → LIBERO-10 / GPT-6 任务清单
+
+目标：在独立目录中迁移现有 RoboEval 方法，使用 GPT-6 作为语义技能规划器，评估它在 LIBERO-10 全部 10 个任务上的成功率、稳定性与失败原因，形成可复现结论。
+
+创建日期：2026-09-07。当前完成的是代码与任务定义检查、实施清单；尚未安装 LIBERO 环境、调用模型或运行实验。下列未勾选项均为待执行工作。
+
+## 1. 工作目录与已确认情况
+
+计划实施目录：`E:\djf\LIBERO-GPT6-Eval`。原始代码来源：`E:\djf\RoboEval-main`、`E:\djf\LIBERO`。
+
+| 检查项 | 已确认的事实 | 对实施的影响 |
+|---|---|---|
+| 方法入口 | `examples/run_agentic_v2.py`、`examples/evaluate_agentic_v2.py` | 迁移 Agentic v2，而非 README 中的 OpenVLA 示例 |
+| 方法结构 | LLM 语义技能请求 → 几何候选/IK/碰撞检查 → 执行 → 监测与重规划 | 保留方法结构，替换环境耦合部分 |
+| 模型接口 | `llm_planner.py` 已使用 Responses API、严格 JSON schema；默认模型为 `gpt-5.6-terra` | 显式配置 GPT-6，检查所有启动器是否覆盖参数 |
+| RoboEval 依赖 | `setup.py` 包含 MuJoCo 3.1.5、dm_control 1.0.31、mojo；IK 依赖 dm_control | 不能假定与 LIBERO 的 robosuite 接口兼容 |
+| LIBERO 环境 | 默认单臂 Panda、OSC_POSE、20 Hz、7 维动作；支持 `check_success()` | 新建状态、动作和运动规划适配层 |
+| LIBERO 资源 | 已存在 10 个任务对应的 `.pruned_init` 文件和 BDDL | 先检验资源可加载，纯评测无需默认下载全量示范 |
+| 本地版本 | RoboEval `988687694c54b8f0e4038fee8c9dade2621b5743`；LIBERO `8f1084e3132a39270c3a13ebe37270a43ece2a01` | 执行时重新记录版本与工作区差异 |
+| 原方法历史 | `docs/agentic_v2_status.md` 记录过 RoboEval 基础任务成功实验 | 属于已有文档记录，本次未复跑，不能外推 LIBERO 成功率 |
+| 本地资源例外 | 上述状态文档提示部分机器人 XML 为未跟踪的本地修改 | 不能仅依赖干净 clone/worktree 复制原方法 |
+
+GPT-6 的目标 API 模型 ID 为 `gpt-6-astra`，官方页面列有 Responses 接口及结构化输出能力。账户能否实际调用仍需测试；不能用其他模型的结果代替 GPT-6 结果。[OpenAI 模型说明](https://developers.openai.com/api/docs/models/gpt-6-astra)
+
+LIBERO-10 是 LIBERO-100 的下游 10 任务子集。本项目首先评测现有方法的任务完成能力；未开展顺序训练与遗忘评估时，不宣称完成了终身学习协议复现。[LIBERO 官方仓库](https://github.com/Lifelong-Robot-Learning/LIBERO)
+
+## 2. 按依赖顺序执行
+
+### P0｜创建独立工程并冻结方法边界
+
+- [x] T01 建立独立工程：`src/`、`configs/`、`scripts/`、`tests/`、`docs/`、`vendor/`、`runs/`、`reports/`、`work/`。
+- [x] T02 保存两个源仓库的 commit、工作区 diff、必要的未跟踪代码/资源清单及哈希；迁移所需代码到新目录，保留许可证。筛选资产，避免复制历史视频、缓存或凭据。
+- [x] T03 写出方法对照表：复用 prompts/schema、技能接口、重规划和日志设计；重写依赖 `env.mojo.physics`、双臂结构、RoboEval action mode 的代码。检查包级 import，避免无意加载整套旧环境依赖。
+- [x] T04 首轮固定为“模拟器状态辅助的 Agentic v2”：允许读取仿真几何、物体位姿、关节与接触；完整记录 LLM、技能层、评估器各自可见的信息。视觉输入路线另列扩展。
+
+验收：新目录能独立追溯代码和资源；原仓库不承担新实验输出；明确所有特权信息及任务专用知识。
+
+### P1｜配置独立运行环境
+
+- [x] T05 检查实际 GPU/驱动、Conda、WSL 发行版、磁盘和渲染能力。已发现相关命令，但尚未检查可用性。先尝试独立 Windows 环境；若兼容性失败，再以实际错误决定 WSL/Linux 路线。
+- [x] T06 以本地 LIBERO 的依赖锁定为起点：README 推荐 Python 3.8.13，requirements 锁定 robosuite 1.4.0 等。单独建立仿真环境，不升级原 roboeval 环境。验证后的版本写入环境锁定文件。
+- [x] T07 若现代 OpenAI SDK/Python 与旧仿真依赖冲突，拆为仿真进程与规划进程，用 JSON 消息通信；不要为统一环境盲目升级仿真栈。
+- [x] T08 将 `LIBERO_CONFIG_PATH` 指向新项目的配置目录，预先生成资产、BDDL、init_states 路径配置，避免首次 import 交互及写入默认用户配置。
+- [x] T09 枚举 10 个任务，逐个加载 BDDL、资产、官方 init state，验证 `reset → set_init_state → step → render → close`；保存两路相机图片、动作规格和异常日志。
+
+验收：全部任务能创建并执行短轨迹；缺资源、渲染失败和依赖冲突均有明确诊断。先验证推理需求，再按需下载示范数据。
+
+### P2｜冻结评测协议与结果格式
+
+- [x] T10 使用 `benchmark.get_benchmark_dict()['libero_10'](task_order_index=0)` 枚举任务，生成 task manifest，保存任务 ID、名称、语言、BDDL/init-state 文件哈希和实际可用初始状态数。
+- [x] T11 固定开发/正式初始状态划分。开发只使用预先列出的少量状态，正式评测使用未用于调参的状态；如需与其他工作按相同状态比较，另跑其协议并披露调参重叠。
+- [x] T12 冻结时间预算。首版采用本地 `libero/configs/eval/default.yaml` 的 600 个动作步；对齐本地 `metric.py` 的 5 步初始稳定操作，明确稳定步是否计入预算及夹爪动作。环境 horizon 与此保持协调。
+- [x] T13 成功以 LIBERO 自带的 `check_success()` 为准，核对它和该版本 `done` 的关系；单独记录成功、步数耗尽、API 错误与仿真错误。LLM 自述、视频观感和自定义子目标分数不能代替成功判定。
+- [x] T14 定义每条记录：run_id、method、model/requested+returned、task_id/name、seed、init_state_id、success、termination_reason、env_steps、LLM calls/tokens/latency、replans、技能失败、耗时、代码/config 哈希、视频路径。
+- [x] T15 实现断点恢复与汇总检查：禁止重复计数、只选成功重试、跳过失败任务。基础设施重试保留原错误与预先声明的重试规则。
+
+验收：不用 LLM 也能输出完整失败轨迹和正确分母；任何超出首版步数上限的实验单独标记，不能混入正式结果。
+
+### P3｜迁移环境与动作适配层
+
+- [x] T16 编写 `LiberoEnvAdapter`，统一 reset、observation、step、render、success 和资源释放。
+- [x] T17 编写 `LiberoSceneAdapter`，映射物体、容器区域、固定设施、关节、末端位姿与接触关系；校验世界/机器人坐标系、四元数顺序和米/弧度单位。
+- [x] T18 编写 `LiberoActionAdapter`，将技能目标转换成符合当前 OSC_POSE 的动作。实测平移/旋转缩放、delta 语义、动作限幅、夹爪正负号与保持行为。
+- [x] T19 迁移运动规划与碰撞检查：保留几何候选与约束设计，替换 dm_control/双臂假设；候选试算使用独立状态副本，不能污染真实评测环境。
+- [x] T20 做有意义的控制验证：末端沿已知方向小幅移动、开合夹爪、抓取后抬升、携物避障、释放退回；记录期望/实际位移及异常。
+
+验收：动作最终由正常 `env.step()` 执行；只在 episode 初始化时装载官方初始状态，不能靠修改物体状态、目标谓词或奖励完成任务。
+
+### P4｜补齐 LIBERO 所需技能
+
+- [x] T21 迁移通用 `grasp / lift / transport / place`，覆盖罐体、盒体、杯子、书和摩卡壶；目标从当前几何/区域计算，测试容器入口与释放后的稳定性。
+- [x] T22 为滑动关节实现抽屉打开/关闭技能，校验把手抓取、滑动轴、行程、放入后的净空。
+- [x] T23 为铰链门实现打开/关闭技能，覆盖微波炉门的圆弧轨迹、接触和杯子避碰；原 RoboEval `close_flap` 仅作设计参考。
+- [x] T24 实现炉灶开关操作，读取实际关节及机构定义；核对 `Turnon` 条件，不能假定原 `rotate_valve` 可直接复用。
+- [x] T25 迁移执行监测、失败分类、限次恢复与重规划；固定脚本规划器先验证机械技能，作为控制层诊断基线。
+
+验收：每类技能有可复现轨迹。若部分任务仍失败，也必须在全套评测中保留，不能以“技能未完成”为由删除。
+
+### P5｜接入 GPT-6 并验证闭环
+
+- [x] T26 显式使用 `gpt-6-astra`，从运行环境读取凭据；验证实际模型权限、结构化响应、超时和错误处理。保存请求模型与返回模型元数据。
+- [x] T27 沿用“LLM 选择语义技能，确定性层计算数值动作”的边界；把单臂技能、对象/区域标识和必要前置条件加入 schema/prompt。
+- [x] T28 校准 reasoning effort、最大输出 token、单次/单 episode 调用上限。原客户端默认 800 输出 token 不能未经验证直接用于 GPT-6；检测截断与格式错误。
+- [x] T29 先跑 1 个装篮任务和 1 个关节交互任务各 2–3 个开发初始状态，保存模型请求/响应、技能决策、失败反馈及完整视频。
+- [x] T30 用试跑实际 tokens、请求量、延迟估算全套成本和墙钟时间；把执行预算写进配置，再扩大规模。
+
+验收：GPT-6 真正驱动技能选择并接收执行反馈；模型不可用时报告阻塞，不能静默退回其他模型。全任务脚本不得冒充 GPT-6 规划。
+
+### P6｜全部 10 个任务试跑、冻结、正式评测
+
+- [x] T31 对全部任务各跑 3–5 个开发初始状态，先生成完整覆盖表与失败分类。
+- [x] T32 修复跨任务通用问题；任何针对 LIBERO-10 的任务定制、BDDL 目标使用或技能新增都写入变更记录。冻结代码、prompt、技能、依赖和超参数后进入正式评测。
+- [ ] T33 正式规模建议每任务 50 个不同、可用且未用于调参的官方初始状态（共 500 episodes）。这是本项目建议，不是本地默认协议；若不足 50，使用实际剩余数量并明确披露，禁止用重复状态伪装独立样本。本地官方默认 `n_eval=20` 可另作对齐实验。
+- [ ] T34 主结果：完整方法 + GPT-6。诊断对照：同一技能层的固定规划器；另跑 GPT-6 关闭重规划，比较闭环恢复价值。扩展消融的规模根据 T30 成本确定，并使用匹配初始状态。
+- [x] T35 每个 episode 独立清空记忆；若研究跨 episode 记忆，单独作为实验条件并声明任务顺序和信息范围。
+
+验收：10 个任务均有正式记录；失败和未完成都可追溯；报告每任务成功率、宏平均和 95% 区间，方法比较使用配对状态。不同协议或信息条件不混合汇总。
+
+### P7｜形成能回答研究问题的交付
+
+- [ ] T36 生成每任务表、整体成功率、成功/失败视频、技能和规划失败分类、平均模型调用/重规划次数、延迟与成本。
+- [ ] T37 选取可复现的失败例子，区分语义目标遗漏、技能缺失、控制误差、碰撞、抓取滑脱、环境与 API 问题。
+- [ ] T38 交付 README、环境锁定、单任务/全套运行说明、冻结配置、原始结果、汇总脚本和中英文结论。
+
+验收表述：回答“在何种观测、控制和时间预算下，现有方法 + GPT-6 在 LIBERO-10 上达到什么水平”。10/10 个任务至少各成功一次只能叫覆盖，不能等同于稳定解决；只有真实结果达到相应指标才能写出成功结论。状态辅助方法的成绩不能直接当作纯 RGB VLA 的同条件成绩。
+
+## 3. 10 个任务的技能与验收要点
+
+下面 ID 对应本地 task map、task_order_index=0；完整名称执行 T10 时自动导出。
+
+| ID | 任务 | 需要的技能 | 官方目标核对重点 |
+|---|---|---|---|
+| 0 | 字母汤罐和番茄酱放入篮子 | 抓取、抬升、容器放置、多物体顺序 | 两个物体都满足 In |
+| 1 | 奶油奶酪盒和黄油放入篮子 | 盒体抓取、容器放置 | 两个物体都满足 In |
+| 2 | 打开炉灶并放上摩卡壶 | 炉灶开关、壶抓取、区域放置 | Turnon 与 On 同时满足 |
+| 3 | 黑碗放入柜子底层抽屉并关上 | 抽屉开合、碗抓取、内部放置 | Close 与 In 同时满足 |
+| 4 | 白杯放左盘，黄白杯放右盘 | 杯子抓取、左右目标消歧、放置 | 两个杯子分别对应正确盘子 |
+| 5 | 书放入收纳盒后隔间 | 薄物抓取、姿态调整、窄空间放置 | In 后部指定区域 |
+| 6 | 白杯放盘上，巧克力布丁放盘右侧 | 多目标定位、关系区域放置 | 杯子 On 盘；布丁 On 右侧区域 |
+| 7 | 字母汤罐和奶油奶酪盒放入篮子 | 异形物体抓取、多物体放置 | 两个物体都满足 In |
+| 8 | 两个摩卡壶放炉灶上 | 双物体放置、避碰、炉灶开关 | 本地 BDDL 还要求 Turnon，不能只按名称理解 |
+| 9 | 黄白杯放微波炉并关门 | 铰链门开合、内部放置 | 杯子 In 与微波炉 Close 同时满足 |
+
+## 4. 范围与执行原则
+
+- 主线是迁移现有方法并完成评测；训练 VLA、下载 LIBERO-90 全部示范、从零构建视觉感知均不属于首轮必要工作。
+- 首轮保留原方法使用几何状态的性质。若目标随后要求仅 RGB/本体观测，再增加感知模块和严格视觉协议，单列结果。
+- 优先实现能独立运行的最小闭环，再覆盖全部任务；不要先堆齐依赖或下载全部数据才验证环境。
+- “研究工作完成”意味着完整、诚实、可复现的结果；并不预设实验一定成功。
+
+参考：[用户指定项目页](https://libero-project.github.io/main.html)、[LIBERO 官方代码](https://github.com/Lifelong-Robot-Learning/LIBERO)、[GPT-6 Astra 官方说明](https://developers.openai.com/api/docs/models/gpt-6-astra)。技术细节以本次检查的本地 commit 为依据；版本或协议改变后需重新核对。
+
+
+## 执行状态与证据
+
+完成 33/38 项。复选框代表对应验收证据，不代表所有任务都成功。
+
+- **T01-T04**: README.md; docs/METHOD.md; docs/provenance/sources.json
+- **T05-T10**: configs/requirements-sim.lock; runs/smoke/results.json; configs/task_manifest.json; docs/provenance/windows_patches.json
+- **T11-T15**: configs/protocol.json; tests/test_protocol.py; runs/noop-memory-validation/task00_state000/result.json
+- **T16-T21**: src/libero_eval/{env,scene,motion,skills}.py; runs/control_validation/results.json; reports/memory_equivalence.json; runs/carry-validation/
+- **T22-T24**: Implemented in skills.py; actual per-mechanism development trajectories must be verified before closing these items.
+- **T25-T31**: runs/api_probe; runs/pilot-gpt6-v1; reports/dev-gpt6-v3; reports/cost_estimate.json
+- **T32-T38**: Formal completion requires configs/frozen.json plus all three complete formal conditions and bilingual report.

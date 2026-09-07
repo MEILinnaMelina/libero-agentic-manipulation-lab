@@ -1,0 +1,93 @@
+{
+  "model": "gpt-6-astra",
+  "store": false,
+  "reasoning": {
+    "effort": "low"
+  },
+  "max_output_tokens": 4096,
+  "input": [
+    {
+      "role": "system",
+      "content": "You are the semantic task planner for a single-arm LIBERO adaptation of RoboEval Agentic v2. Choose exactly one skill. Deterministic robotics code alone chooses poses, offsets, joints, trajectories, gains, tolerances and step counts. Use only current named objects and regions. Fixtures cannot be lifted. Re-observe after each skill and use failure feedback. Do not claim success without official check_success. BDDL goals are explicitly provided as privileged task information. Return the supplied strict JSON schema. thought is a brief decision rationale."
+    },
+    {
+      "role": "user",
+      "content": "{\"task\": {\"language\": \"turn on the stove and put the moka pot on it\", \"goals\": [[\"turnon\", \"flat_stove_1\"], [\"on\", \"moka_pot_1\", \"flat_stove_1_cook_region\"]]}, \"skills\": {\"grasp\": \"Object is movable and not held; one Panda arm.\", \"lift\": \"Object must be held.\", \"transport\": \"Object must be held; goal is a named object/region.\", \"place\": \"Object must be held; goal is a named object/region; release and settle.\", \"open_drawer\": \"Named articulated region is a sliding drawer; hand is empty.\", \"close_drawer\": \"Named sliding drawer is unobstructed; hand is empty.\", \"open_door\": \"Named hinged appliance; hand is empty.\", \"close_door\": \"Named hinged appliance; placed objects clear the door arc.\", \"turn_on\": \"Named stove has a rotary switch; hand is empty.\", \"finish\": \"Official success is true, or no recovery remains.\"}, \"scene\": {\"frame\": \"world\", \"length_unit\": \"meter\", \"angle_unit\": \"radian\", \"objects\": {\"chefmate_8_frypan_1\": {\"position_m\": [-0.07424537303795455, -0.27227409257020646, 0.8990111790672416], \"quaternion_xyzw\": [-7.246305996870269e-05, 7.82174521868279e-05, 0.7071070068646118, 0.707106547469407], \"aabb_m\": [[-0.175392902190354, -0.3690836706845748, 0.8997990444503364], [0.02898886314558073, -0.012953511887312169, 0.9576718904425073]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"moka_pot_1\": {\"position_m\": [0.030272535121471714, -0.007332732665758074, 0.9661014786413371], \"quaternion_xyzw\": [2.0607171974477543e-07, -4.591053245085082e-06, 0.9999999999894399, -3.304197988565333e-10], \"aabb_m\": [[-0.010575660162478767, -0.09856125183881444, 0.8999911506396592], [0.07084073076880694, 0.048976969377827674, 1.0517915480103688]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"flat_stove_1\": {\"position_m\": [-0.20612070218006914, 0.20626385675321599, 0.905], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.2581427939994769, 0.11126385675321598, 0.885], [0.03887929781993085, 0.301263856753216, 0.9550200000000001]], \"type\": \"object\", \"fixed\": true, \"parent\": null, \"held\": false}, \"kitchen_table_flat_stove_init_region\": {\"position_m\": [-0.2, 0.2, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.21000000000000002, 0.19, 0.868], [-0.19, 0.21000000000000002, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"kitchen_table_frypan_init_region\": {\"position_m\": [-0.05, -0.25, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.07500000000000001, -0.275, 0.868], [-0.024999999999999998, -0.22499999999999998, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"kitchen_table_moka_pot_init_region\": {\"position_m\": [0.05, 0.0, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.024999999999999998, -0.025, 0.868], [0.07500000000000001, 0.025, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"flat_stove_1_cook_region\": {\"position_m\": [-0.05612070218006915, 0.20626385675321599, 0.905], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.13112070218006916, 0.131263856753216, 0.9025000000000001], [0.01887929781993085, 0.28126385675321597, 0.9075]], \"type\": \"site\", \"fixed\": true, \"parent\": \"flat_stove_1\", \"held\": false}}, \"joints\": {\"flat_stove_1_button\": {\"qpos\": 0.0, \"type\": \"hinge\", \"range\": [-0.005, 2.1], \"axis_world\": [0.0, 0.0, 1.0], \"anchor_world\": [-0.20612070218006914, 0.20626385675321599, 0.905]}}, \"contacts\": [[\"table_collision\", \"chefmate_8_frypan_1_g4\"], [\"table_collision\", \"chefmate_8_frypan_1_g4\"], [\"table_collision\", \"chefmate_8_frypan_1_g4\"], [\"table_collision\", \"chefmate_8_frypan_1_g4\"], [\"table_collision\", \"moka_pot_1_g2\"], [\"table_collision\", \"moka_pot_1_g2\"], [\"table_collision\", \"moka_pot_1_g2\"], [\"table_collision\", \"moka_pot_1_g2\"], [\"table_collision\", \"moka_pot_1_g3\"], [\"table_collision\", \"moka_pot_1_g3\"], [\"table_collision\", \"moka_pot_1_g3\"], [\"table_collision\", \"moka_pot_1_g3\"], [\"table_collision\", \"moka_pot_1_g4\"], [\"table_collision\", \"moka_pot_1_g4\"], [\"table_collision\", \"moka_pot_1_g4\"], [\"table_collision\", \"moka_pot_1_g4\"], [\"table_collision\", \"moka_pot_1_g5\"], [\"table_collision\", \"moka_pot_1_g5\"], [\"table_collision\", \"moka_pot_1_g5\"], [\"table_collision\", \"moka_pot_1_g5\"], [\"table_collision\", \"moka_pot_1_g6\"], [\"table_collision\", \"moka_pot_1_g6\"], [\"table_collision\", \"moka_pot_1_g6\"], [\"table_collision\", \"moka_pot_1_g6\"], [\"table_collision\", \"moka_pot_1_g7\"], [\"table_collision\", \"moka_pot_1_g7\"], [\"table_collision\", \"moka_pot_1_g7\"], [\"table_collision\", \"moka_pot_1_g7\"], [\"table_collision\", \"moka_pot_1_g8\"], [\"table_collision\", \"moka_pot_1_g8\"], [\"table_collision\", \"moka_pot_1_g8\"], [\"table_collision\", \"moka_pot_1_g8\"]], \"eef_position_m\": [-0.20186883943365197, 0.018714777558742766, 1.1889599054012046], \"eef_quaternion_xyzw\": [0.9997495349925245, 0.012615279373184133, -0.01834588148316746, 0.0022695024065345743], \"gripper_qpos\": [0.0206608274380999, -0.02067897898247199], \"robot_qpos\": [0.022686317918914727, -0.17432097941315203, 0.018861690344734516, -2.4183662566038264, -0.00015776103323587683, 2.207043466336254, 0.802301071004066], \"goal_status\": [{\"predicate\": [\"turnon\", \"flat_stove_1\"], \"satisfied\": false}, {\"predicate\": [\"on\", \"moka_pot_1\", \"flat_stove_1_cook_region\"], \"satisfied\": false}], \"official_success\": false, \"remaining_steps\": 600}, \"history\": []}"
+    }
+  ],
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "name": "libero_semantic_skill",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schema_version",
+          "thought",
+          "request"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "enum": [
+              "libero.agentic_v2.skill_request.v1"
+            ]
+          },
+          "thought": {
+            "type": "string"
+          },
+          "request": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "skill",
+              "object",
+              "goal",
+              "strategy"
+            ],
+            "properties": {
+              "skill": {
+                "type": "string",
+                "enum": [
+                  "grasp",
+                  "lift",
+                  "transport",
+                  "place",
+                  "open_drawer",
+                  "close_drawer",
+                  "open_door",
+                  "close_door",
+                  "turn_on",
+                  "finish"
+                ]
+              },
+              "object": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "goal": {
+                "type": "string"
+              },
+              "strategy": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  null,
+                  "top",
+                  "side",
+                  "handle"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

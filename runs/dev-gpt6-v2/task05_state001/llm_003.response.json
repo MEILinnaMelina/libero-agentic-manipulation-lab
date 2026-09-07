@@ -1,0 +1,172 @@
+{
+  "id": "resp_0a2be1eb36a45499016a9da881987487d089fe594857450fd5",
+  "object": "response",
+  "created_at": 1788717185,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788717188,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a2be1eb36a45499016a9da882ae1887d0847ba5a603fa32e9",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqnaiEejqq0NT3Ac1bCrjg0KWYjYRLlATSrh9WheQDGPtXNFWn6Ma0H_22OGJiQoq5M_Hqtrxj1_0GyUO8QOh5QU-NU7i3kq-2PX3-Hx_RwlKvjXNvk3LPgoxFXQHISXBNJ8NgdBfkGrv_FVlhu7b7CS6-Cb5lQr9fcLM2veayrhZbjMYylkHlXmBMpN5rdBBS1XMFxkhLLg38XM6sChjl-UTcAlEfcBq5-NtKpaXeFjibsw-uyq04aNqJuN4QywjRgbjO2WoLPxEaZlMtMxXkX4FtrxgNcBvfIFUtWyeKUD478zDX56qUf-Qz1dtVubss-PtAQvuuRigQRlr9ZHL4xnz397D2jZyH-248U8hOgkUcaIMfW2P13lCvw_Ya7eO6axpi8YwwXG3aesPwJOyAIQUOqgPTOLGrG5mPEy4Df-YXTk3ttmG-vLpkXdohXZ9R_pN4Hxr1fpZN7G2QUIWS99840gc3KyYJqOY9zCb6S-pr9lFDBvWEE-YpYttZhYFCFoSgT9UNa9bZ6RNgpYQ3ScCsYFSvKY2VlPTloTl572h-5BQ_usmYUzGker7ZsVndGMTr8XjGsSW4s2zf5qGlpZHiXp7L_-QF5-wOgd99AxO_wlmGRvk8OHLPYtRmzdcP7Dc_zu3Qf2rRHNb8zOTuma5GBDkrQ4hVK1Cq-1i3KIqsZwk1HJ5o6ErTvx1Q8p2Rn6bPUlSu5UUiItRO3i2As_7s7AmaB_CpnxfLdwkCJ_FL9kKcD4Yq1dNnTwMeFDC8yXc-tcFW_V2xp2Ff2aWqD0hDFpJ-ilE6Pr0Q6lQ8TFHBNeQx-p1KNDYMOPGOBM95gB53F8yHdJBOjjFECz9yRXUqmL0Ai2feIVJynoB7WwqtEoGmr1h35e5J548DGP9tDKTEtAiSPdJHHNQE9VrAbM78jetKwiWFxI4gJc6ei1yqTGVSMpnBG3VfVvpgypWQzgNFuHedl4rxuZ8gPFVWqQ7G5Og4wYp3ftNUAx3sS1qYHE0GKC1P6p-VnvzoC1opQIh6XgtmZonnWOZ2rT2hju-_GfUsPOk6nVgoDpBvqK4RnMH-eXAKlJ1EqZesQ_gW0w727IRktnFxlw5L5NoHhZkaCsGTTo9GPReCewxu1flFYIzvRELIqJPjStyIN7-mxbUT7BNtri2uMqi-yI_TpY-GDo2wSTCHuWPLJnXISq9ZLlL4fvj7Y8dthgwMjIVttP8WykGxSJMGLOr9bThnDaheAQ==",
+      "summary": []
+    },
+    {
+      "id": "msg_0a2be1eb36a45499016a9da88357d487d0a82dcc714c82ece2",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"schema_version\":\"libero.agentic_v2.skill_request.v1\",\"thought\":\"The book remains unheld after both reach failures. Retry a top grasp from the current nearby end-effector position using the updated book pose.\",\"request\":{\"skill\":\"grasp\",\"object\":\"black_book_1\",\"goal\":\"desk_caddy_1_back_contain_region\",\"strategy\":\"top\"}}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "libero_semantic_skill",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schema_version",
+          "thought",
+          "request"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "enum": [
+              "libero.agentic_v2.skill_request.v1"
+            ]
+          },
+          "thought": {
+            "type": "string"
+          },
+          "request": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "skill",
+              "object",
+              "goal",
+              "strategy"
+            ],
+            "properties": {
+              "skill": {
+                "type": "string",
+                "enum": [
+                  "grasp",
+                  "lift",
+                  "transport",
+                  "place",
+                  "open_drawer",
+                  "close_drawer",
+                  "open_door",
+                  "close_door",
+                  "turn_on",
+                  "finish"
+                ]
+              },
+              "object": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "goal": {
+                "type": "string"
+              },
+              "strategy": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  null,
+                  "top",
+                  "side",
+                  "handle"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 2352,
+    "input_tokens_details": {
+      "cache_write_tokens": 2349,
+      "cached_tokens": 0
+    },
+    "output_tokens": 99,
+    "output_tokens_details": {
+      "reasoning_tokens": 11
+    },
+    "total_tokens": 2451
+  },
+  "user": null,
+  "metadata": {}
+}

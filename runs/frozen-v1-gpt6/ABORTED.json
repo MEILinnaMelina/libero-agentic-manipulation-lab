@@ -1,0 +1,5 @@
+{
+  "status": "aborted_superseded",
+  "reason": "Development-task-9 contact-mask filtering bug and first-success termination alignment fixed before v2. Entire v1 condition is excluded, not selectively retried.",
+  "replacement": "frozen-v2-gpt6"
+}

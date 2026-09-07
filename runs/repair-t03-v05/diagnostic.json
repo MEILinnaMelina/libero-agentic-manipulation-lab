@@ -1,0 +1,58 @@
+{
+  "method": "fixed",
+  "network_disabled": true,
+  "task_id": 3,
+  "states": "0",
+  "code_hash": "20fb953dfa87bfb6e431c42c0981d3b76da9d1b7be9ce768c7dad18dea427cc3",
+  "config": {
+    "protocol_id": "libero10-state-agentic-v2-600-v1",
+    "suite": "libero_10",
+    "task_order_index": 0,
+    "dev_state_ids": [
+      0,
+      1,
+      2
+    ],
+    "formal_states_per_task": 50,
+    "seed": 20260907,
+    "settle_steps": 5,
+    "settle_action": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_env_steps": 600,
+    "horizon": 605,
+    "control_freq": 20,
+    "camera_size": 256,
+    "max_skill_requests": 24,
+    "max_replans": 3,
+    "infra_retries": 0,
+    "model": "gpt-6-astra",
+    "reasoning_effort": "low",
+    "max_output_tokens": 4096,
+    "max_llm_calls": 24,
+    "api_timeout_seconds": 90,
+    "max_episode_seconds": 900,
+    "calibrated": true,
+    "formal_budget_usd": 600,
+    "information": "simulator-state-and-bddl-goals",
+    "cross_episode_memory": false,
+    "pricing_usd_per_million": {
+      "uncached_input": 10,
+      "cached_input": 1,
+      "cache_write": 12.5,
+      "output": 50
+    },
+    "ablation_states_per_task": 5,
+    "mujoco_stack_doubles": 2000000,
+    "blas_threads": 1,
+    "max_workers": 3,
+    "success_termination": "first_official_success",
+    "fixed_stop_on_failure": true
+  }
+}

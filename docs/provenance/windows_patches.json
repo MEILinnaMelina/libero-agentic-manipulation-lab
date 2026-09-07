@@ -1,0 +1,28 @@
+[
+  {
+    "file": "robosuite/utils/log_utils.py",
+    "original_sha256": "f89259ab1809772f10353bc2c4ce45d29cd4017f27ffde225e5e70c0c60a3199",
+    "patched_sha256": "908840942195b62394bf942dff6f705ab4e7b10942b0e6d30c58e77722260cc9",
+    "changes": [
+      [
+        "logging.FileHandler(\"/tmp/robosuite.log\")",
+        "logging.FileHandler(__import__(\"os\").environ.get(\"ROBOSUITE_LOG_PATH\", __import__(\"os\").path.join(__import__(\"tempfile\").gettempdir(), \"robosuite.log\")))"
+      ]
+    ]
+  },
+  {
+    "file": "robosuite/utils/binding_utils.py",
+    "original_sha256": "f5c8aada3bc85d3e66b9c4719c62892f0a32e4ea3489f66cc9abcaa170282c04",
+    "patched_sha256": "3f0b6fffb61381d4d8f5e73ce3c1c8cba77287d1fe79aa824ee080d75f8d7574",
+    "changes": [
+      [
+        "ctypes.WinDLL(os.path.join(os.path.dirname(__file__), \"mujoco.dll\"))",
+        "ctypes.WinDLL(os.path.join(os.path.dirname(mujoco.__file__), \"mujoco.dll\"))"
+      ],
+      [
+        "if macros.MUJOCO_GPU_RENDERING and os.environ.get",
+        "if _SYSTEM != \"Windows\" and macros.MUJOCO_GPU_RENDERING and os.environ.get"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+{"request": {"skill": "grasp", "object": "alphabet_soup_1", "goal": "basket_1_contain_region", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "alphabet_soup_1", "goal": "basket_1_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "alphabet_soup_1", "goal": "basket_1_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "alphabet_soup_1", "goal": "basket_1_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "grasp", "object": "tomato_sauce_1", "goal": "basket_1_contain_region", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "tomato_sauce_1", "goal": "basket_1_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "tomato_sauce_1", "goal": "basket_1_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "tomato_sauce_1", "goal": "basket_1_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}

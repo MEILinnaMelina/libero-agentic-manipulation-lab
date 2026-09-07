@@ -1,0 +1,189 @@
+{
+  "run_id": "dev-gpt6-v2",
+  "method": "gpt6",
+  "split": "dev",
+  "complete": true,
+  "scheduled": 30,
+  "completed": 30,
+  "missing": [],
+  "per_task": [
+    {
+      "task_id": 0,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 2,
+      "success_rate": 0.6666666666666666,
+      "wilson95": [
+        0.2076596008020477,
+        0.9385080552796037
+      ],
+      "termination_counts": {
+        "success": 2,
+        "simulation_error": 1
+      }
+    },
+    {
+      "task_id": 1,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "replan_budget": 1,
+        "simulation_error": 2
+      }
+    },
+    {
+      "task_id": 2,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "replan_budget": 2,
+        "simulation_error": 1
+      }
+    },
+    {
+      "task_id": 3,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "replan_budget": 2,
+        "simulation_error": 1
+      }
+    },
+    {
+      "task_id": 4,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "simulation_error": 3
+      }
+    },
+    {
+      "task_id": 5,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "simulation_error": 1,
+        "replan_budget": 2
+      }
+    },
+    {
+      "task_id": 6,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "simulation_error": 3
+      }
+    },
+    {
+      "task_id": 7,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "simulation_error": 2,
+        "interrupted": 1
+      }
+    },
+    {
+      "task_id": 8,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "interrupted": 2,
+        "simulation_error": 1
+      }
+    },
+    {
+      "task_id": 9,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "simulation_error": 2,
+        "interrupted": 1
+      }
+    }
+  ],
+  "macro_success_rate": 0.06666666666666667,
+  "macro_bootstrap95": [
+    0.0,
+    0.1
+  ],
+  "bootstrap_note": "Stratified empirical bootstrap; degenerates at all-zero/all-one samples. See Wilson per-task intervals.",
+  "micro_wilson95": [
+    0.018477023791270378,
+    0.2132345836261692
+  ],
+  "failure_counts": {
+    "grasp_miss": 6,
+    "control_error": 22
+  },
+  "mean_llm_calls": 2.0,
+  "mean_replans": 0.7,
+  "total_input_tokens": 162356,
+  "total_output_tokens": 4655,
+  "total_llm_latency_seconds": 189.15999999999622,
+  "total_episode_wall_seconds": 374.0094053497314
+}

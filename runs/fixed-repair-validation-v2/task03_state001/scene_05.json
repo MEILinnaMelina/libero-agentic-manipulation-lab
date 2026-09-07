@@ -1,0 +1,581 @@
+{
+  "frame": "world",
+  "length_unit": "meter",
+  "angle_unit": "radian",
+  "objects": {
+    "akita_black_bowl_1": {
+      "position_m": [
+        -0.0015688613946619769,
+        0.13664688027682223,
+        0.9242399683749977
+      ],
+      "quaternion_xyzw": [
+        -1.5068327381910978e-07,
+        1.0792031018973688e-08,
+        0.7402882344641715,
+        0.6722896175859754
+      ],
+      "aabb_m": [
+        [
+          -0.05532434821329217,
+          0.08350511187663451,
+          0.9258299599549938
+        ],
+        [
+          0.05229340113257107,
+          0.19052687135840818,
+          0.9763718952007383
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "wine_bottle_1": {
+      "position_m": [
+        -0.17099930625759394,
+        0.056734059942808626,
+        0.8988609548408878
+      ],
+      "quaternion_xyzw": [
+        -1.245237842167755e-05,
+        7.784437494268592e-07,
+        0.9999999999221661,
+        1.1111742169736561e-08
+      ],
+      "aabb_m": [
+        [
+          -0.19293138959431366,
+          0.03454323493717694,
+          0.8999705571220317
+        ],
+        [
+          -0.15033818814294103,
+          0.07878285503020098,
+          1.0569011172023808
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "white_cabinet_1": {
+      "position_m": [
+        -0.007935069047738368,
+        0.2902118095223618,
+        0.905
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.13128506904773837,
+          0.020912393287798967,
+          0.9095868098380617
+        ],
+        [
+          0.12329493095226164,
+          0.4019161039056784,
+          1.12799
+        ]
+      ],
+      "type": "object",
+      "fixed": true,
+      "parent": null,
+      "held": false
+    },
+    "wine_rack_1": {
+      "position_m": [
+        -0.1048984925417889,
+        -0.3009643474155641,
+        0.9199999999999999
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        1.0,
+        6.123233995736766e-17
+      ],
+      "aabb_m": [
+        [
+          -0.2392784925417889,
+          -0.4304252745619637,
+          0.9178109912979705
+        ],
+        [
+          0.029481507458211098,
+          -0.17658951179123195,
+          1.248240591345647
+        ]
+      ],
+      "type": "object",
+      "fixed": true,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_white_cabinet_init_region": {
+      "position_m": [
+        0.0,
+        0.3,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.01,
+          0.29,
+          0.868
+        ],
+        [
+          0.01,
+          0.31,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_wine_rack_init_region": {
+      "position_m": [
+        -0.1,
+        -0.3,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.11,
+          -0.31,
+          0.868
+        ],
+        [
+          -0.09000000000000001,
+          -0.29,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_akita_black_bowl_init_region": {
+      "position_m": [
+        0.03,
+        -0.05,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          0.0049999999999999975,
+          -0.07500000000000001,
+          0.868
+        ],
+        [
+          0.055,
+          -0.024999999999999998,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_wine_bottle_init_region": {
+      "position_m": [
+        -0.15,
+        0.05,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.175,
+          0.024999999999999998,
+          0.868
+        ],
+        [
+          -0.125,
+          0.07500000000000001,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "white_cabinet_1_top_side": {
+      "position_m": [
+        -0.0043950690477383685,
+        0.3058818095223618,
+        1.12652
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.12973506904773838,
+          0.2115018095223618,
+          1.1250499999999999
+        ],
+        [
+          0.12094493095226164,
+          0.40026180952236184,
+          1.12799
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "white_cabinet_1",
+      "held": false
+    },
+    "white_cabinet_1_top_region": {
+      "position_m": [
+        -0.004655069047738368,
+        0.3031513635323585,
+        1.09063
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865475,
+        0.0,
+        0.7071067811865475
+      ],
+      "aabb_m": [
+        [
+          -0.10689506904773839,
+          0.2275413635323585,
+          1.0607
+        ],
+        [
+          0.09758493095226166,
+          0.3787613635323585,
+          1.12056
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "white_cabinet_1",
+      "held": false
+    },
+    "white_cabinet_1_middle_region": {
+      "position_m": [
+        -0.004655069047738368,
+        0.3031512645395511,
+        1.0219
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865475,
+        0.0,
+        0.7071067811865475
+      ],
+      "aabb_m": [
+        [
+          -0.10689506904773839,
+          0.2275412645395511,
+          0.99197
+        ],
+        [
+          0.09758493095226166,
+          0.3787612645395511,
+          1.05183
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "white_cabinet_1",
+      "held": false
+    },
+    "white_cabinet_1_bottom_region": {
+      "position_m": [
+        -0.004655069047738368,
+        0.14150239328779898,
+        0.95201
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865475,
+        0.0,
+        0.7071067811865475
+      ],
+      "aabb_m": [
+        [
+          -0.10689506904773839,
+          0.06589239328779897,
+          0.92208
+        ],
+        [
+          0.09758493095226166,
+          0.217112393287799,
+          0.98194
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "white_cabinet_1",
+      "held": false
+    },
+    "wine_rack_1_top_region": {
+      "position_m": [
+        -0.10489849254178889,
+        -0.22093434741556411,
+        1.1374499999999999
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        -0.5187731908956008,
+        0.8549119114902988,
+        5.23482500670917e-17
+      ],
+      "aabb_m": [
+        [
+          -0.20576849254178886,
+          -0.2333192133434288,
+          1.116776772324772
+        ],
+        [
+          -0.004028492541788914,
+          -0.20854948148769942,
+          1.1581232276752278
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "wine_rack_1",
+      "held": false
+    }
+  },
+  "joints": {
+    "white_cabinet_1_top_level": {
+      "qpos": 0.0016595540099966768,
+      "type": "slide",
+      "range": [
+        -0.16,
+        0.01
+      ],
+      "axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "anchor_world": [
+        -0.007935069047738368,
+        0.2902118095223618,
+        0.905
+      ]
+    },
+    "white_cabinet_1_middle_level": {
+      "qpos": 0.001659455017189281,
+      "type": "slide",
+      "range": [
+        -0.16,
+        0.01
+      ],
+      "axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "anchor_world": [
+        -0.007935069047738368,
+        0.2902118095223618,
+        0.905
+      ]
+    },
+    "white_cabinet_1_bottom_level": {
+      "qpos": -0.15998941623456284,
+      "type": "slide",
+      "range": [
+        -0.16,
+        0.01
+      ],
+      "axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "anchor_world": [
+        -0.007935069047738368,
+        0.2902118095223618,
+        0.905
+      ]
+    }
+  },
+  "contacts": [
+    [
+      "table_collision",
+      "wine_bottle_1_g3"
+    ],
+    [
+      "table_collision",
+      "wine_bottle_1_g3"
+    ],
+    [
+      "table_collision",
+      "wine_bottle_1_g3"
+    ],
+    [
+      "table_collision",
+      "wine_bottle_1_g3"
+    ],
+    [
+      "akita_black_bowl_1_g36",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g36",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g36",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g36",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g37",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g37",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g37",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g37",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g38",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g38",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g38",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g38",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g39",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g39",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g39",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g39",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g40",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g40",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g40",
+      "white_cabinet_1_g38"
+    ],
+    [
+      "akita_black_bowl_1_g40",
+      "white_cabinet_1_g38"
+    ]
+  ],
+  "eef_position_m": [
+    0.0447877071105268,
+    0.14051451672857318,
+    1.0994116091109805
+  ],
+  "eef_quaternion_xyzw": [
+    0.9999991514753696,
+    0.0003160253246918266,
+    0.0011446512429875075,
+    -0.0005356772041866016
+  ],
+  "gripper_qpos": [
+    0.03949858001171852,
+    -0.03950672134743679
+  ],
+  "robot_qpos": [
+    0.16282440221451067,
+    0.6767104769650588,
+    0.04346895674194874,
+    -1.4627682754680933,
+    -0.03162046355793342,
+    2.141245332544138,
+    2.5697911676968648
+  ],
+  "goal_status": [
+    {
+      "predicate": [
+        "close",
+        "white_cabinet_1_bottom_region"
+      ],
+      "satisfied": false
+    },
+    {
+      "predicate": [
+        "in",
+        "akita_black_bowl_1",
+        "white_cabinet_1_bottom_region"
+      ],
+      "satisfied": true
+    }
+  ],
+  "official_success": false,
+  "remaining_steps": 380
+}

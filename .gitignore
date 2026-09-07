@@ -1,0 +1,9 @@
+.venv*/
+work/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env*
+MUJOCO_LOG.TXT
+*.tmp
+~$*.docx

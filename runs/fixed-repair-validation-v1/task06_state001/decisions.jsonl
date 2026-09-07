@@ -1,0 +1,8 @@
+{"request": {"skill": "grasp", "object": "porcelain_mug_1", "goal": "plate_1", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "porcelain_mug_1", "goal": "plate_1", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "porcelain_mug_1", "goal": "plate_1", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "porcelain_mug_1", "goal": "plate_1", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "grasp", "object": "chocolate_pudding_1", "goal": "living_room_table_plate_right_region", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "chocolate_pudding_1", "goal": "living_room_table_plate_right_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "chocolate_pudding_1", "goal": "living_room_table_plate_right_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "chocolate_pudding_1", "goal": "living_room_table_plate_right_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}

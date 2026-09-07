@@ -1,0 +1,93 @@
+{
+  "model": "gpt-6-astra",
+  "store": false,
+  "reasoning": {
+    "effort": "low"
+  },
+  "max_output_tokens": 4096,
+  "input": [
+    {
+      "role": "system",
+      "content": "You are the semantic task planner for a single-arm LIBERO adaptation of RoboEval Agentic v2. Choose exactly one skill. Deterministic robotics code alone chooses poses, offsets, joints, trajectories, gains, tolerances and step counts. Use only current named objects and regions. Fixtures cannot be lifted. Re-observe after each skill and use failure feedback. Do not claim success without official check_success. BDDL goals are explicitly provided as privileged task information. Return the supplied strict JSON schema. thought is a brief decision rationale."
+    },
+    {
+      "role": "user",
+      "content": "{\"task\": {\"language\": \"put both the alphabet soup and the tomato sauce in the basket\", \"goals\": [[\"in\", \"alphabet_soup_1\", \"basket_1_contain_region\"], [\"in\", \"tomato_sauce_1\", \"basket_1_contain_region\"]]}, \"skills\": {\"grasp\": \"Object is movable and not held; one Panda arm.\", \"lift\": \"Object must be held.\", \"transport\": \"Object must be held; goal is a named object/region.\", \"place\": \"Object must be held; goal is a named object/region; release and settle.\", \"open_drawer\": \"Named articulated region is a sliding drawer; hand is empty.\", \"close_drawer\": \"Named sliding drawer is unobstructed; hand is empty.\", \"open_door\": \"Named hinged appliance; hand is empty.\", \"close_door\": \"Named hinged appliance; placed objects clear the door arc.\", \"turn_on\": \"Named stove has a rotary switch; hand is empty.\", \"finish\": \"Official success is true, or no recovery remains.\"}, \"scene\": {\"frame\": \"world\", \"length_unit\": \"meter\", \"angle_unit\": \"radian\", \"objects\": {\"alphabet_soup_1\": {\"position_m\": [-0.09971844309471406, -0.14803302032619298, 0.6004755709413405], \"quaternion_xyzw\": [-0.0009691342722183569, 0.710233217263228, 0.7039461160831444, 0.0052634139247589844], \"aabb_m\": [[-0.13117610348521525, -0.1832714425122986, 0.5616708322000763], [-0.06810763552106443, -0.12014350525021016, 0.6380117492977825]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": true}, \"cream_cheese_1\": {\"position_m\": [0.07851475615653067, -0.19384593250156518, 0.44569592152000004], \"quaternion_xyzw\": [-2.0680833551666964e-18, 1.3977050759550257e-17, 1.0, -2.4275798249055268e-33], \"aabb_m\": [[0.03790675615653066, -0.21518193250156517, 0.43675992152000004], [0.11912275615653067, -0.17250993250156518, 0.45463192152000004]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"tomato_sauce_1\": {\"position_m\": [-0.006680975811059825, 0.26841757132366967, 0.4921689122093388], \"quaternion_xyzw\": [0.009385471106658754, 0.7073952524143766, 0.7067402224298812, 0.004704018863535784], \"aabb_m\": [[-0.03808676489386163, 0.23420035078421636, 0.4537594757842807], [0.02484185867559964, 0.2960998347130266, 0.5299712377178214]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"ketchup_1\": {\"position_m\": [-0.2684815430229645, -0.14860115104051852, 0.5091798430329575], \"quaternion_xyzw\": [0.5000000437860134, 0.49999995351827814, 0.49999995930623997, 0.500000043389461], \"aabb_m\": [[-0.2861115445979175, -0.17626115409466533, 0.43675984277476865], [-0.2493515387314755, -0.120041147775125, 0.582369843202258]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"orange_juice_1\": {\"position_m\": [0.009959722426096796, -0.2592094518677245, 0.506509843038735], \"quaternion_xyzw\": [0.4999999908468315, 0.5000000089316954, 0.5000000074440085, 0.49999999277746465], \"aabb_m\": [[-0.016290278439116734, -0.28582945296587675, 0.43675984293864156], [0.03620972332883476, -0.23275945154536556, 0.5679498431310108]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"milk_1\": {\"position_m\": [0.04926582347733017, -0.12140787838288564, 0.506509843038735], \"quaternion_xyzw\": [0.5000000042219743, 0.49999999599949824, 0.4999999974871846, 0.5000000022913429], \"aabb_m\": [[0.023015823109305455, -0.1478578786388911, 0.4367598429386416], [0.07551582384170624, -0.09478787780250882, 0.5679498431310107]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"butter_1\": {\"position_m\": [0.07044719834440541, 0.0526561777194373, 0.44546992152000003], \"quaternion_xyzw\": [-3.0096050495288276e-18, 2.045636240160368e-17, 1.0, 3.6926684031284436e-33], \"aabb_m\": [[0.032357198344405404, 0.0328861777194373, 0.43675992152000004], [0.10853719834440542, 0.0724261777194373, 0.45417992152000003]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"basket_1\": {\"position_m\": [-0.0018543702311864148, 0.2691943870662855, 0.43219199586015145], \"quaternion_xyzw\": [-0.001694319682109936, 0.0016956386939918104, 0.7068244227619963, 0.7073849655438014], \"aabb_m\": [[-0.08060814258665616, 0.18569689500474587, 0.43675980545295084], [0.07661558662435271, 0.3553308686722224, 0.578222983384221]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_basket_init_region\": {\"position_m\": [0.0, 0.26, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.01, 0.25, 0.40299999999999997], [0.01, 0.27, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_milk_init_region\": {\"position_m\": [0.05, -0.1, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.024999999999999998, -0.125, 0.40299999999999997], [0.07500000000000001, -0.07500000000000001, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_cream_cheese_init_region\": {\"position_m\": [0.1, -0.2, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.07500000000000001, -0.225, 0.40299999999999997], [0.125, -0.17500000000000002, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_orange_juice_init_region\": {\"position_m\": [0.0, -0.25, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.025, -0.275, 0.40299999999999997], [0.025, -0.22499999999999998, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_tomato_sauce_init_region\": {\"position_m\": [-0.1, 0.05, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.125, 0.024999999999999998, 0.40299999999999997], [-0.07500000000000001, 0.07500000000000001, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_alphabet_soup_init_region\": {\"position_m\": [-0.1, -0.15, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.125, -0.175, 0.40299999999999997], [-0.07500000000000001, -0.125, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_butter_init_region\": {\"position_m\": [0.05, 0.05, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.024999999999999998, 0.024999999999999998, 0.40299999999999997], [0.07500000000000001, 0.07500000000000001, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_ketchup_init_region\": {\"position_m\": [-0.25, -0.15, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.275, -0.175, 0.40299999999999997], [-0.22499999999999998, -0.125, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"basket_1_contain_region\": {\"position_m\": [-0.001854099674573449, 0.2695388438857424, 0.5040411701729182], \"quaternion_xyzw\": [0.0016956392301546452, 0.0016940834555717224, 0.707384985309583, -0.7068244035454688], \"aabb_m\": [[-0.06298276151409954, 0.20807800237063667, 0.4342591422676628], [0.05927456216495264, 0.3309996854008481, 0.5738231980781735]], \"type\": \"site\", \"fixed\": false, \"parent\": \"basket_1\", \"held\": false}}, \"joints\": {}, \"contacts\": [[null, \"cream_cheese_1_g1\"], [null, \"cream_cheese_1_g1\"], [null, \"cream_cheese_1_g1\"], [null, \"cream_cheese_1_g1\"], [null, \"ketchup_1_g1\"], [null, \"ketchup_1_g1\"], [null, \"ketchup_1_g1\"], [null, \"ketchup_1_g1\"], [null, \"orange_juice_1_g1\"], [null, \"orange_juice_1_g1\"], [null, \"orange_juice_1_g1\"], [null, \"orange_juice_1_g1\"], [null, \"milk_1_g1\"], [null, \"milk_1_g1\"], [null, \"milk_1_g1\"], [null, \"milk_1_g1\"], [null, \"butter_1_g1\"], [null, \"butter_1_g1\"], [null, \"butter_1_g1\"], [null, \"butter_1_g1\"], [null, \"basket_1_g1\"], [null, \"basket_1_g1\"], [null, \"basket_1_g1\"], [null, \"basket_1_g1\"], [\"alphabet_soup_1_g2\", \"gripper0_hand_collision\"], [\"alphabet_soup_1_g5\", \"gripper0_hand_collision\"], [\"alphabet_soup_1_g14\", \"gripper0_hand_collision\"], [\"gripper0_finger1_pad_collision\", \"alphabet_soup_1_g6\"], [\"gripper0_finger1_pad_collision\", \"alphabet_soup_1_g6\"], [\"gripper0_finger1_pad_collision\", \"alphabet_soup_1_g6\"], [\"gripper0_finger1_pad_collision\", \"alphabet_soup_1_g6\"], [\"gripper0_finger1_pad_collision\", \"alphabet_soup_1_g15\"], [\"gripper0_finger1_pad_collision\", \"alphabet_soup_1_g15\"], [\"gripper0_finger2_pad_collision\", \"alphabet_soup_1_g7\"], [\"gripper0_finger2_pad_collision\", \"alphabet_soup_1_g7\"], [\"gripper0_finger2_pad_collision\", \"alphabet_soup_1_g7\"], [\"tomato_sauce_1_g8\", \"basket_1_g1\"], [\"tomato_sauce_1_g17\", \"basket_1_g1\"], [\"tomato_sauce_1_g17\", \"basket_1_g1\"]], \"eef_position_m\": [-0.1096570685633788, -0.15173662171913066, 0.6062151086650374], \"eef_quaternion_xyzw\": [0.9999761543338052, -0.0007321405532781934, 0.00490724543129046, 0.004803506663003794], \"gripper_qpos\": [0.030885994858344916, -0.03158773363141534], \"robot_qpos\": [-0.08986728129112528, -0.1067499179923933, -0.2778295834540761, -2.6325064628202983, -0.061445186145655924, 2.5414316445768206, 0.4715051392097941], \"goal_status\": [{\"predicate\": [\"in\", \"alphabet_soup_1\", \"basket_1_contain_region\"], \"satisfied\": false}, {\"predicate\": [\"in\", \"tomato_sauce_1\", \"basket_1_contain_region\"], \"satisfied\": true}], \"official_success\": false, \"remaining_steps\": 197}, \"history\": [{\"request\": {\"skill\": \"place\", \"object\": \"tomato_sauce_1\", \"goal\": \"basket_1_contain_region\", \"strategy\": null}, \"success\": false, \"failure_code\": \"control_error\", \"message\": \"End effector did not reach target\", \"diagnostics\": {\"target\": [-0.00949622974960053, 0.26589537192100404, 0.5118456855539014], \"actual\": [-0.00047340389544249777, 0.2707485669197369, 0.5407175759155834]}, \"env_steps\": 65, \"official_success\": false}, {\"request\": {\"skill\": \"lift\", \"object\": \"tomato_sauce_1\", \"goal\": \"basket_1_contain_region\", \"strategy\": null}, \"success\": true, \"failure_code\": null, \"diagnostics\": {\"object_displacement_m\": [-0.001804138701507205, -0.002207313471851713, 0.12237479028767517]}, \"env_steps\": 12, \"official_success\": false}, {\"request\": {\"skill\": \"place\", \"object\": \"tomato_sauce_1\", \"goal\": \"basket_1_contain_region\", \"strategy\": \"side\"}, \"success\": false, \"failure_code\": \"control_error\", \"message\": \"End effector did not reach target\", \"diagnostics\": {\"target\": [-0.009583503332159557, 0.26588483403691504, 0.5117292900985904], \"actual\": [-0.005934150398936379, 0.2672335533837845, 0.5405440954678183]}, \"env_steps\": 65, \"official_success\": false}, {\"request\": {\"skill\": \"place\", \"object\": \"tomato_sauce_1\", \"goal\": \"basket_1\", \"strategy\": \"top\"}, \"success\": true, \"failure_code\": null, \"diagnostics\": {}, \"env_steps\": 46, \"official_success\": false}, {\"request\": {\"skill\": \"grasp\", \"object\": \"alphabet_soup_1\", \"goal\": \"basket_1_contain_region\", \"strategy\": \"top\"}, \"success\": true, \"failure_code\": null, \"diagnostics\": {\"candidates\": [{\"yaw\": 0, \"target\": [-0.10003547812764838, -0.15569531212341425, 0.4824880836956907], \"report\": {\"feasible\": true, \"waypoints\": [{\"feasible\": true, \"qpos\": [-0.39996605643146455, -0.08921799094783286, 0.03527975314543296, -2.591370111493701, 0.013653131244790902, 2.5023704355311147, 1.9771113964529605], \"attempts\": [{\"position_error_m\": 0.0012768906125995637, \"orientation_error_rad\": 0.006280840269496205, \"collisions\": []}]}, {\"feasible\": true, \"qpos\": [-0.3682284757316691, 0.27663546286093776, 0.004725021269713144, -2.591197684583352, 0.006853078862516539, 2.8663001884491752, 1.9854370074250414], \"attempts\": [{\"position_error_m\": 0.002154319986213391, \"orientation_error_rad\": 0.003634511589527954, \"collisions\": []}]}]}}]}, \"env_steps\": 60, \"official_success\": false}, {\"request\": {\"skill\": \"lift\", \"object\": \"alphabet_soup_1\", \"goal\": \"basket_1_contain_region\", \"strategy\": null}, \"success\": true, \"failure_code\": null, \"diagnostics\": {\"object_displacement_m\": [-0.004242881431849407, 0.0027872988847084945, 0.12027435645502571]}, \"env_steps\": 12, \"official_success\": false}]}"
+    }
+  ],
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "name": "libero_semantic_skill",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schema_version",
+          "thought",
+          "request"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "enum": [
+              "libero.agentic_v2.skill_request.v1"
+            ]
+          },
+          "thought": {
+            "type": "string"
+          },
+          "request": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "skill",
+              "object",
+              "goal",
+              "strategy"
+            ],
+            "properties": {
+              "skill": {
+                "type": "string",
+                "enum": [
+                  "grasp",
+                  "lift",
+                  "transport",
+                  "place",
+                  "open_drawer",
+                  "close_drawer",
+                  "open_door",
+                  "close_door",
+                  "turn_on",
+                  "finish"
+                ]
+              },
+              "object": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "goal": {
+                "type": "string"
+              },
+              "strategy": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  null,
+                  "top",
+                  "side",
+                  "handle"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "gpt6": {
+    "completed": 83,
+    "scheduled": 470,
+    "successes": 33,
+    "terminations": {
+      "success": 33,
+      "api_error": 47,
+      "interrupted": 3
+    },
+    "per_task_completed": {
+      "0": 47,
+      "1": 36
+    }
+  },
+  "fixed": {
+    "completed": 0,
+    "scheduled": 50,
+    "successes": 0,
+    "terminations": {},
+    "per_task_completed": {}
+  },
+  "no-replan": {
+    "completed": 0,
+    "scheduled": 50,
+    "successes": 0,
+    "terminations": {},
+    "per_task_completed": {}
+  },
+  "fixed_development_repair": {
+    "run_id": "fixed-repair-validation-v2",
+    "completed": 24,
+    "scheduled": 24,
+    "successes": 24,
+    "llm_calls": 0
+  }
+}

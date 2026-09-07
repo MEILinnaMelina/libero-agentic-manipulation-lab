@@ -1,0 +1,1 @@
+{"schema_version": "libero.agentic_v2.skill_request.v1", "thought": "The stove is already on, but both pots still need placement. Grasp moka_pot_2 first with the empty hand.", "request": {"skill": "grasp", "object": "moka_pot_2", "goal": "flat_stove_1_cook_region", "strategy": "handle"}}

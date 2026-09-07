@@ -1,0 +1,318 @@
+{
+  "run_id": "fixed-repair-validation-v2",
+  "method": "fixed",
+  "network_disabled": true,
+  "code_hash": "29ccbc6c9f3b91351ce83c7fb0e225cd4dc394c8c74dde093df5aea80885e803",
+  "completed": 24,
+  "successes": 24,
+  "llm_calls": 0,
+  "formal_benchmark": false,
+  "per_task": [
+    {
+      "task_id": 1,
+      "name": "奶油奶酪和黄油放入篮子",
+      "successes": 3,
+      "episodes": 3,
+      "steps": [
+        452,
+        574,
+        296
+      ]
+    },
+    {
+      "task_id": 2,
+      "name": "打开炉灶并放上摩卡壶",
+      "successes": 3,
+      "episodes": 3,
+      "steps": [
+        230,
+        236,
+        233
+      ]
+    },
+    {
+      "task_id": 3,
+      "name": "碗放入底层抽屉并关闭",
+      "successes": 3,
+      "episodes": 3,
+      "steps": [
+        333,
+        327,
+        348
+      ]
+    },
+    {
+      "task_id": 4,
+      "name": "两个杯子分别放到左右盘子",
+      "successes": 3,
+      "episodes": 3,
+      "steps": [
+        272,
+        261,
+        263
+      ]
+    },
+    {
+      "task_id": 5,
+      "name": "书放入收纳盒后槽",
+      "successes": 3,
+      "episodes": 3,
+      "steps": [
+        133,
+        132,
+        134
+      ]
+    },
+    {
+      "task_id": 6,
+      "name": "杯子放盘上、布丁放盘子右侧",
+      "successes": 3,
+      "episodes": 3,
+      "steps": [
+        254,
+        257,
+        263
+      ]
+    },
+    {
+      "task_id": 8,
+      "name": "两个摩卡壶放上炉灶",
+      "successes": 3,
+      "episodes": 3,
+      "steps": [
+        297,
+        302,
+        301
+      ]
+    },
+    {
+      "task_id": 9,
+      "name": "杯子放入微波炉并关门",
+      "successes": 3,
+      "episodes": 3,
+      "steps": [
+        352,
+        361,
+        353
+      ]
+    }
+  ],
+  "video_audit": [
+    {
+      "task_id": 1,
+      "state_id": 0,
+      "frames": 457,
+      "duration_seconds": 22.85,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task01_state000\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 1,
+      "state_id": 1,
+      "frames": 579,
+      "duration_seconds": 28.95,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task01_state001\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 1,
+      "state_id": 2,
+      "frames": 301,
+      "duration_seconds": 15.05,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task01_state002\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 2,
+      "state_id": 0,
+      "frames": 235,
+      "duration_seconds": 11.75,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task02_state000\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 2,
+      "state_id": 1,
+      "frames": 241,
+      "duration_seconds": 12.05,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task02_state001\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 2,
+      "state_id": 2,
+      "frames": 238,
+      "duration_seconds": 11.9,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task02_state002\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 3,
+      "state_id": 0,
+      "frames": 338,
+      "duration_seconds": 16.9,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task03_state000\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 3,
+      "state_id": 1,
+      "frames": 332,
+      "duration_seconds": 16.6,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task03_state001\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 3,
+      "state_id": 2,
+      "frames": 353,
+      "duration_seconds": 17.65,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task03_state002\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 4,
+      "state_id": 0,
+      "frames": 277,
+      "duration_seconds": 13.85,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task04_state000\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 4,
+      "state_id": 1,
+      "frames": 266,
+      "duration_seconds": 13.3,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task04_state001\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 4,
+      "state_id": 2,
+      "frames": 268,
+      "duration_seconds": 13.4,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task04_state002\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 5,
+      "state_id": 0,
+      "frames": 138,
+      "duration_seconds": 6.9,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task05_state000\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 5,
+      "state_id": 1,
+      "frames": 137,
+      "duration_seconds": 6.85,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task05_state001\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 5,
+      "state_id": 2,
+      "frames": 139,
+      "duration_seconds": 6.95,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task05_state002\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 6,
+      "state_id": 0,
+      "frames": 259,
+      "duration_seconds": 12.95,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task06_state000\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 6,
+      "state_id": 1,
+      "frames": 262,
+      "duration_seconds": 13.1,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task06_state001\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 6,
+      "state_id": 2,
+      "frames": 268,
+      "duration_seconds": 13.4,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task06_state002\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 8,
+      "state_id": 0,
+      "frames": 302,
+      "duration_seconds": 15.1,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task08_state000\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 8,
+      "state_id": 1,
+      "frames": 307,
+      "duration_seconds": 15.35,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task08_state001\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 8,
+      "state_id": 2,
+      "frames": 306,
+      "duration_seconds": 15.3,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task08_state002\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 9,
+      "state_id": 0,
+      "frames": 357,
+      "duration_seconds": 17.85,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task09_state000\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 9,
+      "state_id": 1,
+      "frames": 366,
+      "duration_seconds": 18.3,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task09_state001\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    },
+    {
+      "task_id": 9,
+      "state_id": 2,
+      "frames": 358,
+      "duration_seconds": 17.9,
+      "video": "E:\\djf\\LIBERO-GPT6-Eval\\runs\\fixed-repair-validation-v2\\task09_state002\\video.mp4",
+      "decoded": true,
+      "last_frame_official_success": true
+    }
+  ]
+}

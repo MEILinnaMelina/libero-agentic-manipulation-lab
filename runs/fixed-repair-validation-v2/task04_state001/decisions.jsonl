@@ -1,0 +1,8 @@
+{"request": {"skill": "grasp", "object": "porcelain_mug_1", "goal": "plate_1", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "porcelain_mug_1", "goal": "plate_1", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "porcelain_mug_1", "goal": "plate_1", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "porcelain_mug_1", "goal": "plate_1", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "grasp", "object": "white_yellow_mug_1", "goal": "plate_2", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "white_yellow_mug_1", "goal": "plate_2", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "white_yellow_mug_1", "goal": "plate_2", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "white_yellow_mug_1", "goal": "plate_2", "strategy": null}, "source": "fixed_bddl_diagnostic"}

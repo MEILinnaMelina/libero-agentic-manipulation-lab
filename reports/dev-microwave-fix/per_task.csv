@@ -1,0 +1,2 @@
+﻿task_id,scheduled,completed,missing,successes,success_rate,wilson95,termination_counts
+9,3,3,0,0,0.0,"[5.551115123125783e-17, 0.5614970317550454]",{'planner_finish': 3}

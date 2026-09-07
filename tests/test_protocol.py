@@ -1,0 +1,86 @@
+import copy
+import json
+from types import SimpleNamespace
+import numpy as np
+import pytest
+from libero_eval.env import LiberoEnvAdapter, LiberoActionAdapter, StepBudget, OfficialSuccess
+from libero_eval.planner import parse_response, PlannerError, VERSION
+from libero_eval.report import wilson
+from libero_eval.io import dump
+
+def response(**kw):
+    r={'status':'completed','model':'gpt-6-astra','output':[{'type':'message','content':[{'type':'output_text','text':json.dumps({'schema_version':VERSION,'thought':'Grasp first.','request':{'skill':'grasp','object':'can','goal':'basket','strategy':'top'}})}]}]}
+    r.update(kw)
+    return r
+
+def test_response_rejects_truncation_and_model_substitution():
+    assert parse_response(response())['request']['skill']=='grasp'
+    for r in [response(status='incomplete',incomplete_details={'reason':'max_output_tokens'}),response(model='gpt-5.6-terra'),response(output=[])]:
+        with pytest.raises(PlannerError):parse_response(r)
+
+def test_low_level_authority_rejected():
+    r=response();v=json.loads(r['output'][0]['content'][0]['text']);v['request']['position']=[1,2,3]
+    r['output'][0]['content'][0]['text']=json.dumps(v)
+    with pytest.raises(PlannerError):parse_response(r)
+
+def test_action_scaling_and_gripper_persistence():
+    controller=SimpleNamespace(name='OSC_POSE',use_delta=True,output_min=np.array([-.05]*3+[-.5]*3),output_max=np.array([.05]*3+[.5]*3),input_min=-np.ones(6),input_max=np.ones(6))
+    env=SimpleNamespace(raw=SimpleNamespace(robots=[SimpleNamespace(controller=controller)]),obs={'robot0_eef_pos':np.zeros(3),'robot0_eef_quat':np.array([0,0,0,1])})
+    adapter=LiberoActionAdapter(env)
+    np.testing.assert_allclose(adapter.action([.025,0,0],gripper=1),[.5,0,0,0,0,0,1])
+    assert adapter.action([2,0,0])[-1]==1
+    assert adapter.action([2,0,0])[0]==1
+
+def test_step_budget_blocks_before_physics():
+    env=LiberoEnvAdapter.__new__(LiberoEnvAdapter)
+    env.config={'max_env_steps':600};env.steps=600
+    with pytest.raises(StepBudget):env.step(np.zeros(7))
+
+def test_official_success_stops_immediately_after_recording():
+    import time
+    env=LiberoEnvAdapter.__new__(LiberoEnvAdapter)
+    env.config={'max_env_steps':600,'max_episode_seconds':900};env.steps=0;env.started=time.monotonic()
+    env.raw=SimpleNamespace(action_spec=(-np.ones(7),np.ones(7)),robots=[SimpleNamespace(eef_site_id=0)],sim=SimpleNamespace(data=SimpleNamespace(site_xmat=np.eye(3).reshape(1,9),_data=SimpleNamespace(warning=[]))))
+    env.env=SimpleNamespace(step=lambda a:({'robot0_eef_quat':np.array([0,0,0,1])},1.,True,{}),check_success=lambda:True)
+    events=[];env.on_step=lambda *a:events.append(a)
+    with pytest.raises(OfficialSuccess):env.step(np.zeros(7))
+    assert env.steps==1 and len(events)==1
+
+def test_observation_uses_grip_site_rotation_for_osc():
+    from scipy.spatial.transform import Rotation
+    env=LiberoEnvAdapter.__new__(LiberoEnvAdapter)
+    site_rotation=Rotation.from_euler('z',np.pi/2).as_matrix()
+    env.raw=SimpleNamespace(robots=[SimpleNamespace(eef_site_id=0)],sim=SimpleNamespace(data=SimpleNamespace(site_xmat=site_rotation.reshape(1,9))))
+    env.obs={'robot0_eef_quat':np.array([0.,0.,0.,1.])}
+    env.normalize_observation()
+    np.testing.assert_allclose(Rotation.from_quat(env.obs['robot0_eef_quat']).as_matrix(),site_rotation,atol=1e-12)
+    np.testing.assert_array_equal(env.obs['robot0_wrist_quat'],[0,0,0,1])
+
+def test_zero_success_interval_not_zero_width():
+    low,high=wilson(0,47)
+    assert low<1e-10 and .07<high<.08
+
+def test_manifest_disjoint_unique_and_complete():
+    from libero_eval.bootstrap import ROOT
+    from libero_eval.io import read
+    manifest=read(ROOT/'configs/task_manifest.json')
+    assert [t['task_id'] for t in manifest['tasks']]==list(range(10))
+    for t in manifest['tasks']:
+        assert not set(t['dev_state_ids'])&set(t['formal_state_ids'])
+        hashes=[t['state_sha256'][i] for i in t['dev_state_ids']+t['formal_state_ids']]
+        assert len(hashes)==len(set(hashes))
+
+def test_summary_keeps_failed_denominator_and_rejects_mixed_protocol(tmp_path,monkeypatch):
+    import libero_eval.report as report
+    monkeypatch.setattr(report,'ROOT',tmp_path)
+    run=tmp_path/'run'
+    identity={'run_id':'test','method':'gpt6','split':'formal','code_hash':'a','config_hash':'b','manifest_hash':'c','schedule':[{'task_id':0,'init_state_id':3},{'task_id':0,'init_state_id':4}], 'config':{'max_env_steps':600}}
+    dump(run/'run.json',identity)
+    base={'task_id':0,'init_state_id':3,'method':'gpt6','split':'formal','code_hash':'a','config_hash':'b','manifest_hash':'c','env_steps':0,'success':False,'termination_reason':'api_error','skill_failures':[],'llm_calls':1,'replans':0,'llm_input_tokens':0,'llm_output_tokens':0,'llm_latency_seconds':1.,'wall_seconds':1.}
+    dump(run/'task00_state003/result.json',base)
+    result=report.summarize(run)
+    assert result['scheduled']==2 and result['completed']==1 and not result['complete']
+    assert result['per_task'][0]['success_rate']==0
+    changed=dict(base,init_state_id=4,code_hash='different')
+    dump(run/'task00_state004/result.json',changed)
+    with pytest.raises(ValueError):report.summarize(run)

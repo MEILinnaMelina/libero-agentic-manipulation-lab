@@ -1,0 +1,39 @@
+schema_version: 1
+tasks:
+  - lift_pot
+  - cube_handover
+  - stack_two_blocks
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+control_frequency: 20
+action_mode:
+  class: JointPositionActionMode
+  absolute: true
+  ee: false
+  floating_base: true
+  floating_dofs: []
+baselines:
+  v1_p22_independent: d9198fa
+  v1_p23_memory: 337d0f0
+primary_method:
+  name: v2-full
+  cross_trial_memory: false
+deterministic_gate:
+  minimum_successes_per_task: 8
+  trials_per_task: 10
+methods:
+  - v1-p22-independent
+  - v1-p23-memory
+  - v2-ik-only
+  - v2-fixed
+  - v2-full-no-replan
+  - v2-full
+  - v2-full-memory
+artifacts:
+  - run_config.json
+  - planner_trace.json
+  - planning_trace.json
+  - trial_report.json
+  - trajectory.gif
+api_pricing:
+  input_usd_per_million_env: OPENAI_INPUT_COST_PER_MILLION
+  output_usd_per_million_env: OPENAI_OUTPUT_COST_PER_MILLION

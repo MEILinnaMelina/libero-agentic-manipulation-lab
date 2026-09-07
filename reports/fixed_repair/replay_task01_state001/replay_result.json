@@ -1,0 +1,9 @@
+{
+  "source_episode": "runs\\fixed-repair-validation-v2\\task01_state001",
+  "official_success": true,
+  "env_steps": 574,
+  "frames": 579,
+  "source_frames": 579,
+  "max_state_error": 0.0,
+  "state_match_atol_1e-8": true
+}

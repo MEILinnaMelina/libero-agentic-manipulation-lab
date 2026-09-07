@@ -1,0 +1,2 @@
+﻿task_id,scheduled,completed,missing,successes,success_rate,wilson95,termination_counts
+0,1,1,0,0,0.0,"[0.0, 0.7934506856227626]",{'step_budget': 1}

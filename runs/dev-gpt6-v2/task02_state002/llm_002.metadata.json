@@ -1,0 +1,19 @@
+{
+  "requested_model": "gpt-6-astra",
+  "returned_model": "gpt-6-astra",
+  "latency_seconds": 3.219000000000051,
+  "usage": {
+    "input_tokens": 2122,
+    "input_tokens_details": {
+      "cache_write_tokens": 2119,
+      "cached_tokens": 0
+    },
+    "output_tokens": 85,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 2207
+  },
+  "error": null,
+  "response_id": "resp_09dbaf2e3b4c8488016a9da8699fa487d0839116459565e8a3"
+}

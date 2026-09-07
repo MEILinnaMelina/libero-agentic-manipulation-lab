@@ -1,0 +1,184 @@
+{
+  "run_id": "dev-gpt6-v4",
+  "method": "gpt6",
+  "split": "dev",
+  "complete": true,
+  "scheduled": 30,
+  "completed": 30,
+  "missing": [],
+  "per_task": [
+    {
+      "task_id": 0,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 3,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 3
+      }
+    },
+    {
+      "task_id": 1,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "replan_budget": 3
+      }
+    },
+    {
+      "task_id": 2,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "replan_budget": 3
+      }
+    },
+    {
+      "task_id": 3,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "replan_budget": 3
+      }
+    },
+    {
+      "task_id": 4,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "replan_budget": 3
+      }
+    },
+    {
+      "task_id": 5,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "replan_budget": 3
+      }
+    },
+    {
+      "task_id": 6,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "replan_budget": 3
+      }
+    },
+    {
+      "task_id": 7,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 3,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 3
+      }
+    },
+    {
+      "task_id": 8,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "replan_budget": 3
+      }
+    },
+    {
+      "task_id": 9,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "termination_counts": {
+        "replan_budget": 3
+      }
+    }
+  ],
+  "macro_success_rate": 0.2,
+  "macro_bootstrap95": [
+    0.2,
+    0.2
+  ],
+  "bootstrap_note": "Stratified empirical bootstrap; degenerates at all-zero/all-one samples. See Wilson per-task intervals.",
+  "micro_wilson95": [
+    0.0950510717728987,
+    0.3730569641314825
+  ],
+  "failure_counts": {
+    "ik_or_collision": 12,
+    "grasp_miss": 11,
+    "control_error": 55,
+    "grasp_slip": 15,
+    "placement_unstable": 3
+  },
+  "mean_llm_calls": 5.9,
+  "mean_replans": 2.4,
+  "total_input_tokens": 470344,
+  "total_output_tokens": 14655,
+  "total_llm_latency_seconds": 698.3940000000584,
+  "total_episode_wall_seconds": 930.6889999999985
+}

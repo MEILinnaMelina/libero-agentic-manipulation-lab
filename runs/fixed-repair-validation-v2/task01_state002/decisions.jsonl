@@ -1,0 +1,8 @@
+{"request": {"skill": "grasp", "object": "cream_cheese_1", "goal": "basket_1_contain_region", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "cream_cheese_1", "goal": "basket_1_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "cream_cheese_1", "goal": "basket_1_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "cream_cheese_1", "goal": "basket_1_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "grasp", "object": "butter_1", "goal": "basket_1_contain_region", "strategy": "top"}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "lift", "object": "butter_1", "goal": "basket_1_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "transport", "object": "butter_1", "goal": "basket_1_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}
+{"request": {"skill": "place", "object": "butter_1", "goal": "basket_1_contain_region", "strategy": null}, "source": "fixed_bddl_diagnostic"}

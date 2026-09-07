@@ -1,0 +1,1 @@
+{"schema_version": "libero.agentic_v2.skill_request.v1", "thought": "Neither item is in the basket and the hand is empty. Grasp the tomato sauce first, which is near the hand and basket.", "request": {"skill": "grasp", "object": "tomato_sauce_1", "goal": "basket_1_contain_region", "strategy": "top"}}

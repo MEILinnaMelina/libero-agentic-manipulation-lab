@@ -1,0 +1,172 @@
+{
+  "id": "resp_0414ba2557b11d0c016a9da9f0adb087d09f35a5b3898139a8",
+  "object": "response",
+  "created_at": 1788717552,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1788717556,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 4096,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0414ba2557b11d0c016a9da9f1822887d08ec0a04cf9c131c9",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqnan0UDpP7BQVGYGZBV5vIJblQLT0lcDUwYZ3DnmZ6_5xSz6fZosWjvoegWox9qYCDCEIzJp_jR67qnH6wv0aXs6MDqQY3X13wTR6-_E3O2cTJmIBJT2TkLDpeFCWkQGv2Md2SOVLeN7KwAYuY1RQwUmLEWd0eNVh8tRBdOR_8Fre6LDAqm7GpfmnlG26fZyvu0tij1BigUW3jnPYeFKt92M93UKFzdwj_dCe4x7mOTUYkwo3OFAjryVxRTDWj0nGZJBnLTkY96gqIGmXswn8h-d9JwGH2D3__YP-SF14KrPaglNk_VRHy3qIs0R5W1WPZskvUxFsNkDSjj_kbGx628eiDr_sIkRTOFtCag6eo-lPGU7Lknvv5gl562ewiqvB-bBPpFCWQeXBGvK_qITTTzin0RM7pR4YYYvQ60VqY9sstCGvIqRrL0-tDGIMTxeWHh6i0EdTewO_qALzib9o__e3TID0JVr_nhv2PMYk8SiJRc8qQaFCGSYFwRTyNpgG4iUlz6vjPU9wFY-AHIZSQkuY-Zdpe_1rqMHbO04wTUyjhqdXKkOdqJlVv-ZVpMmL-G2X4bSlldgBmY0K4-macvn2ipbl103ZUAA4bxPuqAAKFnd2EnbESsw3UDOdskXOyDgIEz_XNlgf-X7A46vHL--BgCz4Ik0o9mjRyV8DN4svtC7leBFDc0mtErkDqRP6IX3Dh4hhZ6cfFe1ROD_74AF7Dk2jTf9YDEekuNoRiG0z5pBB5fkXSeZgFzMxmuE3U5GH9s9etUApxT2SgCGjfqRCdc0t-69Ye72vk6e0-JLruIX1VqLYOTKByVP2qrBMhH9n_hVGYjGFACsaw9JWQtse90SHpCktQCWWY0pY5jh3sNgE1mIc_Iq9VZSSe-LhDZGOCWh4hb69s18FHdcnwNemTxeBHmAqF8fiykP6Pl0EKHLOebavupe0SUdbBL4uEgATZn7HeftAaLZyINJcV0wQ6Fzl7WWp-RztTenm9K2_n39m7TOCnIFR8vYf0BT3BzUNZU0KUhicKw7hL9L7Camy4o4Nzwp6pLt0S5ySXCHncybD6EPNIURKQvMhLr8wc9BLk0bMEEt2GDqgpvlxby-UAGGro28nEPkuGt19YVIZpULjbUTor8sdYgyS78OjWqSVQXP00xLX_UFObBu-NhwSlf996bvgqFQM3bKrYg794YJaNBbra4C6hfU3R-28M-ddz-c-ywtrUpPFRumyaV037SPLfR1MkDpNm8FoLJy3ZrKpjJ-2V0RzEAtwhN4zQVngPjhLfT2WUrmYiaZj7o156IC_oaPQHlLDJQeqyI01o19Yw6JzkV0AqgN1tRKl6TbTLJbxmLwJWFqgk8ubCskmnIovRsgC8g50_fYck9s4YVM=",
+      "summary": []
+    },
+    {
+      "id": "msg_0414ba2557b11d0c016a9da9f2b3ec87d09fee631b6de8cc4b",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"schema_version\":\"libero.agentic_v2.skill_request.v1\",\"thought\":\"The mug is currently reported held with contacts on both fingers. Since repeated lift attempts failed verification, try transporting it toward its target plate and re-observe.\",\"request\":{\"skill\":\"transport\",\"object\":\"porcelain_mug_1\",\"goal\":\"plate_1\",\"strategy\":null}}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "libero_semantic_skill",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schema_version",
+          "thought",
+          "request"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "enum": [
+              "libero.agentic_v2.skill_request.v1"
+            ]
+          },
+          "thought": {
+            "type": "string"
+          },
+          "request": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "skill",
+              "object",
+              "goal",
+              "strategy"
+            ],
+            "properties": {
+              "skill": {
+                "type": "string",
+                "enum": [
+                  "grasp",
+                  "lift",
+                  "transport",
+                  "place",
+                  "open_drawer",
+                  "close_drawer",
+                  "open_door",
+                  "close_door",
+                  "turn_on",
+                  "finish"
+                ]
+              },
+              "object": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "goal": {
+                "type": "string"
+              },
+              "strategy": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  null,
+                  "top",
+                  "side",
+                  "handle"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 2586,
+    "input_tokens_details": {
+      "cache_write_tokens": 2583,
+      "cached_tokens": 0
+    },
+    "output_tokens": 112,
+    "output_tokens_details": {
+      "reasoning_tokens": 26
+    },
+    "total_tokens": 2698
+  },
+  "user": null,
+  "metadata": {}
+}

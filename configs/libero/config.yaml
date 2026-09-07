@@ -1,0 +1,5 @@
+benchmark_root: "E:\\djf\\LIBERO-GPT6-Eval\\vendor\\LIBERO\\libero\\libero"
+bddl_files: "E:\\djf\\LIBERO-GPT6-Eval\\vendor\\LIBERO\\libero\\libero\\bddl_files"
+init_states: "E:\\djf\\LIBERO-GPT6-Eval\\vendor\\LIBERO\\libero\\libero\\init_files"
+assets: "E:\\djf\\LIBERO-GPT6-Eval\\vendor\\LIBERO\\libero\\libero\\assets"
+datasets: "E:\\djf\\LIBERO-GPT6-Eval\\work\\datasets"

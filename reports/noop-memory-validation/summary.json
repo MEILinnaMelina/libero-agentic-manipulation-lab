@@ -1,0 +1,43 @@
+{
+  "run_id": "noop-memory-validation",
+  "method": "noop",
+  "split": "dev",
+  "complete": true,
+  "scheduled": 1,
+  "completed": 1,
+  "missing": [],
+  "per_task": [
+    {
+      "task_id": 0,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.7934506856227626
+      ],
+      "termination_counts": {
+        "step_budget": 1
+      }
+    }
+  ],
+  "macro_success_rate": 0.0,
+  "macro_bootstrap95": [
+    0.0,
+    0.0
+  ],
+  "bootstrap_note": "Stratified empirical bootstrap; degenerates at all-zero/all-one samples. See Wilson per-task intervals.",
+  "micro_wilson95": [
+    0.0,
+    0.7934506856227626
+  ],
+  "failure_counts": {},
+  "mean_llm_calls": 0.0,
+  "mean_replans": 0.0,
+  "total_input_tokens": 0,
+  "total_output_tokens": 0,
+  "total_llm_latency_seconds": 0.0,
+  "total_episode_wall_seconds": 16.07800000000043
+}

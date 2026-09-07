@@ -1,0 +1,437 @@
+{
+  "frame": "world",
+  "length_unit": "meter",
+  "angle_unit": "radian",
+  "objects": {
+    "black_book_1": {
+      "position_m": [
+        -0.4438743120449167,
+        -0.1310779183362691,
+        1.1056414692643455
+      ],
+      "quaternion_xyzw": [
+        -0.016297997234621255,
+        0.005181548267448609,
+        0.9977230041547691,
+        -0.06524058417944437
+      ],
+      "aabb_m": [
+        [
+          -0.4709079269963838,
+          -0.17553939554358067,
+          1.1065290344322654
+        ],
+        [
+          -0.4236744391045761,
+          -0.06126261174851122,
+          1.2431397578021877
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": true
+    },
+    "white_yellow_mug_1": {
+      "position_m": [
+        -0.10769362437325546,
+        0.022212004195518414,
+        0.8852270012643118
+      ],
+      "quaternion_xyzw": [
+        -8.931891978264352e-07,
+        -3.670730930542566e-08,
+        0.7071069872187453,
+        -0.7071065751537245
+      ],
+      "aabb_m": [
+        [
+          -0.16064598623410067,
+          -0.04623709342966972,
+          0.8851297580437095
+        ],
+        [
+          -0.05458425532196718,
+          0.09348985288291548,
+          0.988343114716578
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "desk_caddy_1": {
+      "position_m": [
+        -0.4061207021800691,
+        -0.13373614324678404,
+        0.887
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        1.0,
+        6.123233995736766e-17
+      ],
+      "aabb_m": [
+        [
+          -0.48162070218006914,
+          -0.35061614324678403,
+          0.88839
+        ],
+        [
+          -0.3306207021800691,
+          0.08314385675321592,
+          1.05529
+        ]
+      ],
+      "type": "object",
+      "fixed": true,
+      "parent": null,
+      "held": false
+    },
+    "study_table_desk_caddy_init_region": {
+      "position_m": [
+        -0.4,
+        -0.14,
+        0.867
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.41000000000000003,
+          -0.15000000000000002,
+          0.86
+        ],
+        [
+          -0.39,
+          -0.13,
+          0.874
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "study_table_black_book_init_region": {
+      "position_m": [
+        -0.2,
+        0.15,
+        0.867
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.225,
+          0.125,
+          0.86
+        ],
+        [
+          -0.17500000000000002,
+          0.175,
+          0.874
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "study_table_white_yellow_mug_init_region": {
+      "position_m": [
+        -0.1,
+        0.0,
+        0.867
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.125,
+          -0.025,
+          0.86
+        ],
+        [
+          -0.07500000000000001,
+          0.025,
+          0.874
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "study_table_desk_caddy_right_region": {
+      "position_m": [
+        -0.4,
+        0.15,
+        0.867
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.45,
+          0.09999999999999998,
+          0.86
+        ],
+        [
+          -0.35000000000000003,
+          0.2,
+          0.874
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "desk_caddy_1_right_contain_region": {
+      "position_m": [
+        -0.4124307021800691,
+        0.00965385675321595,
+        0.95258
+      ],
+      "quaternion_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "aabb_m": [
+        [
+          -0.4743907021800691,
+          -0.05250614324678406,
+          0.89212
+        ],
+        [
+          -0.3504707021800691,
+          0.07181385675321596,
+          1.01304
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "desk_caddy_1",
+      "held": false
+    },
+    "desk_caddy_1_left_contain_region": {
+      "position_m": [
+        -0.41243070218006916,
+        -0.27924614324678404,
+        0.95258
+      ],
+      "quaternion_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "aabb_m": [
+        [
+          -0.4743907021800692,
+          -0.34140614324678403,
+          0.89212
+        ],
+        [
+          -0.35047070218006915,
+          -0.21708614324678405,
+          1.01304
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "desk_caddy_1",
+      "held": false
+    },
+    "desk_caddy_1_back_contain_region": {
+      "position_m": [
+        -0.43976070218006913,
+        -0.13309614324678404,
+        0.97258
+      ],
+      "quaternion_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "aabb_m": [
+        [
+          -0.4675107021800691,
+          -0.19525614324678403,
+          0.91212
+        ],
+        [
+          -0.41201070218006913,
+          -0.07093614324678404,
+          1.03304
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "desk_caddy_1",
+      "held": false
+    },
+    "desk_caddy_1_front_contain_region": {
+      "position_m": [
+        -0.37510070218006913,
+        -0.13309614324678404,
+        0.92754
+      ],
+      "quaternion_xyzw": [
+        0.7071067811865475,
+        0.0,
+        4.3297803758143125e-17,
+        -0.7071067811865475
+      ],
+      "aabb_m": [
+        [
+          -0.40285070218006913,
+          -0.19525614324678406,
+          0.89159
+        ],
+        [
+          -0.34735070218006914,
+          -0.07093614324678402,
+          0.9634900000000001
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "desk_caddy_1",
+      "held": false
+    }
+  },
+  "joints": {},
+  "contacts": [
+    [
+      null,
+      "white_yellow_mug_1_g23"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g23"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g24"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g25"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g26"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g28"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g30"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g31"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g32"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g33"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g34"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g34"
+    ],
+    [
+      "black_book_1_g1",
+      "gripper0_finger1_collision"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "black_book_1_g1"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "black_book_1_g1"
+    ],
+    [
+      "black_book_1_g1",
+      "gripper0_finger2_collision"
+    ],
+    [
+      "gripper0_finger2_pad_collision",
+      "black_book_1_g1"
+    ],
+    [
+      "gripper0_finger2_pad_collision",
+      "black_book_1_g1"
+    ]
+  ],
+  "eef_position_m": [
+    -0.4493755326166832,
+    -0.11696077180604462,
+    1.2179946329303561
+  ],
+  "eef_quaternion_xyzw": [
+    0.959483266212826,
+    0.28126288263695715,
+    0.015189968166242927,
+    0.007233088926946439
+  ],
+  "gripper_qpos": [
+    0.01934413857921059,
+    -0.020306560064712053
+  ],
+  "robot_qpos": [
+    -0.14963147035073193,
+    -0.7364705819007533,
+    -0.22270821697690324,
+    -2.8061192563820563,
+    -0.16746409136790477,
+    2.1094355699926775,
+    1.5521313536666075
+  ],
+  "goal_status": [
+    {
+      "predicate": [
+        "in",
+        "black_book_1",
+        "desk_caddy_1_back_contain_region"
+      ],
+      "satisfied": false
+    }
+  ],
+  "official_success": false,
+  "remaining_steps": 483
+}
