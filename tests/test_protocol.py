@@ -42,6 +42,39 @@ def test_diagnostic_budget_is_separate_and_enforced(tmp_path,monkeypatch):
     assert budget.reserve({'input':'x'},config)
     assert not (tmp_path/'runs/budget.sqlite').exists()
 
+def test_two_pot_targets_clear_bodies_in_either_selection_order():
+    from libero_eval.skills import Skills
+    names=['moka_pot_1','moka_pot_2']
+    positions={names[0]:np.array([-.02,.23,.966]),names[1]:np.array([.04,.08,.966]),'cook':np.array([0.,0.,.905])}
+    def bounds(name):
+        half=np.array([.075,.075,.0025]) if name=='cook' else np.array([.041,.074,.076])
+        return positions[name]-half,positions[name]+half
+    scene=SimpleNamespace(bounds=bounds,pose=lambda n:(positions[n],np.eye(3)),goals=lambda:[['on',n,'cook'] for n in names])
+    skill=Skills.__new__(Skills);skill.scene=scene
+    skill.env=SimpleNamespace(raw=SimpleNamespace(object_states_dict={'cook':SimpleNamespace(object_state_type='site',parent_name='stove')},objects_dict=dict.fromkeys(names)),obs={'robot0_eef_pos':np.array([0.,0.,1.2])})
+    for order in [names,list(reversed(names))]:
+        targets={n:skill.placement(n,'cook')-(skill.env.obs['robot0_eef_pos']-positions[n]) for n in order}
+        # Two 8.2 cm bodies need positive space, not merely distinct centers.
+        assert abs(targets[names[0]][0]-targets[names[1]][0])-.082>=.02
+        assert all(abs(p[0])<.075 for p in targets.values())
+
+def test_cavity_grasp_requires_opening_clearance_and_handle_strategy():
+    from libero_eval.scene import LiberoSceneAdapter
+    from libero_eval.skills import Skills
+    qpos=np.array([-1.432])  # Official Open is true at q < -1.3, but not ready for insertion.
+    appliance=SimpleNamespace(joints=['hinge'],object_properties={'articulation':{'default_open_ranges':[-2.094,-1.3],'default_close_ranges':[-.005,0.]}})
+    raw=SimpleNamespace(parsed_problem={'goal_state':[['in','mug','microwave_region']]},object_states_dict={'microwave_region':SimpleNamespace(parent_name='microwave')},get_object=lambda n:appliance,sim=SimpleNamespace(model=SimpleNamespace(joint_name2id=lambda n:0,jnt_type=[3],jnt_qposadr=[0]),data=SimpleNamespace(qpos=qpos)))
+    scene=LiberoSceneAdapter(SimpleNamespace(raw=raw))
+    assert not scene.insertion_requirements()[0]['opening_ready']
+    skill=Skills.__new__(Skills);skill.scene=scene
+    calls=[];skill.grasp=lambda *args:calls.append(args)
+    req=dict(skill='grasp',object='mug',goal='microwave_region',strategy='handle')
+    assert skill.execute(req)['failure_code']=='precondition' and not calls
+    qpos[0]=-1.68
+    assert scene.insertion_requirements()[0]['opening_ready']
+    assert skill.execute(dict(req,strategy='top'))['failure_code']=='precondition' and not calls
+    assert skill.execute(req)['success'] and calls==[('mug','handle')]
+
 def test_action_scaling_and_gripper_persistence():
     controller=SimpleNamespace(name='OSC_POSE',use_delta=True,output_min=np.array([-.05]*3+[-.5]*3),output_max=np.array([.05]*3+[.5]*3),input_min=-np.ones(6),input_max=np.ones(6))
     env=SimpleNamespace(raw=SimpleNamespace(robots=[SimpleNamespace(controller=controller)]),obs={'robot0_eef_pos':np.zeros(3),'robot0_eef_quat':np.array([0,0,0,1])})

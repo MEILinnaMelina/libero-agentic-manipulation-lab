@@ -1,0 +1,38 @@
+{
+  "run_id": "gpt6-t08-t09-state3-repair-v1",
+  "code_hash": "06ee8718755a31b2ef9bf358b8e5f616e02afa8ba6300d075182d8e7045b407c",
+  "formal_benchmark": false,
+  "scheduled": 2,
+  "completed": 2,
+  "successes": 2,
+  "llm_calls": 14,
+  "input_tokens": 37047,
+  "output_tokens": 1171,
+  "estimated_usd": 0.5215325000000001,
+  "unknown_usage_requests": 0,
+  "cost_note": "Usage-priced estimate, not an invoice",
+  "videos": [
+    {
+      "task_id": 8,
+      "state_id": 3,
+      "frames": 322,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 9,
+      "state_id": 3,
+      "frames": 356,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    }
+  ]
+}

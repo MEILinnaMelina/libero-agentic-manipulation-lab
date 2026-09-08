@@ -7,6 +7,13 @@ Independent state-assisted adaptation of `E:\djf\RoboEval-main` to the locally p
 
 ## Latest GPT check
 
+Targeted follow-up: after adjusting tasks 8 and 9, both succeeded on state 3
+using GPT-6 Astra: **2/2**, 14 calls, estimated **USD 0.5215**, zero replans.
+See [rerun results and videos](reports/gpt6-t08-t09-state3-repair-v1/RESULTS_ZH.md)
+and [repair details](docs/GPT6_TASK89_REPAIR_LOG.md).
+Tasks 0–7 were not rerun in this changed implementation; this does not replace
+the original ten-episode result or establish a common-version 10/10 rate.
+
 On 2026-09-08, an explicitly authorized ten-episode GPT-6 Astra check used state 3
 once for every task: **8/10 successful**, 81 API calls, usage-priced estimate
 **USD 3.0490**. Tasks 8 and 9 failed; no episodes were rerun. All ten videos were

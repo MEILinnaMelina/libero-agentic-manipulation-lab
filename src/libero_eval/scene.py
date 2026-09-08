@@ -56,6 +56,31 @@ class LiberoSceneAdapter:
         from libero.libero.envs.predicates import eval_predicate_fn
         return [{'predicate':g, 'satisfied':bool(eval_predicate_fn(g[0],*[self.raw.object_states_dict[n] for n in g[1:]]))} for g in self.goals()]
 
+    def insertion_requirements(self):
+        """Skill feasibility constraints, separate from official goal predicates."""
+        result=[]
+        sim=self.raw.sim
+        for goal in self.goals():
+            if len(goal)!=3 or goal[0].lower()!='in' or 'microwave' not in goal[2]:
+                continue
+            state=self.raw.object_states_dict[goal[2]]
+            parent=getattr(state,'parent_name',None)
+            obj=self.raw.get_object(parent)
+            if obj is None: continue
+            articulation=obj.object_properties.get('articulation',{})
+            target=float(np.mean(articulation['default_open_ranges']))
+            closed=float(np.mean(articulation['default_close_ranges']))
+            joints=[sim.model.joint_name2id(j) for j in obj.joints]
+            joints=[j for j in joints if int(sim.model.jnt_type[j])==3]
+            if not joints: continue
+            q=float(sim.data.qpos[sim.model.jnt_qposadr[joints[0]]])
+            ready=bool(np.sign(target-closed)*(q-target)>=-.05)
+            result.append({'object':goal[1],'goal':goal[2],'mechanism':parent,
+                           'required_grasp_strategy':'handle','opening_ready':ready,
+                           'preparation_skill':'open_door',
+                           'reason':'Before grasping for cavity insertion, open the door to the skill target with an empty hand. A partially open door can satisfy Open but still obstruct insertion. Use the mug handle to keep the palm outside the opening.'})
+        return result
+
     def snapshot(self):
         sim=self.raw.sim
         objects={}
@@ -74,4 +99,4 @@ class LiberoSceneAdapter:
         for c in sim.data.contact[:sim.data.ncon]:
             if c.dist <= .001:
                 contacts.append([sim.model.geom_id2name(c.geom1),sim.model.geom_id2name(c.geom2)])
-        return {'frame':'world','length_unit':'meter','angle_unit':'radian','objects':objects,'joints':joints,'contacts':contacts,'eef_position_m':self.env.obs['robot0_eef_pos'].tolist(),'eef_quaternion_xyzw':self.env.obs['robot0_eef_quat'].tolist(),'gripper_qpos':self.env.obs['robot0_gripper_qpos'].tolist(),'robot_qpos':self.env.obs['robot0_joint_pos'].tolist(),'goal_status':self.goal_status(),'official_success':self.env.success(),'remaining_steps':self.env.config['max_env_steps']-self.env.steps}
+        return {'frame':'world','length_unit':'meter','angle_unit':'radian','objects':objects,'joints':joints,'contacts':contacts,'eef_position_m':self.env.obs['robot0_eef_pos'].tolist(),'eef_quaternion_xyzw':self.env.obs['robot0_eef_quat'].tolist(),'gripper_qpos':self.env.obs['robot0_gripper_qpos'].tolist(),'robot_qpos':self.env.obs['robot0_joint_pos'].tolist(),'goal_status':self.goal_status(),'insertion_requirements':self.insertion_requirements(),'official_success':self.env.success(),'remaining_steps':self.env.config['max_env_steps']-self.env.steps}

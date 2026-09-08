@@ -1,0 +1,3 @@
+﻿task_id,scheduled,completed,missing,successes,success_rate,wilson95,termination_counts
+8,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",{'success': 1}
+9,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",{'success': 1}

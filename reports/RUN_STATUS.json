@@ -43,5 +43,15 @@
     "estimated_usd": 3.048955,
     "code_hash": "72933d0b088bfc8aa543662d85c801b90a0dcb63b901e36392fb174a911fee1b",
     "formal_benchmark": false
+  },
+  "gpt6_task89_repair": {
+    "run_id": "gpt6-t08-t09-state3-repair-v1",
+    "scheduled": 2,
+    "completed": 2,
+    "successes": 2,
+    "llm_calls": 14,
+    "estimated_usd": 0.5215325000000001,
+    "code_hash": "06ee8718755a31b2ef9bf358b8e5f616e02afa8ba6300d075182d8e7045b407c",
+    "formal_benchmark": false
   }
 }

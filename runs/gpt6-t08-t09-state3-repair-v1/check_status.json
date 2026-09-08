@@ -1,0 +1,19 @@
+{
+  "run_id": "gpt6-t08-t09-state3-repair-v1",
+  "scheduled": 2,
+  "completed": 2,
+  "successes": 2,
+  "unexecuted": 0,
+  "stop_reason": null,
+  "llm_calls": 14,
+  "budget_usd": 3.0,
+  "ledger": [
+    {
+      "state": "observed",
+      "requests": 14,
+      "amount_usd": 0.5215325
+    }
+  ],
+  "formal_benchmark": false,
+  "code_hash": "06ee8718755a31b2ef9bf358b8e5f616e02afa8ba6300d075182d8e7045b407c"
+}

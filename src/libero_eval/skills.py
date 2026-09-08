@@ -155,7 +155,11 @@ class Skills:
         offset=max(valid,key=lambda o:min([np.linalg.norm((target+o-p)[:2]) for p in occupied] or [1.]))
         siblings=[g[1] for g in self.scene.goals() if len(g)==3 and g[0].lower()=='on' and g[2]==goal and g[1].startswith('moka_pot')]
         if name in siblings and len(siblings)==2:
-            offset=np.array([-.04 if siblings.index(name)==0 else .04,0.,0.])
+            # Old 8 cm center spacing overlapped ~8.1 cm bodies. Reserve positive
+            # body clearance even when the model chooses the opposite pot order.
+            half_width=max((self.scene.bounds(n)[1][0]-self.scene.bounds(n)[0][0])/2 for n in siblings)
+            half_spacing=min((high[0]-low[0])/2-.015,max(.055,half_width+.014))
+            offset=np.array([-half_spacing if siblings.index(name)==0 else half_spacing,0.,0.])
         target+=offset
         if 'microwave' in goal:
             parentpos,_=self.scene.pose(parent)
@@ -325,7 +329,14 @@ class Skills:
         self.last_diagnostics={}
         skill,name,goal=request['skill'],request['object'],request['goal']
         try:
-            if skill=='grasp': self.grasp(name,request['strategy'])
+            if skill=='grasp':
+                for rule in self.scene.insertion_requirements():
+                    if rule['object']!=name: continue
+                    if not rule['opening_ready']:
+                        raise SkillFailure('precondition','Open '+rule['mechanism']+' to the insertion-ready position before grasping the mug.',rule)
+                    if request['strategy']!=rule['required_grasp_strategy']:
+                        raise SkillFailure('precondition','Cavity insertion requires a handle grasp, not a rim pinch.',rule)
+                self.grasp(name,request['strategy'])
             elif skill=='clear_obstruction': self.clear_obstruction(name)
             elif skill=='lift': self.lift(name)
             elif skill=='transport': self.transport(name,goal)

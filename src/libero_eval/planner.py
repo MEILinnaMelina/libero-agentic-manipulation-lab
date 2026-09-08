@@ -32,6 +32,7 @@ SCHEMA = {'type':'object', 'additionalProperties':False, 'required':['schema_ver
 SYSTEM = ('You are the semantic task planner for a single-arm LIBERO adaptation of RoboEval Agentic v2. '
           'Choose exactly one skill. Deterministic robotics code alone chooses poses, offsets, joints, trajectories, gains, tolerances and step counts. '
           'Use only current named objects and regions. Fixtures cannot be lifted. Re-observe after each skill and use failure feedback. '
+          'Respect scene.insertion_requirements: when opening_ready is false, use the preparation skill on the mechanism with an empty hand before grasping the object. Use the required_grasp_strategy. These are skill preconditions, not substitutes for official success. '
           'Do not claim success without official check_success. BDDL goals are explicitly provided as privileged task information. '
           'Return the supplied strict JSON schema. thought is a brief decision rationale.')
 
