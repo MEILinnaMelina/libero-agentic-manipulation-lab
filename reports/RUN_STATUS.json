@@ -33,5 +33,15 @@
     "scheduled": 24,
     "successes": 24,
     "llm_calls": 0
+  },
+  "gpt6_single_state_check": {
+    "run_id": "gpt6-single-state3-20260908-v1",
+    "scheduled": 10,
+    "completed": 10,
+    "successes": 8,
+    "llm_calls": 81,
+    "estimated_usd": 3.048955,
+    "code_hash": "72933d0b088bfc8aa543662d85c801b90a0dcb63b901e36392fb174a911fee1b",
+    "formal_benchmark": false
   }
 }

@@ -23,6 +23,25 @@ def test_low_level_authority_rejected():
     r['output'][0]['content'][0]['text']=json.dumps(v)
     with pytest.raises(PlannerError):parse_response(r)
 
+def test_planner_can_request_physical_obstacle_clearance():
+    r=response()
+    value=json.loads(r['output'][0]['content'][0]['text'])
+    value['request'].update(skill='clear_obstruction',object='milk_1',goal='',strategy=None)
+    r['output'][0]['content'][0]['text']=json.dumps(value)
+    assert parse_response(r)['request']['skill']=='clear_obstruction'
+
+def test_diagnostic_budget_is_separate_and_enforced(tmp_path,monkeypatch):
+    from libero_eval import budget
+    monkeypatch.setattr(budget,'ROOT',tmp_path)
+    (tmp_path/'runs').mkdir()
+    config={'calibrated':True,'pricing_usd_per_million':{'uncached_input':10,'cached_input':1,'cache_write':12.5,'output':50},'max_output_tokens':4096,'formal_budget_usd':.3,'budget_ledger':'runs/check.sqlite'}
+    reservation=budget.reserve({'input':'x'},config)
+    with pytest.raises(RuntimeError,match='campaign_cost_budget'):
+        budget.reserve({'input':'x'},config)
+    budget.settle(reservation,{'input_tokens':100,'output_tokens':10},config)
+    assert budget.reserve({'input':'x'},config)
+    assert not (tmp_path/'runs/budget.sqlite').exists()
+
 def test_action_scaling_and_gripper_persistence():
     controller=SimpleNamespace(name='OSC_POSE',use_delta=True,output_min=np.array([-.05]*3+[-.5]*3),output_max=np.array([.05]*3+[.5]*3),input_min=-np.ones(6),input_max=np.ones(6))
     env=SimpleNamespace(raw=SimpleNamespace(robots=[SimpleNamespace(controller=controller)]),obs={'robot0_eef_pos':np.zeros(3),'robot0_eef_quat':np.array([0,0,0,1])})

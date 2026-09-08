@@ -1,0 +1,94 @@
+{
+  "model": "gpt-6-astra",
+  "store": false,
+  "reasoning": {
+    "effort": "low"
+  },
+  "max_output_tokens": 4096,
+  "input": [
+    {
+      "role": "system",
+      "content": "You are the semantic task planner for a single-arm LIBERO adaptation of RoboEval Agentic v2. Choose exactly one skill. Deterministic robotics code alone chooses poses, offsets, joints, trajectories, gains, tolerances and step counts. Use only current named objects and regions. Fixtures cannot be lifted. Re-observe after each skill and use failure feedback. Do not claim success without official check_success. BDDL goals are explicitly provided as privileged task information. Return the supplied strict JSON schema. thought is a brief decision rationale."
+    },
+    {
+      "role": "user",
+      "content": "{\"task\": {\"language\": \"put the black bowl in the bottom drawer of the cabinet and close it\", \"goals\": [[\"close\", \"white_cabinet_1_bottom_region\"], [\"in\", \"akita_black_bowl_1\", \"white_cabinet_1_bottom_region\"]]}, \"skills\": {\"clear_obstruction\": \"Hand is empty; physically move a movable obstacle away from a blocked grasp approach to free workspace. Object names the obstacle; deterministic code selects the destination.\", \"grasp\": \"Object is movable and not held; one Panda arm.\", \"lift\": \"Object must be held.\", \"transport\": \"Object must be held; goal is a named object/region.\", \"place\": \"Object must be held; goal is a named object/region; release and settle.\", \"open_drawer\": \"Named articulated region is a sliding drawer; hand is empty.\", \"close_drawer\": \"Named sliding drawer is unobstructed; hand is empty.\", \"open_door\": \"Named hinged appliance; hand is empty.\", \"close_door\": \"Named hinged appliance; placed objects clear the door arc.\", \"turn_on\": \"Named stove has a rotary switch; hand is empty.\", \"finish\": \"Official success is true, or no recovery remains.\"}, \"scene\": {\"frame\": \"world\", \"length_unit\": \"meter\", \"angle_unit\": \"radian\", \"objects\": {\"akita_black_bowl_1\": {\"position_m\": [0.0247, -0.037, 1.0213], \"quaternion_xyzw\": [0.0028, 0.0019, 0.704, 0.7102], \"aabb_m\": [[-0.0282, -0.0909, 1.0227], [0.0789, 0.0162, 1.0738]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": true}, \"wine_bottle_1\": {\"position_m\": [-0.1487, 0.0353, 0.8989], \"quaternion_xyzw\": [-0.0, 0.0, 1.0, 0.0], \"aabb_m\": [[-0.1706, 0.0131, 0.9], [-0.128, 0.0574, 1.0569]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"white_cabinet_1\": {\"position_m\": [-0.0079, 0.2902, 0.905], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.1313, 0.0377, 0.9096], [0.1233, 0.4019, 1.128]], \"type\": \"object\", \"fixed\": true, \"parent\": null, \"held\": false}, \"wine_rack_1\": {\"position_m\": [-0.1049, -0.301, 0.92], \"quaternion_xyzw\": [0.0, 0.0, 1.0, 0.0], \"aabb_m\": [[-0.2393, -0.4304, 0.9178], [0.0295, -0.1766, 1.2482]], \"type\": \"object\", \"fixed\": true, \"parent\": null, \"held\": false}, \"kitchen_table_white_cabinet_init_region\": {\"position_m\": [0.0, 0.3, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.01, 0.29, 0.868], [0.01, 0.31, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"kitchen_table_wine_rack_init_region\": {\"position_m\": [-0.1, -0.3, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.11, -0.31, 0.868], [-0.09, -0.29, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"kitchen_table_akita_black_bowl_init_region\": {\"position_m\": [0.03, -0.05, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.005, -0.075, 0.868], [0.055, -0.025, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"kitchen_table_wine_bottle_init_region\": {\"position_m\": [-0.15, 0.05, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.175, 0.025, 0.868], [-0.125, 0.075, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"white_cabinet_1_top_side\": {\"position_m\": [-0.0044, 0.3059, 1.1265], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.1297, 0.2115, 1.125], [0.1209, 0.4003, 1.128]], \"type\": \"site\", \"fixed\": true, \"parent\": \"white_cabinet_1\", \"held\": false}, \"white_cabinet_1_top_region\": {\"position_m\": [-0.0047, 0.3015, 1.0906], \"quaternion_xyzw\": [0.0, 0.7071, 0.0, 0.7071], \"aabb_m\": [[-0.1069, 0.2259, 1.0607], [0.0976, 0.3771, 1.1206]], \"type\": \"site\", \"fixed\": true, \"parent\": \"white_cabinet_1\", \"held\": false}, \"white_cabinet_1_middle_region\": {\"position_m\": [-0.0047, 0.3015, 1.0219], \"quaternion_xyzw\": [0.0, 0.7071, 0.0, 0.7071], \"aabb_m\": [[-0.1069, 0.2259, 0.992], [0.0976, 0.3771, 1.0518]], \"type\": \"site\", \"fixed\": true, \"parent\": \"white_cabinet_1\", \"held\": false}, \"white_cabinet_1_bottom_region\": {\"position_m\": [-0.0047, 0.1583, 0.952], \"quaternion_xyzw\": [0.0, 0.7071, 0.0, 0.7071], \"aabb_m\": [[-0.1069, 0.0827, 0.9221], [0.0976, 0.2339, 0.9819]], \"type\": \"site\", \"fixed\": true, \"parent\": \"white_cabinet_1\", \"held\": false}, \"wine_rack_1_top_region\": {\"position_m\": [-0.1049, -0.2209, 1.1374], \"quaternion_xyzw\": [0.0, -0.5188, 0.8549, 0.0], \"aabb_m\": [[-0.2058, -0.2333, 1.1168], [-0.004, -0.2085, 1.1581]], \"type\": \"site\", \"fixed\": true, \"parent\": \"wine_rack_1\", \"held\": false}}, \"joints\": {\"white_cabinet_1_top_level\": {\"qpos\": 0.0, \"type\": \"slide\", \"range\": [-0.16, 0.01], \"axis_world\": [0.0, 1.0, 0.0], \"anchor_world\": [-0.0079, 0.2902, 0.905]}, \"white_cabinet_1_middle_level\": {\"qpos\": 0.0, \"type\": \"slide\", \"range\": [-0.16, 0.01], \"axis_world\": [0.0, 1.0, 0.0], \"anchor_world\": [-0.0079, 0.2902, 0.905]}, \"white_cabinet_1_bottom_level\": {\"qpos\": -0.1432, \"type\": \"slide\", \"range\": [-0.16, 0.01], \"axis_world\": [0.0, 1.0, 0.0], \"anchor_world\": [-0.0079, 0.2902, 0.905]}}, \"contacts\": [[\"table_collision\", \"wine_bottle_1_g3\"], [\"table_collision\", \"wine_bottle_1_g3\"], [\"table_collision\", \"wine_bottle_1_g3\"], [\"table_collision\", \"wine_bottle_1_g3\"], [\"akita_black_bowl_1_g25\", \"gripper0_finger1_collision\"], [\"akita_black_bowl_1_g26\", \"gripper0_finger1_collision\"], [\"gripper0_finger1_pad_collision\", \"akita_black_bowl_1_g25\"], [\"gripper0_finger1_pad_collision\", \"akita_black_bowl_1_g26\"], [\"gripper0_finger2_pad_collision\", \"akita_black_bowl_1_g25\"], [\"gripper0_finger2_pad_collision\", \"akita_black_bowl_1_g26\"]], \"eef_position_m\": [0.0749, -0.0377, 1.064], \"eef_quaternion_xyzw\": [1.0, 0.0003, -0.0028, -0.0005], \"gripper_qpos\": [0.0037, -0.0039], \"robot_qpos\": [0.0176, 0.7917, -0.0936, -1.3595, 0.08, 2.1418, 2.2641], \"goal_status\": [{\"predicate\": [\"close\", \"white_cabinet_1_bottom_region\"], \"satisfied\": false}, {\"predicate\": [\"in\", \"akita_black_bowl_1\", \"white_cabinet_1_bottom_region\"], \"satisfied\": false}], \"official_success\": false, \"remaining_steps\": 521}, \"history\": [{\"request\": {\"skill\": \"grasp\", \"object\": \"akita_black_bowl_1\", \"goal\": \"white_cabinet_1_bottom_region\", \"strategy\": \"top\"}, \"success\": true, \"failure_code\": null, \"official_success\": false}, {\"request\": {\"skill\": \"lift\", \"object\": \"akita_black_bowl_1\", \"goal\": \"white_cabinet_1_bottom_region\", \"strategy\": null}, \"success\": true, \"failure_code\": null, \"official_success\": false}]}"
+    }
+  ],
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "name": "libero_semantic_skill",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schema_version",
+          "thought",
+          "request"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "enum": [
+              "libero.agentic_v2.skill_request.v1"
+            ]
+          },
+          "thought": {
+            "type": "string"
+          },
+          "request": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "skill",
+              "object",
+              "goal",
+              "strategy"
+            ],
+            "properties": {
+              "skill": {
+                "type": "string",
+                "enum": [
+                  "clear_obstruction",
+                  "grasp",
+                  "lift",
+                  "transport",
+                  "place",
+                  "open_drawer",
+                  "close_drawer",
+                  "open_door",
+                  "close_door",
+                  "turn_on",
+                  "finish"
+                ]
+              },
+              "object": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "goal": {
+                "type": "string"
+              },
+              "strategy": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  null,
+                  "top",
+                  "side",
+                  "handle"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

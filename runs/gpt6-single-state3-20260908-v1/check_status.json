@@ -1,0 +1,19 @@
+{
+  "run_id": "gpt6-single-state3-20260908-v1",
+  "scheduled": 10,
+  "completed": 10,
+  "successes": 8,
+  "unexecuted": 0,
+  "stop_reason": null,
+  "llm_calls": 81,
+  "budget_usd": 10.0,
+  "ledger": [
+    {
+      "state": "observed",
+      "requests": 81,
+      "amount_usd": 3.048954999999999
+    }
+  ],
+  "formal_benchmark": false,
+  "code_hash": "72933d0b088bfc8aa543662d85c801b90a0dcb63b901e36392fb174a911fee1b"
+}

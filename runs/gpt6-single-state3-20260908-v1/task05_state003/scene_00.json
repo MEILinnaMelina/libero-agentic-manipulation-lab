@@ -1,0 +1,429 @@
+{
+  "frame": "world",
+  "length_unit": "meter",
+  "angle_unit": "radian",
+  "objects": {
+    "black_book_1": {
+      "position_m": [
+        -0.22193311473363422,
+        0.13574681532918093,
+        0.8829596872669809
+      ],
+      "quaternion_xyzw": [
+        -2.0923595031199258e-09,
+        3.2762108903180036e-09,
+        0.8111438271488389,
+        -0.584846724944523
+      ],
+      "aabb_m": [
+        [
+          -0.2902062613475049,
+          0.10899039642439892,
+          0.8851296867377795
+        ],
+        [
+          -0.17641860282600785,
+          0.1710716762604799,
+          1.0195296876071454
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "white_yellow_mug_1": {
+      "position_m": [
+        -0.10154755959296638,
+        0.019991112731360585,
+        0.885226999043608
+      ],
+      "quaternion_xyzw": [
+        -8.896963035887104e-07,
+        -3.350509645843649e-08,
+        0.7071069872187755,
+        -0.7071065751536991
+      ],
+      "aabb_m": [
+        [
+          -0.15449992141186342,
+          -0.04845798415589464,
+          0.8851297557041101
+        ],
+        [
+          -0.04843819049972968,
+          0.09126896238488373,
+          0.9883431119779413
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "desk_caddy_1": {
+      "position_m": [
+        -0.4061207021800691,
+        -0.13373614324678404,
+        0.887
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        1.0,
+        6.123233995736766e-17
+      ],
+      "aabb_m": [
+        [
+          -0.48162070218006914,
+          -0.35061614324678403,
+          0.88839
+        ],
+        [
+          -0.3306207021800691,
+          0.08314385675321592,
+          1.05529
+        ]
+      ],
+      "type": "object",
+      "fixed": true,
+      "parent": null,
+      "held": false
+    },
+    "study_table_desk_caddy_init_region": {
+      "position_m": [
+        -0.4,
+        -0.14,
+        0.867
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.41000000000000003,
+          -0.15000000000000002,
+          0.86
+        ],
+        [
+          -0.39,
+          -0.13,
+          0.874
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "study_table_black_book_init_region": {
+      "position_m": [
+        -0.2,
+        0.15,
+        0.867
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.225,
+          0.125,
+          0.86
+        ],
+        [
+          -0.17500000000000002,
+          0.175,
+          0.874
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "study_table_white_yellow_mug_init_region": {
+      "position_m": [
+        -0.1,
+        0.0,
+        0.867
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.125,
+          -0.025,
+          0.86
+        ],
+        [
+          -0.07500000000000001,
+          0.025,
+          0.874
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "study_table_desk_caddy_right_region": {
+      "position_m": [
+        -0.4,
+        0.15,
+        0.867
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.45,
+          0.09999999999999998,
+          0.86
+        ],
+        [
+          -0.35000000000000003,
+          0.2,
+          0.874
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "desk_caddy_1_right_contain_region": {
+      "position_m": [
+        -0.4124307021800691,
+        0.00965385675321595,
+        0.95258
+      ],
+      "quaternion_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "aabb_m": [
+        [
+          -0.4743907021800691,
+          -0.05250614324678406,
+          0.89212
+        ],
+        [
+          -0.3504707021800691,
+          0.07181385675321596,
+          1.01304
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "desk_caddy_1",
+      "held": false
+    },
+    "desk_caddy_1_left_contain_region": {
+      "position_m": [
+        -0.41243070218006916,
+        -0.27924614324678404,
+        0.95258
+      ],
+      "quaternion_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "aabb_m": [
+        [
+          -0.4743907021800692,
+          -0.34140614324678403,
+          0.89212
+        ],
+        [
+          -0.35047070218006915,
+          -0.21708614324678405,
+          1.01304
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "desk_caddy_1",
+      "held": false
+    },
+    "desk_caddy_1_back_contain_region": {
+      "position_m": [
+        -0.43976070218006913,
+        -0.13309614324678404,
+        0.97258
+      ],
+      "quaternion_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "aabb_m": [
+        [
+          -0.4675107021800691,
+          -0.19525614324678403,
+          0.91212
+        ],
+        [
+          -0.41201070218006913,
+          -0.07093614324678404,
+          1.03304
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "desk_caddy_1",
+      "held": false
+    },
+    "desk_caddy_1_front_contain_region": {
+      "position_m": [
+        -0.37510070218006913,
+        -0.13309614324678404,
+        0.92754
+      ],
+      "quaternion_xyzw": [
+        0.7071067811865475,
+        0.0,
+        4.3297803758143125e-17,
+        -0.7071067811865475
+      ],
+      "aabb_m": [
+        [
+          -0.40285070218006913,
+          -0.19525614324678406,
+          0.89159
+        ],
+        [
+          -0.34735070218006914,
+          -0.07093614324678402,
+          0.9634900000000001
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "desk_caddy_1",
+      "held": false
+    }
+  },
+  "joints": {},
+  "contacts": [
+    [
+      null,
+      "black_book_1_g1"
+    ],
+    [
+      null,
+      "black_book_1_g1"
+    ],
+    [
+      null,
+      "black_book_1_g1"
+    ],
+    [
+      null,
+      "black_book_1_g1"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g23"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g23"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g24"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g25"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g26"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g28"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g30"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g31"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g32"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g33"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g34"
+    ],
+    [
+      null,
+      "white_yellow_mug_1_g34"
+    ]
+  ],
+  "eef_position_m": [
+    -0.3065045294754195,
+    0.00956359599984548,
+    1.1709744745393715
+  ],
+  "eef_quaternion_xyzw": [
+    0.7059766979706957,
+    0.7076589969008903,
+    -0.018426772886941976,
+    -0.02181971742694203
+  ],
+  "gripper_qpos": [
+    0.020678146723253195,
+    -0.02067355206377571
+  ],
+  "robot_qpos": [
+    0.0190546506415103,
+    -0.18057732462490345,
+    0.0007275602119608063,
+    -2.472409815936423,
+    0.007598456224994832,
+    2.2349919477246463,
+    0.7984233662219486
+  ],
+  "goal_status": [
+    {
+      "predicate": [
+        "in",
+        "black_book_1",
+        "desk_caddy_1_back_contain_region"
+      ],
+      "satisfied": false
+    }
+  ],
+  "official_success": false,
+  "remaining_steps": 600
+}

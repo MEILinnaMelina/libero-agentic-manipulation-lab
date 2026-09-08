@@ -12,6 +12,7 @@ from .io import dump
 
 VERSION = 'libero.agentic_v2.skill_request.v1'
 SKILLS = {
+    'clear_obstruction': 'Hand is empty; physically move a movable obstacle away from a blocked grasp approach to free workspace. Object names the obstacle; deterministic code selects the destination.',
     'grasp': 'Object is movable and not held; one Panda arm.',
     'lift': 'Object must be held.',
     'transport': 'Object must be held; goal is a named object/region.',

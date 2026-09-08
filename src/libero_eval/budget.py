@@ -4,6 +4,9 @@ import time
 import uuid
 from .bootstrap import ROOT
 
+def ledger_path(config):
+    return ROOT/config.get('budget_ledger','runs/budget.sqlite')
+
 def actual_cost(usage, prices):
     details=usage.get('input_tokens_details') or {}
     cached=details.get('cached_tokens',0)
@@ -21,7 +24,7 @@ def reserve(payload,config):
     if max_input>272000: raise RuntimeError('Long-context price tier not permitted by this protocol')
     bound=(max_input*max(prices['uncached_input'],prices['cache_write'])+config['max_output_tokens']*prices['output'])/1e6
     token=str(uuid.uuid4())
-    with sqlite3.connect(str(ROOT/'runs/budget.sqlite'),timeout=30,isolation_level=None) as db:
+    with sqlite3.connect(str(ledger_path(config)),timeout=30,isolation_level=None) as db:
         db.execute('CREATE TABLE IF NOT EXISTS requests (id TEXT PRIMARY KEY, amount REAL, state TEXT, created REAL)')
         db.execute('BEGIN IMMEDIATE')
         total=db.execute('SELECT COALESCE(SUM(amount),0) FROM requests').fetchone()[0]
@@ -33,5 +36,5 @@ def reserve(payload,config):
 
 def settle(token,usage,config):
     if token is None:return
-    with sqlite3.connect(str(ROOT/'runs/budget.sqlite'),timeout=30) as db:
+    with sqlite3.connect(str(ledger_path(config)),timeout=30) as db:
         db.execute('UPDATE requests SET amount=?,state=? WHERE id=?',(actual_cost(usage,config['pricing_usd_per_million']),'observed',token))

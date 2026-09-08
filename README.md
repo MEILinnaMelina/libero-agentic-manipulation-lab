@@ -5,9 +5,19 @@ Archive version: [v0.1.0-fixed-repair](VERSION.md).
 
 Independent state-assisted adaptation of `E:\djf\RoboEval-main` to the locally pinned LIBERO benchmark. All source/assets are copied into `vendor`; original repositories receive no experiment outputs. See [METHOD.md](docs/METHOD.md) for privileged observations, source-to-port mapping and limitations, and [CHANGELOG.md](docs/CHANGELOG.md) for tuning history.
 
-## Current work: fixed semantic repairs only
+## Latest GPT check
 
-The paid GPT campaign remains paused. The current repair branch uses deterministic fixed plans with network connections disabled. See [repair log](docs/FIXED_REPAIR_LOG.md) and [results/video index](reports/fixed_repair/SUMMARY.md). Repairs change the implementation identity; do not mix these results with or resume the old frozen GPT campaign.
+On 2026-09-08, an explicitly authorized ten-episode GPT-6 Astra check used state 3
+once for every task: **8/10 successful**, 81 API calls, usage-priced estimate
+**USD 3.0490**. Tasks 8 and 9 failed; no episodes were rerun. All ten videos were
+decoded and checked. See [results and videos](reports/gpt6-single-state3-20260908-v1/RESULTS_ZH.md)
+and [execution log](docs/GPT6_SINGLE_STATE_LOG.md).
+This single-state check is separate from both the 24/24 fixed development
+validation and the old incomplete formal campaign.
+
+## Fixed semantic repair workflow
+
+The old full GPT campaign remains paused. Fixed repair runs use deterministic plans with network connections disabled. See [repair log](docs/FIXED_REPAIR_LOG.md) and [results/video index](reports/fixed_repair/SUMMARY.md). Repairs change the implementation identity; do not mix these results with or resume the old frozen GPT campaign.
 
 ```powershell
 # No API calls; unique run ID required; official development states only.

@@ -1,0 +1,184 @@
+{
+  "run_id": "gpt6-single-state3-20260908-v1",
+  "method": "gpt6",
+  "split": "formal",
+  "complete": true,
+  "scheduled": 10,
+  "completed": 10,
+  "missing": [],
+  "per_task": [
+    {
+      "task_id": 0,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 1,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 1
+      }
+    },
+    {
+      "task_id": 1,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 1,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 1
+      }
+    },
+    {
+      "task_id": 2,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 1,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 1
+      }
+    },
+    {
+      "task_id": 3,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 1,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 1
+      }
+    },
+    {
+      "task_id": 4,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 1,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 1
+      }
+    },
+    {
+      "task_id": 5,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 1,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 1
+      }
+    },
+    {
+      "task_id": 6,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 1,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 1
+      }
+    },
+    {
+      "task_id": 7,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 1,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 1
+      }
+    },
+    {
+      "task_id": 8,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.7934506856227626
+      ],
+      "termination_counts": {
+        "step_budget": 1
+      }
+    },
+    {
+      "task_id": 9,
+      "scheduled": 1,
+      "completed": 1,
+      "missing": 0,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.7934506856227626
+      ],
+      "termination_counts": {
+        "replan_budget": 1
+      }
+    }
+  ],
+  "macro_success_rate": 0.8,
+  "macro_bootstrap95": [
+    0.7999999999999999,
+    0.7999999999999999
+  ],
+  "bootstrap_note": "Stratified empirical bootstrap; degenerates at all-zero/all-one samples. See Wilson per-task intervals.",
+  "micro_wilson95": [
+    0.49016247153664183,
+    0.9433178485456247
+  ],
+  "failure_counts": {
+    "control_error": 5,
+    "grasp_miss": 1,
+    "ik_or_collision": 2
+  },
+  "mean_llm_calls": 8.1,
+  "mean_replans": 0.7,
+  "total_input_tokens": 217477,
+  "total_output_tokens": 6622,
+  "total_llm_latency_seconds": 316.0229999999574,
+  "total_episode_wall_seconds": 404.7960000000312,
+  "estimated_cost_usd": 3.048954999999999,
+  "cost_note": "Usage-priced estimate, not an invoice; unavailable-response usage remains unknown."
+}
