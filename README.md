@@ -7,6 +7,14 @@ Independent state-assisted adaptation of `E:\djf\RoboEval-main` to the locally p
 
 ## Latest GPT check
 
+Three-state follow-up on 2026-09-08: all ten tasks ran once on each of official
+states 4, 5 and 6, using one unchanged manipulation version and GPT-6 Astra.
+**27/30 successful (90%)**, 212 API calls, usage-priced estimate **USD 8.2216**;
+no API errors. Tasks 1, 3 and 9 each succeeded in 2/3 states; all others in 3/3.
+See [30-episode results and videos](reports/gpt6-all10-states456-20260908-v1/RESULTS_ZH.md)
+and [execution/failure log](docs/GPT6_THREE_STATE_LOG.md).
+This is a bounded three-state check, not the full 470-episode benchmark.
+
 Targeted follow-up: after adjusting tasks 8 and 9, both succeeded on state 3
 using GPT-6 Astra: **2/2**, 14 calls, estimated **USD 0.5215**, zero replans.
 See [rerun results and videos](reports/gpt6-t08-t09-state3-repair-v1/RESULTS_ZH.md)

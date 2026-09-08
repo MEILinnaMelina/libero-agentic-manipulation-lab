@@ -1,0 +1,308 @@
+{
+  "frame": "world",
+  "length_unit": "meter",
+  "angle_unit": "radian",
+  "objects": {
+    "chefmate_8_frypan_1": {
+      "position_m": [
+        -0.04640456778747729,
+        -0.23555889704835445,
+        0.899170958627053
+      ],
+      "quaternion_xyzw": [
+        -7.829701864720032e-05,
+        8.432544031772613e-05,
+        0.7071070062060509,
+        0.7071065468040251
+      ],
+      "aabb_m": [
+        [
+          -0.1475520819549237,
+          -0.33236782164255485,
+          0.8999578764183137
+        ],
+        [
+          0.05682968338555502,
+          0.023762467935220938,
+          0.9578273220552922
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "moka_pot_1": {
+      "position_m": [
+        0.0431158101500102,
+        -0.024923699727091724,
+        1.0865591283052316
+      ],
+      "quaternion_xyzw": [
+        -0.006924031462267917,
+        -0.0017142301509572792,
+        0.9999745352884116,
+        -0.00021903886517549867
+      ],
+      "aabb_m": [
+        [
+          0.0013437919812807585,
+          -0.1163240135323095,
+          1.019891380134172
+        ],
+        [
+          0.08459615938270525,
+          0.031277937702023785,
+          1.1723380477781091
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": true
+    },
+    "flat_stove_1": {
+      "position_m": [
+        -0.20612070218006914,
+        0.20626385675321599,
+        0.905
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.26003209538776206,
+          0.11126385675321598,
+          0.885
+        ],
+        [
+          0.03887929781993085,
+          0.301263856753216,
+          0.9550200000000001
+        ]
+      ],
+      "type": "object",
+      "fixed": true,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_flat_stove_init_region": {
+      "position_m": [
+        -0.2,
+        0.2,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.21000000000000002,
+          0.19,
+          0.868
+        ],
+        [
+          -0.19,
+          0.21000000000000002,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_frypan_init_region": {
+      "position_m": [
+        -0.05,
+        -0.25,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.07500000000000001,
+          -0.275,
+          0.868
+        ],
+        [
+          -0.024999999999999998,
+          -0.22499999999999998,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "kitchen_table_moka_pot_init_region": {
+      "position_m": [
+        0.05,
+        0.0,
+        0.875
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          0.024999999999999998,
+          -0.025,
+          0.868
+        ],
+        [
+          0.07500000000000001,
+          0.025,
+          0.882
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "flat_stove_1_cook_region": {
+      "position_m": [
+        -0.05612070218006915,
+        0.20626385675321599,
+        0.905
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.13112070218006916,
+          0.131263856753216,
+          0.9025000000000001
+        ],
+        [
+          0.01887929781993085,
+          0.28126385675321597,
+          0.9075
+        ]
+      ],
+      "type": "site",
+      "fixed": true,
+      "parent": "flat_stove_1",
+      "held": false
+    }
+  },
+  "joints": {
+    "flat_stove_1_button": {
+      "qpos": 1.06329470260509,
+      "type": "hinge",
+      "range": [
+        -0.005,
+        2.1
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "anchor_world": [
+        -0.20612070218006914,
+        0.20626385675321599,
+        0.905
+      ]
+    }
+  },
+  "contacts": [
+    [
+      "table_collision",
+      "chefmate_8_frypan_1_g4"
+    ],
+    [
+      "table_collision",
+      "chefmate_8_frypan_1_g4"
+    ],
+    [
+      "table_collision",
+      "chefmate_8_frypan_1_g4"
+    ],
+    [
+      "table_collision",
+      "chefmate_8_frypan_1_g4"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "moka_pot_1_g16"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "moka_pot_1_g16"
+    ],
+    [
+      "gripper0_finger2_pad_collision",
+      "moka_pot_1_g16"
+    ],
+    [
+      "gripper0_finger2_pad_collision",
+      "moka_pot_1_g16"
+    ]
+  ],
+  "eef_position_m": [
+    0.042128568588668876,
+    -0.022937867066520193,
+    1.1636159373168764
+  ],
+  "eef_quaternion_xyzw": [
+    0.9999961614989683,
+    0.00025563538675549275,
+    0.0027588510416314653,
+    1.9462997903375856e-05
+  ],
+  "gripper_qpos": [
+    0.0058216950562073756,
+    -0.005658117028111841
+  ],
+  "robot_qpos": [
+    0.0337740442375855,
+    0.5489706019469488,
+    -0.08335139394083127,
+    -1.5055209012936515,
+    0.049372598425124314,
+    2.0579606159559316,
+    2.2959143662706465
+  ],
+  "goal_status": [
+    {
+      "predicate": [
+        "turnon",
+        "flat_stove_1"
+      ],
+      "satisfied": true
+    },
+    {
+      "predicate": [
+        "on",
+        "moka_pot_1",
+        "flat_stove_1_cook_region"
+      ],
+      "satisfied": false
+    }
+  ],
+  "insertion_requirements": [],
+  "official_success": false,
+  "remaining_steps": 421
+}

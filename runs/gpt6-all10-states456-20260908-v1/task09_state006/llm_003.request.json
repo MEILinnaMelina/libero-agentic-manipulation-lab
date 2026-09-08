@@ -1,0 +1,94 @@
+{
+  "model": "gpt-6-astra",
+  "store": false,
+  "reasoning": {
+    "effort": "low"
+  },
+  "max_output_tokens": 4096,
+  "input": [
+    {
+      "role": "system",
+      "content": "You are the semantic task planner for a single-arm LIBERO adaptation of RoboEval Agentic v2. Choose exactly one skill. Deterministic robotics code alone chooses poses, offsets, joints, trajectories, gains, tolerances and step counts. Use only current named objects and regions. Fixtures cannot be lifted. Re-observe after each skill and use failure feedback. Respect scene.insertion_requirements: when opening_ready is false, use the preparation skill on the mechanism with an empty hand before grasping the object. Use the required_grasp_strategy. These are skill preconditions, not substitutes for official success. Do not claim success without official check_success. BDDL goals are explicitly provided as privileged task information. Return the supplied strict JSON schema. thought is a brief decision rationale."
+    },
+    {
+      "role": "user",
+      "content": "{\"task\": {\"language\": \"put the yellow and white mug in the microwave and close it\", \"goals\": [[\"in\", \"white_yellow_mug_1\", \"microwave_1_heating_region\"], [\"close\", \"microwave_1\"]]}, \"skills\": {\"clear_obstruction\": \"Hand is empty; physically move a movable obstacle away from a blocked grasp approach to free workspace. Object names the obstacle; deterministic code selects the destination.\", \"grasp\": \"Object is movable and not held; one Panda arm.\", \"lift\": \"Object must be held.\", \"transport\": \"Object must be held; goal is a named object/region.\", \"place\": \"Object must be held; goal is a named object/region; release and settle.\", \"open_drawer\": \"Named articulated region is a sliding drawer; hand is empty.\", \"close_drawer\": \"Named sliding drawer is unobstructed; hand is empty.\", \"open_door\": \"Named hinged appliance; hand is empty.\", \"close_door\": \"Named hinged appliance; placed objects clear the door arc.\", \"turn_on\": \"Named stove has a rotary switch; hand is empty.\", \"finish\": \"Official success is true, or no recovery remains.\"}, \"scene\": {\"frame\": \"world\", \"length_unit\": \"meter\", \"angle_unit\": \"radian\", \"objects\": {\"porcelain_mug_1\": {\"position_m\": [-0.1053, -0.253, 0.8976], \"quaternion_xyzw\": [-0.0, -0.0, -0.7071, 0.7071], \"aabb_m\": [[-0.1548, -0.3129, 0.9], [-0.0585, -0.1883, 1.0061]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"white_yellow_mug_1\": {\"position_m\": [0.0119, -0.0034, 0.9014], \"quaternion_xyzw\": [-0.0009, 0.0009, 0.7092, -0.7051], \"aabb_m\": [[-0.0413, -0.0719, 0.9012], [0.0648, 0.0678, 1.0046]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": true}, \"microwave_1\": {\"position_m\": [-0.0079, 0.3402, 0.92], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.2722, -0.005, 0.92], [0.1646, 0.4513, 1.1085]], \"type\": \"object\", \"fixed\": true, \"parent\": null, \"held\": false}, \"kitchen_table_microwave_init_region\": {\"position_m\": [0.0, 0.35, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.01, 0.34, 0.868], [0.01, 0.36, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"kitchen_table_white_yellow_mug_init_region\": {\"position_m\": [0.0, 0.0, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.025, -0.025, 0.868], [0.025, 0.025, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"kitchen_table_porcelain_mug_init_region\": {\"position_m\": [-0.1, -0.25, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.125, -0.275, 0.868], [-0.075, -0.225, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"kitchen_table_porcelain_mug_front_region\": {\"position_m\": [0.0, -0.25, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.05, -0.3, 0.868], [0.05, -0.2, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"microwave_1_top_side\": {\"position_m\": [-0.0079, 0.3502, 1.12], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.1279, 0.2667, 1.115], [0.1121, 0.4337, 1.125]], \"type\": \"site\", \"fixed\": true, \"parent\": \"microwave_1\", \"held\": false}, \"microwave_1_heating_region\": {\"position_m\": [-0.0079, 0.3502, 1.016], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.1279, 0.2667, 0.936], [0.1121, 0.4337, 1.096]], \"type\": \"site\", \"fixed\": true, \"parent\": \"microwave_1\", \"held\": false}}, \"joints\": {\"microwave_1_microjoint\": {\"qpos\": -1.685, \"type\": \"hinge\", \"range\": [-2.094, 0.0], \"axis_world\": [0.0, 0.0, 1.0], \"anchor_world\": [-0.1804, 0.2522, 1.016]}}, \"contacts\": [[\"table_collision\", \"porcelain_mug_1_g5\"], [\"table_collision\", \"porcelain_mug_1_g5\"], [\"table_collision\", \"porcelain_mug_1_g5\"], [\"table_collision\", \"porcelain_mug_1_g5\"], [\"table_collision\", \"porcelain_mug_1_g19\"], [\"table_collision\", \"porcelain_mug_1_g19\"], [\"table_collision\", \"porcelain_mug_1_g19\"], [\"table_collision\", \"porcelain_mug_1_g19\"], [\"table_collision\", \"porcelain_mug_1_g20\"], [\"table_collision\", \"porcelain_mug_1_g20\"], [\"table_collision\", \"porcelain_mug_1_g20\"], [\"table_collision\", \"porcelain_mug_1_g20\"], [\"table_collision\", \"porcelain_mug_1_g21\"], [\"table_collision\", \"porcelain_mug_1_g21\"], [\"table_collision\", \"porcelain_mug_1_g21\"], [\"table_collision\", \"porcelain_mug_1_g21\"], [\"table_collision\", \"porcelain_mug_1_g22\"], [\"table_collision\", \"porcelain_mug_1_g22\"], [\"table_collision\", \"porcelain_mug_1_g22\"], [\"table_collision\", \"porcelain_mug_1_g22\"], [\"gripper0_finger1_pad_collision\", \"white_yellow_mug_1_g1\"], [\"gripper0_finger1_pad_collision\", \"white_yellow_mug_1_g1\"], [\"gripper0_finger1_pad_collision\", \"white_yellow_mug_1_g1\"], [\"gripper0_finger1_pad_collision\", \"white_yellow_mug_1_g1\"], [\"gripper0_finger2_pad_collision\", \"white_yellow_mug_1_g1\"], [\"gripper0_finger2_pad_collision\", \"white_yellow_mug_1_g1\"], [\"gripper0_finger2_pad_collision\", \"white_yellow_mug_1_g1\"], [\"gripper0_finger2_pad_collision\", \"white_yellow_mug_1_g1\"]], \"eef_position_m\": [0.0113, -0.0671, 0.9606], \"eef_quaternion_xyzw\": [1.0, -0.0003, 0.0018, 0.0005], \"gripper_qpos\": [0.0092, -0.0092], \"robot_qpos\": [0.0015, 0.7852, -0.1112, -1.6822, 0.1243, 2.4641, 2.1831], \"goal_status\": [{\"predicate\": [\"in\", \"white_yellow_mug_1\", \"microwave_1_heating_region\"], \"satisfied\": false}, {\"predicate\": [\"close\", \"microwave_1\"], \"satisfied\": false}], \"insertion_requirements\": [{\"object\": \"white_yellow_mug_1\", \"goal\": \"microwave_1_heating_region\", \"mechanism\": \"microwave_1\", \"required_grasp_strategy\": \"handle\", \"opening_ready\": true, \"preparation_skill\": \"open_door\", \"reason\": \"Before grasping for cavity insertion, open the door to the skill target with an empty hand. A partially open door can satisfy Open but still obstruct insertion. Use the mug handle to keep the palm outside the opening.\"}], \"official_success\": false, \"remaining_steps\": 458}, \"history\": [{\"request\": {\"skill\": \"open_door\", \"object\": \"microwave_1\", \"goal\": \"microwave_1_heating_region\", \"strategy\": null}, \"success\": true, \"failure_code\": null, \"official_success\": false}, {\"request\": {\"skill\": \"grasp\", \"object\": \"white_yellow_mug_1\", \"goal\": \"microwave_1_heating_region\", \"strategy\": \"handle\"}, \"success\": true, \"failure_code\": null, \"official_success\": false}]}"
+    }
+  ],
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "name": "libero_semantic_skill",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schema_version",
+          "thought",
+          "request"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "enum": [
+              "libero.agentic_v2.skill_request.v1"
+            ]
+          },
+          "thought": {
+            "type": "string"
+          },
+          "request": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "skill",
+              "object",
+              "goal",
+              "strategy"
+            ],
+            "properties": {
+              "skill": {
+                "type": "string",
+                "enum": [
+                  "clear_obstruction",
+                  "grasp",
+                  "lift",
+                  "transport",
+                  "place",
+                  "open_drawer",
+                  "close_drawer",
+                  "open_door",
+                  "close_door",
+                  "turn_on",
+                  "finish"
+                ]
+              },
+              "object": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "goal": {
+                "type": "string"
+              },
+              "strategy": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  null,
+                  "top",
+                  "side",
+                  "handle"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

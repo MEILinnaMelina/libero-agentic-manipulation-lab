@@ -1,0 +1,94 @@
+{
+  "model": "gpt-6-astra",
+  "store": false,
+  "reasoning": {
+    "effort": "low"
+  },
+  "max_output_tokens": 4096,
+  "input": [
+    {
+      "role": "system",
+      "content": "You are the semantic task planner for a single-arm LIBERO adaptation of RoboEval Agentic v2. Choose exactly one skill. Deterministic robotics code alone chooses poses, offsets, joints, trajectories, gains, tolerances and step counts. Use only current named objects and regions. Fixtures cannot be lifted. Re-observe after each skill and use failure feedback. Respect scene.insertion_requirements: when opening_ready is false, use the preparation skill on the mechanism with an empty hand before grasping the object. Use the required_grasp_strategy. These are skill preconditions, not substitutes for official success. Do not claim success without official check_success. BDDL goals are explicitly provided as privileged task information. Return the supplied strict JSON schema. thought is a brief decision rationale."
+    },
+    {
+      "role": "user",
+      "content": "{\"task\": {\"language\": \"put the white mug on the plate and put the chocolate pudding to the right of the plate\", \"goals\": [[\"on\", \"porcelain_mug_1\", \"plate_1\"], [\"on\", \"chocolate_pudding_1\", \"living_room_table_plate_right_region\"]]}, \"skills\": {\"clear_obstruction\": \"Hand is empty; physically move a movable obstacle away from a blocked grasp approach to free workspace. Object names the obstacle; deterministic code selects the destination.\", \"grasp\": \"Object is movable and not held; one Panda arm.\", \"lift\": \"Object must be held.\", \"transport\": \"Object must be held; goal is a named object/region.\", \"place\": \"Object must be held; goal is a named object/region; release and settle.\", \"open_drawer\": \"Named articulated region is a sliding drawer; hand is empty.\", \"close_drawer\": \"Named sliding drawer is unobstructed; hand is empty.\", \"open_door\": \"Named hinged appliance; hand is empty.\", \"close_door\": \"Named hinged appliance; placed objects clear the door arc.\", \"turn_on\": \"Named stove has a rotary switch; hand is empty.\", \"finish\": \"Official success is true, or no recovery remains.\"}, \"scene\": {\"frame\": \"world\", \"length_unit\": \"meter\", \"angle_unit\": \"radian\", \"objects\": {\"porcelain_mug_1\": {\"position_m\": [-0.0894, -0.1377, 0.4344], \"quaternion_xyzw\": [-0.0, -0.0, -0.7071, 0.7071], \"aabb_m\": [[-0.1389, -0.1977, 0.4368], [-0.0426, -0.073, 0.5428]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"red_coffee_mug_1\": {\"position_m\": [-0.209, -0.0133, 0.4386], \"quaternion_xyzw\": [0.0, -0.0, -0.7071, 0.7071], \"aabb_m\": [[-0.2562, -0.0755, 0.4368], [-0.163, 0.0474, 0.5694]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"plate_1\": {\"position_m\": [0.1466, -0.0025, 0.4393], \"quaternion_xyzw\": [0.0, -0.0, 0.7071, 0.7071], \"aabb_m\": [[0.0775, -0.0705, 0.4368], [0.215, 0.0671, 0.4557]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"chocolate_pudding_1\": {\"position_m\": [-0.0491, 0.0956, 0.4498], \"quaternion_xyzw\": [0.0, -0.0, 1.0, 0.0], \"aabb_m\": [[-0.0887, 0.0724, 0.4368], [-0.0085, 0.1188, 0.4642]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_plate_left_region\": {\"position_m\": [0.15, -0.1, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.1, -0.15, 0.403], [0.2, -0.05, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_plate_right_region\": {\"position_m\": [0.15, 0.1, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.1, 0.05, 0.403], [0.2, 0.15, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_plate_init_region\": {\"position_m\": [0.15, 0.0, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.125, -0.025, 0.403], [0.175, 0.025, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_porcelain_mug_init_region\": {\"position_m\": [-0.1, -0.15, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.125, -0.175, 0.403], [-0.075, -0.125, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_chocolate_pudding_init_region\": {\"position_m\": [-0.05, 0.1, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.075, 0.075, 0.403], [-0.025, 0.125, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"living_room_table_red_coffee_mug_init_region\": {\"position_m\": [-0.2, 0.0, 0.41], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.225, -0.025, 0.403], [-0.175, 0.025, 0.417]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}}, \"joints\": {}, \"contacts\": [[null, \"porcelain_mug_1_g5\"], [null, \"porcelain_mug_1_g5\"], [null, \"porcelain_mug_1_g5\"], [null, \"porcelain_mug_1_g5\"], [null, \"porcelain_mug_1_g19\"], [null, \"porcelain_mug_1_g19\"], [null, \"porcelain_mug_1_g19\"], [null, \"porcelain_mug_1_g19\"], [null, \"porcelain_mug_1_g20\"], [null, \"porcelain_mug_1_g20\"], [null, \"porcelain_mug_1_g20\"], [null, \"porcelain_mug_1_g20\"], [null, \"porcelain_mug_1_g21\"], [null, \"porcelain_mug_1_g21\"], [null, \"porcelain_mug_1_g21\"], [null, \"porcelain_mug_1_g21\"], [null, \"porcelain_mug_1_g22\"], [null, \"porcelain_mug_1_g22\"], [null, \"porcelain_mug_1_g22\"], [null, \"porcelain_mug_1_g22\"], [null, \"red_coffee_mug_1_g2\"], [null, \"red_coffee_mug_1_g3\"], [null, \"red_coffee_mug_1_g3\"], [null, \"red_coffee_mug_1_g4\"], [null, \"red_coffee_mug_1_g5\"], [null, \"red_coffee_mug_1_g6\"], [null, \"red_coffee_mug_1_g7\"], [null, \"red_coffee_mug_1_g8\"], [null, \"red_coffee_mug_1_g8\"], [null, \"plate_1_g2\"], [null, \"plate_1_g3\"], [null, \"plate_1_g4\"], [null, \"plate_1_g6\"], [null, \"plate_1_g8\"], [null, \"plate_1_g9\"], [null, \"plate_1_g10\"], [null, \"plate_1_g8\"], [null, \"chocolate_pudding_1_g1\"], [null, \"chocolate_pudding_1_g1\"], [null, \"chocolate_pudding_1_g1\"], [null, \"chocolate_pudding_1_g1\"]], \"eef_position_m\": [-0.05, 0.0022, 0.7007], \"eef_quaternion_xyzw\": [0.7071, 0.707, -0.0092, -0.009], \"gripper_qpos\": [0.0207, -0.0207], \"robot_qpos\": [0.0111, -0.1809, -0.0061, -2.4173, -0.0016, 2.2106, 0.7922], \"goal_status\": [{\"predicate\": [\"on\", \"porcelain_mug_1\", \"plate_1\"], \"satisfied\": false}, {\"predicate\": [\"on\", \"chocolate_pudding_1\", \"living_room_table_plate_right_region\"], \"satisfied\": false}], \"insertion_requirements\": [], \"official_success\": false, \"remaining_steps\": 600}, \"history\": []}"
+    }
+  ],
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "name": "libero_semantic_skill",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schema_version",
+          "thought",
+          "request"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "enum": [
+              "libero.agentic_v2.skill_request.v1"
+            ]
+          },
+          "thought": {
+            "type": "string"
+          },
+          "request": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "skill",
+              "object",
+              "goal",
+              "strategy"
+            ],
+            "properties": {
+              "skill": {
+                "type": "string",
+                "enum": [
+                  "clear_obstruction",
+                  "grasp",
+                  "lift",
+                  "transport",
+                  "place",
+                  "open_drawer",
+                  "close_drawer",
+                  "open_door",
+                  "close_door",
+                  "turn_on",
+                  "finish"
+                ]
+              },
+              "object": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "goal": {
+                "type": "string"
+              },
+              "strategy": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  null,
+                  "top",
+                  "side",
+                  "handle"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

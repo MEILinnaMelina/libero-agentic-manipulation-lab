@@ -1,0 +1,457 @@
+{
+  "frame": "world",
+  "length_unit": "meter",
+  "angle_unit": "radian",
+  "objects": {
+    "porcelain_mug_1": {
+      "position_m": [
+        0.16029754257425996,
+        -0.0012944733732958367,
+        0.44312417944013643
+      ],
+      "quaternion_xyzw": [
+        0.029040983075880454,
+        0.02076193848187697,
+        0.7711720887920792,
+        -0.6356250252157499
+      ],
+      "aabb_m": [
+        [
+          0.10766685196360781,
+          -0.06024390087620671,
+          0.4448189812024455
+        ],
+        [
+          0.20338467629208393,
+          0.06874312722362576,
+          0.5556425885818382
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "red_coffee_mug_1": {
+      "position_m": [
+        -0.20896919898780422,
+        -0.01333309456508813,
+        0.4385990213862532
+      ],
+      "quaternion_xyzw": [
+        5.101358839510269e-07,
+        -6.141475738671115e-07,
+        -0.7071064789966139,
+        0.7071070833759012
+      ],
+      "aabb_m": [
+        [
+          -0.25618599535465963,
+          -0.07550044263786249,
+          0.43675975900976916
+        ],
+        [
+          -0.16299059844492592,
+          0.04740479861700518,
+          0.5694382580167549
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "plate_1": {
+      "position_m": [
+        0.14658827864346877,
+        -0.002474944719172485,
+        0.43927271704630383
+      ],
+      "quaternion_xyzw": [
+        1.213957909134847e-06,
+        -7.137292376927225e-08,
+        0.7073893108259686,
+        0.7068241386141834
+      ],
+      "aabb_m": [
+        [
+          0.07748647257577873,
+          -0.07048971004836871,
+          0.4367596108558315
+        ],
+        [
+          0.21499635952895846,
+          0.067170996833426,
+          0.4557058544513024
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "chocolate_pudding_1": {
+      "position_m": [
+        -0.04764007984534692,
+        0.09497080839446971,
+        0.5746964105698337
+      ],
+      "quaternion_xyzw": [
+        0.003273473916931031,
+        -0.002878755380920104,
+        0.9999897019429712,
+        -0.0012621980746316624
+      ],
+      "aabb_m": [
+        [
+          -0.08738286115484997,
+          0.07162811129697344,
+          0.5612178654252578
+        ],
+        [
+          -0.006889064927504442,
+          0.11830880473239377,
+          0.5894283682138983
+        ]
+      ],
+      "type": "object",
+      "fixed": false,
+      "parent": null,
+      "held": true
+    },
+    "living_room_table_plate_left_region": {
+      "position_m": [
+        0.15,
+        -0.1,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          0.09999999999999998,
+          -0.15000000000000002,
+          0.40299999999999997
+        ],
+        [
+          0.2,
+          -0.049999999999999996,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_plate_right_region": {
+      "position_m": [
+        0.15,
+        0.1,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          0.09999999999999998,
+          0.049999999999999996,
+          0.40299999999999997
+        ],
+        [
+          0.2,
+          0.15000000000000002,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_plate_init_region": {
+      "position_m": [
+        0.15,
+        0.0,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          0.125,
+          -0.025,
+          0.40299999999999997
+        ],
+        [
+          0.175,
+          0.025,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_porcelain_mug_init_region": {
+      "position_m": [
+        -0.1,
+        -0.15,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.125,
+          -0.175,
+          0.40299999999999997
+        ],
+        [
+          -0.07500000000000001,
+          -0.125,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_chocolate_pudding_init_region": {
+      "position_m": [
+        -0.05,
+        0.1,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.07500000000000001,
+          0.07500000000000001,
+          0.40299999999999997
+        ],
+        [
+          -0.024999999999999998,
+          0.125,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    },
+    "living_room_table_red_coffee_mug_init_region": {
+      "position_m": [
+        -0.2,
+        0.0,
+        0.41
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "aabb_m": [
+        [
+          -0.225,
+          -0.025,
+          0.40299999999999997
+        ],
+        [
+          -0.17500000000000002,
+          0.025,
+          0.417
+        ]
+      ],
+      "type": "site",
+      "fixed": false,
+      "parent": null,
+      "held": false
+    }
+  },
+  "joints": {},
+  "contacts": [
+    [
+      null,
+      "red_coffee_mug_1_g2"
+    ],
+    [
+      null,
+      "red_coffee_mug_1_g4"
+    ],
+    [
+      null,
+      "red_coffee_mug_1_g5"
+    ],
+    [
+      null,
+      "red_coffee_mug_1_g6"
+    ],
+    [
+      null,
+      "red_coffee_mug_1_g7"
+    ],
+    [
+      null,
+      "red_coffee_mug_1_g8"
+    ],
+    [
+      null,
+      "plate_1_g2"
+    ],
+    [
+      null,
+      "plate_1_g3"
+    ],
+    [
+      null,
+      "plate_1_g4"
+    ],
+    [
+      null,
+      "plate_1_g6"
+    ],
+    [
+      null,
+      "plate_1_g7"
+    ],
+    [
+      null,
+      "plate_1_g8"
+    ],
+    [
+      null,
+      "plate_1_g9"
+    ],
+    [
+      null,
+      "plate_1_g10"
+    ],
+    [
+      null,
+      "plate_1_g8"
+    ],
+    [
+      "chocolate_pudding_1_g1",
+      "gripper0_finger1_collision"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "chocolate_pudding_1_g1"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "chocolate_pudding_1_g1"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "chocolate_pudding_1_g1"
+    ],
+    [
+      "gripper0_finger1_pad_collision",
+      "chocolate_pudding_1_g1"
+    ],
+    [
+      "chocolate_pudding_1_g1",
+      "gripper0_finger2_collision"
+    ],
+    [
+      "gripper0_finger2_pad_collision",
+      "chocolate_pudding_1_g1"
+    ],
+    [
+      "gripper0_finger2_pad_collision",
+      "chocolate_pudding_1_g1"
+    ],
+    [
+      "gripper0_finger2_pad_collision",
+      "chocolate_pudding_1_g1"
+    ],
+    [
+      "gripper0_finger2_pad_collision",
+      "chocolate_pudding_1_g1"
+    ],
+    [
+      "porcelain_mug_1_g21",
+      "plate_1_g1"
+    ],
+    [
+      "porcelain_mug_1_g21",
+      "plate_1_g1"
+    ],
+    [
+      "porcelain_mug_1_g22",
+      "plate_1_g8"
+    ]
+  ],
+  "eef_position_m": [
+    -0.05394182020969243,
+    0.09499520427692691,
+    0.5760774453659085
+  ],
+  "eef_quaternion_xyzw": [
+    0.7068944608631049,
+    0.7073088922402984,
+    0.003715062608282772,
+    0.0007419357646765027
+  ],
+  "gripper_qpos": [
+    0.022967371006429104,
+    -0.02287143726924745
+  ],
+  "robot_qpos": [
+    0.061801754718825645,
+    0.07087496897797646,
+    0.14099617982606996,
+    -2.5180051469154465,
+    -0.013659941005589907,
+    2.5951568716975832,
+    0.9993644635666735
+  ],
+  "goal_status": [
+    {
+      "predicate": [
+        "on",
+        "porcelain_mug_1",
+        "plate_1"
+      ],
+      "satisfied": true
+    },
+    {
+      "predicate": [
+        "on",
+        "chocolate_pudding_1",
+        "living_room_table_plate_right_region"
+      ],
+      "satisfied": false
+    }
+  ],
+  "insertion_requirements": [],
+  "official_success": false,
+  "remaining_steps": 372
+}

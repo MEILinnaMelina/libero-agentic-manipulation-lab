@@ -122,6 +122,19 @@ def test_manifest_disjoint_unique_and_complete():
         hashes=[t['state_sha256'][i] for i in t['dev_state_ids']+t['formal_state_ids']]
         assert len(hashes)==len(set(hashes))
 
+def test_three_state_schedule_has_exactly_thirty_distinct_pairs():
+    import importlib.util
+    from libero_eval.bootstrap import ROOT
+    from libero_eval.io import read
+    spec=importlib.util.spec_from_file_location('run_gpt_check',ROOT/'scripts/run_gpt_check.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    manifest=read(ROOT/'configs/task_manifest.json')
+    schedule=module.build_schedule(manifest,list(range(10)),[4,5,6])
+    pairs={(e['task_id'],e['init_state_id']) for e in schedule}
+    assert len(schedule)==30 and pairs=={(t,s) for t in range(10) for s in [4,5,6]}
+    for states in [[4,4,5],[0,4,5],[50],[]]:
+        with pytest.raises(ValueError):module.build_schedule(manifest,[8,9],states)
+
 def test_summary_keeps_failed_denominator_and_rejects_mixed_protocol(tmp_path,monkeypatch):
     import libero_eval.report as report
     monkeypatch.setattr(report,'ROOT',tmp_path)

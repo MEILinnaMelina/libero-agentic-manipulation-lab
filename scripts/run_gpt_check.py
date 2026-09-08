@@ -1,6 +1,6 @@
-"""One immutable GPT episode per selected task, with an isolated budget and fail-fast API stop.
+"""Immutable GPT episodes for explicit task/state pairs with an isolated budget.
 
-This is a ten-episode check, not completion or resumption of the old formal campaign.
+This is a bounded check, not completion or resumption of the old formal campaign.
 No completed or interrupted attempt is rerun by this entry point.
 """
 import os
@@ -17,34 +17,42 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
 from libero_eval.io import read,dump,code_hash,digest
 
+def build_schedule(manifest,ids,states):
+    if not ids or len(ids)!=len(set(ids)) or any(t not in range(10) for t in ids):
+        raise ValueError('Invalid or duplicate task IDs')
+    if not states or len(states)!=len(set(states)):
+        raise ValueError('Invalid or duplicate state IDs')
+    tasks=[t for t in manifest['tasks'] if t['task_id'] in ids]
+    for task in tasks:
+        if not set(states)<=set(task['formal_state_ids']):
+            raise ValueError('Choose official non-development states')
+    return [dict(task_id=t['task_id'],init_state_id=s) for t in tasks for s in states]
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--run-id',required=True)
-    parser.add_argument('--state',type=int,default=3)
+    selection=parser.add_mutually_exclusive_group()
+    selection.add_argument('--state',type=int)
+    selection.add_argument('--states',help='Distinct official state IDs, comma-separated')
     parser.add_argument('--tasks',default='0,1,2,3,4,5,6,7,8,9')
     parser.add_argument('--budget-usd',type=float,default=10.)
     args=parser.parse_args()
     ids=[int(v) for v in args.tasks.split(',')]
-    if not ids or len(ids)!=len(set(ids)) or any(t not in range(10) for t in ids):
-        raise ValueError('Invalid or duplicate task IDs')
+    states=[int(v) for v in args.states.split(',')] if args.states is not None else [args.state if args.state is not None else 3]
     if Path(args.run_id).name!=args.run_id or args.run_id in ('.','..'):
         raise ValueError('Invalid run ID')
-    if not 0<args.budget_usd<=10:
-        raise ValueError('This diagnostic permits at most USD 10')
+    if not 0<args.budget_usd<=20:
+        raise ValueError('This diagnostic permits at most USD 20')
     if not os.getenv('OPENAI_API_KEY'):
         raise RuntimeError('OPENAI_API_KEY is missing; no request was made')
+    manifest=read(ROOT/'configs/task_manifest.json')
+    schedule=build_schedule(manifest,ids,states)
     run=ROOT/'runs'/args.run_id
     run.mkdir(exist_ok=False)
     config=read(ROOT/'configs/protocol.json')
     config.update(formal_budget_usd=args.budget_usd,budget_ledger=(run/'budget.sqlite').relative_to(ROOT).as_posix(),max_workers=1)
-    manifest=read(ROOT/'configs/task_manifest.json')
-    tasks=[t for t in manifest['tasks'] if t['task_id'] in ids]
-    for task in tasks:
-        if args.state not in task['formal_state_ids']:
-            raise ValueError('Choose one official non-development state')
     fingerprint=code_hash(ROOT)
-    schedule=[dict(task_id=t['task_id'],init_state_id=args.state) for t in tasks]
-    identity=dict(run_id=args.run_id,method='gpt6',split='formal',formal_benchmark=False,purpose='selected_task_single_state_check',code_hash=fingerprint,config_hash=digest(ROOT/'configs/protocol.json'),manifest_hash=digest(ROOT/'configs/task_manifest.json'),schedule=schedule,config=config,created_at=time.time(),note='One state per selected task; new versions retain all earlier successes and failures.')
+    identity=dict(run_id=args.run_id,method='gpt6',split='formal',formal_benchmark=False,purpose='selected_task_state_check',code_hash=fingerprint,config_hash=digest(ROOT/'configs/protocol.json'),manifest_hash=digest(ROOT/'configs/task_manifest.json'),schedule=schedule,config=config,created_at=time.time(),note='Each selected task/state pair executes once; new versions retain all earlier successes and failures.')
     dump(run/'run.json',identity)
     with zipfile.ZipFile(str(run/'source.zip'),'w',zipfile.ZIP_DEFLATED) as archive:
         for folder in ['src','scripts','configs','tests']:
@@ -56,14 +64,16 @@ def main():
     results=[]
     stop_reason=None
     try:
-        for task in tasks:
+        for planned in schedule:
+            task=next(t for t in manifest['tasks'] if t['task_id']==planned['task_id'])
+            state=planned['init_state_id']
             if code_hash(ROOT)!=fingerprint:
                 raise RuntimeError('Source changed during diagnostic')
-            directory=run/('task%02d_state%03d'%(task['task_id'],args.state))
-            print(json.dumps(dict(event='episode_start',task_id=task['task_id'],state=args.state)),flush=True)
-            result=episode(task,args.state,config,directory,args.run_id,'gpt6','formal',fingerprint)
+            directory=run/('task%02d_state%03d'%(task['task_id'],state))
+            print(json.dumps(dict(event='episode_start',task_id=task['task_id'],state=state)),flush=True)
+            result=episode(task,state,config,directory,args.run_id,'gpt6','formal',fingerprint)
             results.append(result)
-            print(json.dumps({k:result[k] for k in ['task_id','success','termination_reason','env_steps','llm_calls','llm_input_tokens','llm_output_tokens','wall_seconds']}),flush=True)
+            print(json.dumps({k:result[k] for k in ['task_id','init_state_id','success','termination_reason','env_steps','llm_calls','llm_input_tokens','llm_output_tokens','wall_seconds']}),flush=True)
             if result['termination_reason']=='api_error':
                 stop_reason='api_error: '+result.get('error','unknown')
                 # No later task may repeat an exhausted-account/invalid-key request.

@@ -53,5 +53,21 @@
     "estimated_usd": 0.5215325000000001,
     "code_hash": "06ee8718755a31b2ef9bf358b8e5f616e02afa8ba6300d075182d8e7045b407c",
     "formal_benchmark": false
+  },
+  "gpt6_three_state_check": {
+    "run_id": "gpt6-all10-states456-20260908-v1",
+    "scheduled": 30,
+    "completed": 30,
+    "successes": 27,
+    "llm_calls": 212,
+    "code_hash": "8c7738eecf1f8926ae7e89af6bd15366c777a5f68617c6f97ee99fc246a188dc",
+    "formal_benchmark": false,
+    "estimated_usd": 8.2216475,
+    "state_ids": [
+      4,
+      5,
+      6
+    ],
+    "api_errors": 0
   }
 }

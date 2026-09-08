@@ -1,0 +1,435 @@
+{
+  "run_id": "gpt6-all10-states456-20260908-v1",
+  "code_hash": "8c7738eecf1f8926ae7e89af6bd15366c777a5f68617c6f97ee99fc246a188dc",
+  "formal_benchmark": false,
+  "scheduled": 30,
+  "completed": 30,
+  "successes": 27,
+  "llm_calls": 212,
+  "estimated_usd": 8.2216475,
+  "unknown_usage_requests": 0,
+  "api_errors": 0,
+  "usage": {
+    "input_tokens": 589647,
+    "output_tokens": 17053,
+    "cached_input_tokens": 0,
+    "cache_write_tokens": 589011,
+    "ordinary_input_tokens": 636
+  },
+  "episode_wall_seconds": 1101.6889999999548,
+  "per_task": [
+    {
+      "task_id": 0,
+      "scheduled": 3,
+      "completed": 3,
+      "successes": 3,
+      "llm_calls": 26,
+      "estimated_usd": 1.2330675
+    },
+    {
+      "task_id": 1,
+      "scheduled": 3,
+      "completed": 3,
+      "successes": 2,
+      "llm_calls": 26,
+      "estimated_usd": 1.19908
+    },
+    {
+      "task_id": 2,
+      "scheduled": 3,
+      "completed": 3,
+      "successes": 3,
+      "llm_calls": 15,
+      "estimated_usd": 0.4556625
+    },
+    {
+      "task_id": 3,
+      "scheduled": 3,
+      "completed": 3,
+      "successes": 2,
+      "llm_calls": 15,
+      "estimated_usd": 0.6154124999999999
+    },
+    {
+      "task_id": 4,
+      "scheduled": 3,
+      "completed": 3,
+      "successes": 3,
+      "llm_calls": 24,
+      "estimated_usd": 0.8800324999999999
+    },
+    {
+      "task_id": 5,
+      "scheduled": 3,
+      "completed": 3,
+      "successes": 3,
+      "llm_calls": 12,
+      "estimated_usd": 0.4087225
+    },
+    {
+      "task_id": 6,
+      "scheduled": 3,
+      "completed": 3,
+      "successes": 3,
+      "llm_calls": 24,
+      "estimated_usd": 0.8442825
+    },
+    {
+      "task_id": 7,
+      "scheduled": 3,
+      "completed": 3,
+      "successes": 3,
+      "llm_calls": 27,
+      "estimated_usd": 0.98271
+    },
+    {
+      "task_id": 8,
+      "scheduled": 3,
+      "completed": 3,
+      "successes": 3,
+      "llm_calls": 24,
+      "estimated_usd": 0.8852575
+    },
+    {
+      "task_id": 9,
+      "scheduled": 3,
+      "completed": 3,
+      "successes": 2,
+      "llm_calls": 19,
+      "estimated_usd": 0.7174200000000001
+    }
+  ],
+  "video_audit": [
+    {
+      "task_id": 0,
+      "state_id": 4,
+      "frames": 397,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 0,
+      "state_id": 5,
+      "frames": 390,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 0,
+      "state_id": 6,
+      "frames": 293,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 1,
+      "state_id": 4,
+      "frames": 433,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 1,
+      "state_id": 5,
+      "frames": 435,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 1,
+      "state_id": 6,
+      "frames": 546,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": false,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 2,
+      "state_id": 4,
+      "frames": 233,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 2,
+      "state_id": 5,
+      "frames": 234,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 2,
+      "state_id": 6,
+      "frames": 238,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 3,
+      "state_id": 4,
+      "frames": 300,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 3,
+      "state_id": 5,
+      "frames": 344,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": false,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 3,
+      "state_id": 6,
+      "frames": 281,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 4,
+      "state_id": 4,
+      "frames": 282,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 4,
+      "state_id": 5,
+      "frames": 280,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 4,
+      "state_id": 6,
+      "frames": 275,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 5,
+      "state_id": 4,
+      "frames": 137,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 5,
+      "state_id": 5,
+      "frames": 148,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 5,
+      "state_id": 6,
+      "frames": 143,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 6,
+      "state_id": 4,
+      "frames": 260,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 6,
+      "state_id": 5,
+      "frames": 262,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 6,
+      "state_id": 6,
+      "frames": 257,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 7,
+      "state_id": 4,
+      "frames": 319,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 7,
+      "state_id": 5,
+      "frames": 334,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 7,
+      "state_id": 6,
+      "frames": 388,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 8,
+      "state_id": 4,
+      "frames": 325,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 8,
+      "state_id": 5,
+      "frames": 333,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 8,
+      "state_id": 6,
+      "frames": 320,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 9,
+      "state_id": 4,
+      "frames": 605,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": false,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 9,
+      "state_id": 5,
+      "frames": 286,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "task_id": 9,
+      "state_id": 6,
+      "frames": 360,
+      "fps": 20.0,
+      "decoded": true,
+      "official_success": true,
+      "returned_models": [
+        "gpt-6-astra"
+      ]
+    }
+  ],
+  "cost_note": "Usage-priced estimate, not invoice; unknown usage is not zero cost."
+}

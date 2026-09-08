@@ -1,0 +1,94 @@
+{
+  "model": "gpt-6-astra",
+  "store": false,
+  "reasoning": {
+    "effort": "low"
+  },
+  "max_output_tokens": 4096,
+  "input": [
+    {
+      "role": "system",
+      "content": "You are the semantic task planner for a single-arm LIBERO adaptation of RoboEval Agentic v2. Choose exactly one skill. Deterministic robotics code alone chooses poses, offsets, joints, trajectories, gains, tolerances and step counts. Use only current named objects and regions. Fixtures cannot be lifted. Re-observe after each skill and use failure feedback. Respect scene.insertion_requirements: when opening_ready is false, use the preparation skill on the mechanism with an empty hand before grasping the object. Use the required_grasp_strategy. These are skill preconditions, not substitutes for official success. Do not claim success without official check_success. BDDL goals are explicitly provided as privileged task information. Return the supplied strict JSON schema. thought is a brief decision rationale."
+    },
+    {
+      "role": "user",
+      "content": "{\"task\": {\"language\": \"turn on the stove and put the moka pot on it\", \"goals\": [[\"turnon\", \"flat_stove_1\"], [\"on\", \"moka_pot_1\", \"flat_stove_1_cook_region\"]]}, \"skills\": {\"clear_obstruction\": \"Hand is empty; physically move a movable obstacle away from a blocked grasp approach to free workspace. Object names the obstacle; deterministic code selects the destination.\", \"grasp\": \"Object is movable and not held; one Panda arm.\", \"lift\": \"Object must be held.\", \"transport\": \"Object must be held; goal is a named object/region.\", \"place\": \"Object must be held; goal is a named object/region; release and settle.\", \"open_drawer\": \"Named articulated region is a sliding drawer; hand is empty.\", \"close_drawer\": \"Named sliding drawer is unobstructed; hand is empty.\", \"open_door\": \"Named hinged appliance; hand is empty.\", \"close_door\": \"Named hinged appliance; placed objects clear the door arc.\", \"turn_on\": \"Named stove has a rotary switch; hand is empty.\", \"finish\": \"Official success is true, or no recovery remains.\"}, \"scene\": {\"frame\": \"world\", \"length_unit\": \"meter\", \"angle_unit\": \"radian\", \"objects\": {\"chefmate_8_frypan_1\": {\"position_m\": [-0.063, -0.2515, 0.8992], \"quaternion_xyzw\": [-0.0001, 0.0001, 0.7071, 0.7071], \"aabb_m\": [[-0.1641, -0.3483, 0.9], [0.0403, 0.0079, 0.9578]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": false}, \"moka_pot_1\": {\"position_m\": [-0.0622, 0.2052, 1.2027], \"quaternion_xyzw\": [-0.0159, -0.0057, 0.9999, 0.0022], \"aabb_m\": [[-0.1051, 0.1134, 1.1353], [-0.0195, 0.2612, 1.2886]], \"type\": \"object\", \"fixed\": false, \"parent\": null, \"held\": true}, \"flat_stove_1\": {\"position_m\": [-0.2061, 0.2063, 0.905], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.26, 0.1113, 0.885], [0.0389, 0.3013, 0.955]], \"type\": \"object\", \"fixed\": true, \"parent\": null, \"held\": false}, \"kitchen_table_flat_stove_init_region\": {\"position_m\": [-0.2, 0.2, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.21, 0.19, 0.868], [-0.19, 0.21, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"kitchen_table_frypan_init_region\": {\"position_m\": [-0.05, -0.25, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.075, -0.275, 0.868], [-0.025, -0.225, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"kitchen_table_moka_pot_init_region\": {\"position_m\": [0.05, 0.0, 0.875], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[0.025, -0.025, 0.868], [0.075, 0.025, 0.882]], \"type\": \"site\", \"fixed\": false, \"parent\": null, \"held\": false}, \"flat_stove_1_cook_region\": {\"position_m\": [-0.0561, 0.2063, 0.905], \"quaternion_xyzw\": [0.0, 0.0, 0.0, 1.0], \"aabb_m\": [[-0.1311, 0.1313, 0.9025], [0.0189, 0.2813, 0.9075]], \"type\": \"site\", \"fixed\": true, \"parent\": \"flat_stove_1\", \"held\": false}}, \"joints\": {\"flat_stove_1_button\": {\"qpos\": 1.0652, \"type\": \"hinge\", \"range\": [-0.005, 2.1], \"axis_world\": [0.0, 0.0, 1.0], \"anchor_world\": [-0.2061, 0.2063, 0.905]}}, \"contacts\": [[\"table_collision\", \"chefmate_8_frypan_1_g4\"], [\"table_collision\", \"chefmate_8_frypan_1_g4\"], [\"table_collision\", \"chefmate_8_frypan_1_g4\"], [\"table_collision\", \"chefmate_8_frypan_1_g4\"], [\"gripper0_finger1_pad_collision\", \"moka_pot_1_g16\"], [\"gripper0_finger1_pad_collision\", \"moka_pot_1_g16\"], [\"gripper0_finger1_pad_collision\", \"moka_pot_1_g16\"], [\"gripper0_finger1_pad_collision\", \"moka_pot_1_g16\"], [\"gripper0_finger2_pad_collision\", \"moka_pot_1_g16\"], [\"gripper0_finger2_pad_collision\", \"moka_pot_1_g16\"], [\"gripper0_finger2_pad_collision\", \"moka_pot_1_g16\"], [\"gripper0_finger2_pad_collision\", \"moka_pot_1_g16\"]], \"eef_position_m\": [-0.0647, 0.2065, 1.2801], \"eef_quaternion_xyzw\": [0.9999, -0.0022, 0.016, -0.003], \"gripper_qpos\": [0.0057, -0.0057], \"robot_qpos\": [0.1374, 0.2158, 0.2177, -1.7139, -0.0556, 1.9563, 2.7307], \"goal_status\": [{\"predicate\": [\"turnon\", \"flat_stove_1\"], \"satisfied\": true}, {\"predicate\": [\"on\", \"moka_pot_1\", \"flat_stove_1_cook_region\"], \"satisfied\": false}], \"insertion_requirements\": [], \"official_success\": false, \"remaining_steps\": 390}, \"history\": [{\"request\": {\"skill\": \"turn_on\", \"object\": \"flat_stove_1\", \"goal\": \"flat_stove_1\", \"strategy\": null}, \"success\": true, \"failure_code\": null, \"official_success\": false}, {\"request\": {\"skill\": \"grasp\", \"object\": \"moka_pot_1\", \"goal\": \"flat_stove_1_cook_region\", \"strategy\": \"handle\"}, \"success\": true, \"failure_code\": null, \"official_success\": false}, {\"request\": {\"skill\": \"lift\", \"object\": \"moka_pot_1\", \"goal\": \"flat_stove_1_cook_region\", \"strategy\": null}, \"success\": true, \"failure_code\": null, \"official_success\": false}, {\"request\": {\"skill\": \"transport\", \"object\": \"moka_pot_1\", \"goal\": \"flat_stove_1_cook_region\", \"strategy\": null}, \"success\": true, \"failure_code\": null, \"official_success\": false}]}"
+    }
+  ],
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "name": "libero_semantic_skill",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schema_version",
+          "thought",
+          "request"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "enum": [
+              "libero.agentic_v2.skill_request.v1"
+            ]
+          },
+          "thought": {
+            "type": "string"
+          },
+          "request": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "skill",
+              "object",
+              "goal",
+              "strategy"
+            ],
+            "properties": {
+              "skill": {
+                "type": "string",
+                "enum": [
+                  "clear_obstruction",
+                  "grasp",
+                  "lift",
+                  "transport",
+                  "place",
+                  "open_drawer",
+                  "close_drawer",
+                  "open_door",
+                  "close_door",
+                  "turn_on",
+                  "finish"
+                ]
+              },
+              "object": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "goal": {
+                "type": "string"
+              },
+              "strategy": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  null,
+                  "top",
+                  "side",
+                  "handle"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

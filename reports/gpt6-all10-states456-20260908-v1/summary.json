@@ -1,0 +1,187 @@
+{
+  "run_id": "gpt6-all10-states456-20260908-v1",
+  "method": "gpt6",
+  "split": "formal",
+  "complete": true,
+  "scheduled": 30,
+  "completed": 30,
+  "missing": [],
+  "per_task": [
+    {
+      "task_id": 0,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 3,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 3
+      }
+    },
+    {
+      "task_id": 1,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 2,
+      "success_rate": 0.6666666666666666,
+      "wilson95": [
+        0.2076596008020477,
+        0.9385080552796037
+      ],
+      "termination_counts": {
+        "success": 2,
+        "replan_budget": 1
+      }
+    },
+    {
+      "task_id": 2,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 3,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 3
+      }
+    },
+    {
+      "task_id": 3,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 2,
+      "success_rate": 0.6666666666666666,
+      "wilson95": [
+        0.2076596008020477,
+        0.9385080552796037
+      ],
+      "termination_counts": {
+        "success": 2,
+        "replan_budget": 1
+      }
+    },
+    {
+      "task_id": 4,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 3,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 3
+      }
+    },
+    {
+      "task_id": 5,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 3,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 3
+      }
+    },
+    {
+      "task_id": 6,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 3,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 3
+      }
+    },
+    {
+      "task_id": 7,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 3,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 3
+      }
+    },
+    {
+      "task_id": 8,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 3,
+      "success_rate": 1.0,
+      "wilson95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "termination_counts": {
+        "success": 3
+      }
+    },
+    {
+      "task_id": 9,
+      "scheduled": 3,
+      "completed": 3,
+      "missing": 0,
+      "successes": 2,
+      "success_rate": 0.6666666666666666,
+      "wilson95": [
+        0.2076596008020477,
+        0.9385080552796037
+      ],
+      "termination_counts": {
+        "step_budget": 1,
+        "success": 2
+      }
+    }
+  ],
+  "macro_success_rate": 0.8999999999999998,
+  "macro_bootstrap95": [
+    0.7999999999999999,
+    0.9999999999999999
+  ],
+  "bootstrap_note": "Stratified empirical bootstrap; degenerates at all-zero/all-one samples. See Wilson per-task intervals.",
+  "micro_wilson95": [
+    0.7437891742081593,
+    0.9654001112526658
+  ],
+  "failure_counts": {
+    "control_error": 14,
+    "placement_unstable": 1,
+    "mechanism_contact": 1
+  },
+  "mean_llm_calls": 7.066666666666666,
+  "mean_replans": 0.4666666666666667,
+  "total_input_tokens": 589647,
+  "total_output_tokens": 17053,
+  "total_llm_latency_seconds": 857.9420000001846,
+  "total_episode_wall_seconds": 1101.6889999999548,
+  "estimated_cost_usd": 8.221647499999998,
+  "cost_note": "Usage-priced estimate, not an invoice; unavailable-response usage remains unknown."
+}

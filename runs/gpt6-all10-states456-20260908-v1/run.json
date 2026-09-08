@@ -1,0 +1,185 @@
+{
+  "run_id": "gpt6-all10-states456-20260908-v1",
+  "method": "gpt6",
+  "split": "formal",
+  "formal_benchmark": false,
+  "purpose": "selected_task_state_check",
+  "code_hash": "8c7738eecf1f8926ae7e89af6bd15366c777a5f68617c6f97ee99fc246a188dc",
+  "config_hash": "3e33ea42d3c70c693b9a5cd2e3aa0c68359c412f1345dc17c3efc060ac1f00c7",
+  "manifest_hash": "359b6c3f4f056621a41ef463d2a790e1f9bedc2616b772d6209d6488db6d3429",
+  "schedule": [
+    {
+      "task_id": 0,
+      "init_state_id": 4
+    },
+    {
+      "task_id": 0,
+      "init_state_id": 5
+    },
+    {
+      "task_id": 0,
+      "init_state_id": 6
+    },
+    {
+      "task_id": 1,
+      "init_state_id": 4
+    },
+    {
+      "task_id": 1,
+      "init_state_id": 5
+    },
+    {
+      "task_id": 1,
+      "init_state_id": 6
+    },
+    {
+      "task_id": 2,
+      "init_state_id": 4
+    },
+    {
+      "task_id": 2,
+      "init_state_id": 5
+    },
+    {
+      "task_id": 2,
+      "init_state_id": 6
+    },
+    {
+      "task_id": 3,
+      "init_state_id": 4
+    },
+    {
+      "task_id": 3,
+      "init_state_id": 5
+    },
+    {
+      "task_id": 3,
+      "init_state_id": 6
+    },
+    {
+      "task_id": 4,
+      "init_state_id": 4
+    },
+    {
+      "task_id": 4,
+      "init_state_id": 5
+    },
+    {
+      "task_id": 4,
+      "init_state_id": 6
+    },
+    {
+      "task_id": 5,
+      "init_state_id": 4
+    },
+    {
+      "task_id": 5,
+      "init_state_id": 5
+    },
+    {
+      "task_id": 5,
+      "init_state_id": 6
+    },
+    {
+      "task_id": 6,
+      "init_state_id": 4
+    },
+    {
+      "task_id": 6,
+      "init_state_id": 5
+    },
+    {
+      "task_id": 6,
+      "init_state_id": 6
+    },
+    {
+      "task_id": 7,
+      "init_state_id": 4
+    },
+    {
+      "task_id": 7,
+      "init_state_id": 5
+    },
+    {
+      "task_id": 7,
+      "init_state_id": 6
+    },
+    {
+      "task_id": 8,
+      "init_state_id": 4
+    },
+    {
+      "task_id": 8,
+      "init_state_id": 5
+    },
+    {
+      "task_id": 8,
+      "init_state_id": 6
+    },
+    {
+      "task_id": 9,
+      "init_state_id": 4
+    },
+    {
+      "task_id": 9,
+      "init_state_id": 5
+    },
+    {
+      "task_id": 9,
+      "init_state_id": 6
+    }
+  ],
+  "config": {
+    "protocol_id": "libero10-state-agentic-v2-600-v1",
+    "suite": "libero_10",
+    "task_order_index": 0,
+    "dev_state_ids": [
+      0,
+      1,
+      2
+    ],
+    "formal_states_per_task": 50,
+    "seed": 20260907,
+    "settle_steps": 5,
+    "settle_action": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_env_steps": 600,
+    "horizon": 605,
+    "control_freq": 20,
+    "camera_size": 256,
+    "max_skill_requests": 24,
+    "max_replans": 3,
+    "infra_retries": 0,
+    "model": "gpt-6-astra",
+    "reasoning_effort": "low",
+    "max_output_tokens": 4096,
+    "max_llm_calls": 24,
+    "api_timeout_seconds": 90,
+    "max_episode_seconds": 900,
+    "calibrated": true,
+    "formal_budget_usd": 20.0,
+    "information": "simulator-state-and-bddl-goals",
+    "cross_episode_memory": false,
+    "pricing_usd_per_million": {
+      "uncached_input": 10,
+      "cached_input": 1,
+      "cache_write": 12.5,
+      "output": 50
+    },
+    "ablation_states_per_task": 5,
+    "mujoco_stack_doubles": 2000000,
+    "blas_threads": 1,
+    "max_workers": 1,
+    "success_termination": "first_official_success",
+    "budget_ledger": "runs/gpt6-all10-states456-20260908-v1/budget.sqlite"
+  },
+  "created_at": 1788870967.3141742,
+  "note": "Each selected task/state pair executes once; new versions retain all earlier successes and failures."
+}
